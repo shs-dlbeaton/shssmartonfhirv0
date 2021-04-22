@@ -118,11 +118,12 @@
     var clientGlobalScope = {};
     FHIR.oauth2.ready().then(function (bundle) {
         // Render the current patient (or any error)
+        bundle.bundle = {};
         bundle.patient.read().then(
             function (pt) {
                 console.log(pt);
                 document.getElementById('patient').innerText = JSON.stringify(pt, null, 4);
-                bundle.patientResource = pt;
+                bundle.bundle.patientResource = pt;
             },
             function (error) {
                 document.getElementById('patient').innerText = error.stack;
@@ -133,7 +134,7 @@
         bundle.encounter.read().then(
             function (encounterLaunchContext) {
                 document.getElementById('encounterLaunchContext').innerText = JSON.stringify(encounterLaunchContext, null, 4);
-                bundle.encounterLaunchContextResource = encounterLaunchContext;
+                bundle.bundle.encounterLaunchContextResource = encounterLaunchContext;
             },
             function (error) {
                 document.getElementById('encounterLaunchContext').innerText = error.stack;
@@ -155,7 +156,7 @@
             .then(
                 function (encounterByPatientId) {
                     document.getElementById('encounterByPatientId').innerText = JSON.stringify(encounterByPatientId, null, 4);
-                    bundle.encounterByPatientIdResource = encounterByPatientId;
+                    bundle.bundle.encounterByPatientIdResource = encounterByPatientId;
                 },
                 function (error) {
                     alert('Issue Fetching Encounter by PatientId');
@@ -178,7 +179,7 @@
             .then(
                 function (observation) {
                     document.getElementById('observation').innerText = JSON.stringify(observation, null, 4);
-                    bundle.observation = observation;
+                    bundle.bundle.observation = observation;
                 },
                 function (error) {
                     alert('Issue Fetching observation by PatientId');
@@ -200,7 +201,7 @@
             .then(
                 function (appointment) {
                     document.getElementById('appointment').innerText = JSON.stringify(appointment, null, 4);
-                    bundle.appointment = appointment;
+                    bundle.bundle.appointment = appointment;
                 },
                 function (error) {
                     alert('Issue Fetching appointment by PatientId');
@@ -222,7 +223,7 @@
             .then(
                 function (allergyIntolerance) {
                     document.getElementById('allergyIntolerance').innerText = JSON.stringify(allergyIntolerance, null, 4);
-                    bundle.allergyIntolerance = allergyIntolerance;
+                    bundle.bundle.allergyIntolerance = allergyIntolerance;
                 },
                 function (error) {
                     alert('Issue Fetching allergyIntolerance by PatientId');
@@ -244,7 +245,7 @@
             .then(
                 function (documentReference) {
                     document.getElementById('documentReference').innerText = JSON.stringify(documentReference, null, 4);
-                    bundle.documentReference = documentReference;
+                    bundle.bundle.documentReference = documentReference;
                 },
                 function (error) {
                     alert('Issue Fetching documentReference by PatientId');
@@ -270,7 +271,7 @@
             .then(
                 function (encounter) {
                     document.getElementById('organization').innerText = JSON.stringify(encounter[0].resource.serviceProvider, null, 4);
-                    bundle.organizationResource = organization;
+                    bundle.bundle.organizationResource = organization;
                 },
                 function (error) {
                     alert('Issue Fetching Organization');
@@ -296,7 +297,7 @@
             .then(
                 function (encounter) {
                     document.getElementById('location').innerText = JSON.stringify(encounter[0].resource.location, null, 4);
-                    bundle.locationResource = location;
+                    bundle.bundle.locationResource = location;
                 },
                 function (error) {
                     alert('Issue Fetching Location');
