@@ -4,6 +4,11 @@
     <meta charset="UTF-8"/>
     <title>SHS Referral Submit App</title>
     <script src="https://cdn.jsdelivr.net/npm/fhirclient/build/fhir-client.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <style>
         #patient, #organization, #location, #practitioner, #encounterByPatientId, #encounterLaunchContext, #observation, #documentReference, #appointment, #allergyIntolerance, #headers {
             font-family: Monaco, monospace;
@@ -47,45 +52,47 @@
     </style>
 </head>
 <body>
-<img src="images/shs_logo2.png" height="128" width="170"/>
-<h2>SHS Referral Submit App</h2>
-<table>
-    <tr>
-        <th>
-            SEND TO PATHWAYS <!--in Pathways from the external Cerner HIS.-->
-        </th>
-        <th>
-            <button onclick="returnClient()">Send To PathWays</button>
-        </th>
-    </tr>
-</table>
-<h4>Current Patient</h4>
-<div id="patient">Loading...</div>
 <div class="container">
-    <h4>Encounter fetch from EHR launch context</h4>
-    <div id="encounterLaunchContext">Loading...</div>
-    <h4>Encounter fetch from Patient FHIR Resource reference</h4>
-    <div id="encounterByPatientId">Loading...</div>
-</div>
-<h4>Organization fetch from EHR launch context</h4>
-<div id="organization">Loading...</div>
-<h4>Location</h4>
-<div id="location">Loading...</div>
-<h4>Practitioners</h4>
-<div id="practitioner">Loading...</div>
-<h4>Observations</h4>
-<div id="observation">Loading...</div>
-<h4>Appointments</h4>
-<div id="appointment">Loading...</div>
-<h4>Allergy Intolerances</h4>
-<div id="allergyIntolerance">Loading...</div>
-<h4>Document Reference </h4>
-<div id="documentReference">Loading...</div>
-<div class="container">
-    <h4>Referral Submit Payload</h4>
-    <div class="item">Auth</div>
-    <div class="item">Referral</div>
-    <div id="headers">Loading...</div>
+    <img src="images/shs_logo2.png" height="128" width="170"/>
+    <h2>SHS Referral Submit App</h2>
+    <table>
+        <tr>
+            <th>
+                SEND TO PATHWAYS <!--in Pathways from the external Cerner HIS.-->
+            </th>
+            <th>
+                <button onclick="returnClient()">Send To PathWays</button>
+            </th>
+        </tr>
+    </table>
+    <h4>Current Patient</h4>
+    <div id="patient">Loading...</div>
+    <div class="container">
+        <h4>Encounter fetch from EHR launch context</h4>
+        <div id="encounterLaunchContext">Loading...</div>
+        <h4>Encounter fetch from Patient FHIR Resource reference</h4>
+        <div id="encounterByPatientId">Loading...</div>
+    </div>
+    <h4>Organization fetch from EHR launch context</h4>
+    <div id="organization">Loading...</div>
+    <h4>Location</h4>
+    <div id="location">Loading...</div>
+    <h4>Practitioners</h4>
+    <div id="practitioner">Loading...</div>
+    <h4>Observations</h4>
+    <div id="observation">Loading...</div>
+    <h4>Appointments</h4>
+    <div id="appointment">Loading...</div>
+    <h4>Allergy Intolerances</h4>
+    <div id="allergyIntolerance">Loading...</div>
+    <h4>Document Reference </h4>
+    <div id="documentReference">Loading...</div>
+    <div class="container">
+        <h4>Referral Submit Payload</h4>
+        <div class="item">Auth</div>
+        <div class="item">Referral</div>
+        <div id="headers">Loading...</div>
+    </div>
 </div>
 <script type="text/javascript">
     var clientGlobalScope = {};
