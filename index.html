@@ -271,7 +271,7 @@
             .then(
                 function (encounter) {
                     document.getElementById('organization').innerText = JSON.stringify(encounter[0].resource.serviceProvider, null, 4);
-                    fhirBundle.fhirBundle.organizationResource = organization;
+                    fhirBundle.fhirBundle.organizationResource = encounter[0].resource.serviceProvider;
                 },
                 function (error) {
                     alert('Issue Fetching Organization');
@@ -297,7 +297,7 @@
             .then(
                 function (encounter) {
                     document.getElementById('location').innerText = JSON.stringify(encounter[0].resource.location, null, 4);
-                    fhirBundle.fhirBundle.locationResource = location;
+                    fhirBundle.fhirBundle.locationResource = encounter[0].resource.location;
                 },
                 function (error) {
                     alert('Issue Fetching Location');
@@ -326,7 +326,7 @@
             .then(
                 function (practitioner) {
                     document.getElementById('practitioner').innerText = JSON.stringify(practitioner, null, 4);
-                    //document.getElementById('headers').innerText = JSON.stringify(client, null, 4);
+                    fhirBundle.fhirBundle.practitionerResource = practitioner;
                 },
                 function (error) {
                     document.getElementById('practitioner').innerText = error.stack;
