@@ -33,7 +33,7 @@
         }
 
         .container {
-            border: 5px solid rgb(111, 41, 97);
+            border: 5px solid rgb(30,144,255);
             border-radius: .5em;
             padding: 10px;
             display: flex;
@@ -43,56 +43,76 @@
         }
 
         .item {
-            width: 100px;
+            width: 300px;
             height: 100px;
             padding: 10px;
-            background-color: rgba(111, 41, 97, .3);
-            border: 2px solid rgba(111, 41, 97, .5);
+            background-color: rgba(173,255,47);
+            border: 2px solid rgba(214, 69, 65, 1);
+            font-size: 13px;
         }
     </style>
 </head>
 <body>
+<img src="images/shs_logo2.png" height="128" width="170"/>
+<h2>SHS Referral Submit App</h2>
+<table>
+    <tr>
+        <th>
+            SEND TO PATHWAYS <!--in Pathways from the external Cerner HIS.-->
+        </th>
+        <th>
+            <button onclick="returnClient()">Send To PathWays</button>
+        </th>
+    </tr>
+</table>
 <div class="container">
-    <img src="images/shs_logo2.png" height="128" width="170"/>
-    <h2>SHS Referral Submit App</h2>
-    <table>
-        <tr>
-            <th>
-                SEND TO PATHWAYS <!--in Pathways from the external Cerner HIS.-->
-            </th>
-            <th>
-                <button onclick="returnClient()">Send To PathWays</button>
-            </th>
-        </tr>
-    </table>
     <h4>Current Patient</h4>
     <div id="patient">Loading...</div>
-    <div class="container">
-        <h4>Encounter fetch from EHR launch context</h4>
-        <div id="encounterLaunchContext">Loading...</div>
-        <h4>Encounter fetch from Patient FHIR Resource reference</h4>
-        <div id="encounterByPatientId">Loading...</div>
-    </div>
+</div>
+<div class="container">
+    <h4>Encounter fetch from EHR launch context</h4>
+    <div id="encounterLaunchContext">Loading...</div>
+    <h4>Encounter fetch from Patient FHIR Resource reference</h4>
+    <div id="encounterByPatientId">Loading...</div>
+</div>
+<div class="container">
     <h4>Organization fetch from EHR launch context</h4>
     <div id="organization">Loading...</div>
+</div>
+<div class="container">
     <h4>Location</h4>
     <div id="location">Loading...</div>
+</div>
+<div class="container">
     <h4>Practitioners</h4>
     <div id="practitioner">Loading...</div>
+</div>
+<div class="container">
     <h4>Observations</h4>
     <div id="observation">Loading...</div>
+</div>
+<div class="container">
     <h4>Appointments</h4>
     <div id="appointment">Loading...</div>
+</div>
+<div class="container">
     <h4>Allergy Intolerances</h4>
     <div id="allergyIntolerance">Loading...</div>
+</div>
+<div class="container">
     <h4>Document Reference </h4>
     <div id="documentReference">Loading...</div>
-    <div class="container">
-        <h4>Referral Submit Payload</h4>
-        <div class="item">Auth</div>
-        <div class="item">Referral</div>
-        <div id="headers">Loading...</div>
-    </div>
+</div>
+<div class="container">
+    <h4>Referral Submit Payload Structure </h4>
+    <div class="item">Location Resource</div>
+    <div class="item">Patient Resource</div>
+    <div class="item">Organization Resource</div>
+    <div class="item">DocumentReference Resource</div>
+    <div class="item">Encounter Resource</div>
+    <div class="item">Observation Resource</div>
+    <div class="item">Appointment Resource</div>
+    <div id="headers">Loading...</div>
 </div>
 <script type="text/javascript">
     var clientGlobalScope = {};
