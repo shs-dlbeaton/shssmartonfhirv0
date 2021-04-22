@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="84128e52-38dc-4443-81e7-2a5ed93fef9a" name="Default Changelist" comment="adding boostrap css + r">
+    <list default="true" id="84128e52-38dc-4443-81e7-2a5ed93fef9a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -16,10 +16,25 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="110" column="39" selection-start-line="110" selection-start-column="39" selection-end-line="110" selection-end-column="39" />
+            <state relative-caret-position="235">
+              <caret line="42" column="9" lean-forward="true" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/epic/launch.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cerner/launch.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/smarthealthit/launch.html">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -72,6 +87,21 @@
               <item name="shssmartonfhirv0" type="b2602c69:ProjectViewProjectNode" />
               <item name="shssmartonfhirv0" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="shssmartonfhirv0" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shssmartonfhirv0" type="462c0819:PsiDirectoryNode" />
+              <item name="cerner" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="shssmartonfhirv0" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shssmartonfhirv0" type="462c0819:PsiDirectoryNode" />
+              <item name="epic" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="shssmartonfhirv0" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shssmartonfhirv0" type="462c0819:PsiDirectoryNode" />
+              <item name="smarthealthit" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -81,7 +111,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1619102383014" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1619106870003" />
     <property name="node.js.path.for.package.jscs" value="project" />
     <property name="node.js.selected.package.jscs" value="" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -114,7 +144,7 @@
       <option name="presentableId" value="Default" />
       <updated>1619099475240</updated>
       <workItem from="1619099476383" duration="967000" />
-      <workItem from="1619100646575" duration="1677000" />
+      <workItem from="1619100646575" duration="2721000" />
     </task>
     <task id="LOCAL-00001" summary="git initial push">
       <created>1619099545925</created>
@@ -144,11 +174,18 @@
       <option name="project" value="LOCAL" />
       <updated>1619101534443</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="adding boostrap css + r">
+      <created>1619102381834</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1619102381834</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2644000" />
+    <option name="totallyTimeSpent" value="3688000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -240,16 +277,23 @@
     <MESSAGE value="git initial push" />
     <MESSAGE value="test commit" />
     <MESSAGE value="adding boostrap css" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding boostrap css" />
+    <MESSAGE value="adding boostrap css + r" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding boostrap css + r" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/epic/launch.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/cerner/launch.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smarthealthit/launch.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="110" column="39" selection-start-line="110" selection-start-column="39" selection-end-line="110" selection-end-column="39" />
+        <state relative-caret-position="235">
+          <caret line="42" column="9" lean-forward="true" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
         </state>
       </provider>
     </entry>
