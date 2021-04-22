@@ -16,8 +16,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="42" column="9" lean-forward="true" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
+            <state relative-caret-position="199">
+              <caret line="299" column="34" selection-start-line="299" selection-start-column="34" selection-end-line="299" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -111,7 +111,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1619107011499" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1619107956953" />
     <property name="node.js.path.for.package.jscs" value="project" />
     <property name="node.js.selected.package.jscs" value="" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -144,7 +144,7 @@
       <option name="presentableId" value="Default" />
       <updated>1619099475240</updated>
       <workItem from="1619099476383" duration="967000" />
-      <workItem from="1619100646575" duration="2721000" />
+      <workItem from="1619100646575" duration="3544000" />
     </task>
     <task id="LOCAL-00001" summary="git initial push">
       <created>1619099545925</created>
@@ -181,11 +181,25 @@
       <option name="project" value="LOCAL" />
       <updated>1619102381834</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="adding boostrap css + r">
+      <created>1619106868525</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1619106868525</updated>
+    </task>
+    <task id="LOCAL-00007" summary="renaming into bundle">
+      <created>1619107010093</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1619107010093</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3688000" />
+    <option name="totallyTimeSpent" value="4511000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -278,7 +292,8 @@
     <MESSAGE value="test commit" />
     <MESSAGE value="adding boostrap css" />
     <MESSAGE value="adding boostrap css + r" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding boostrap css + r" />
+    <MESSAGE value="renaming into bundle" />
+    <option name="LAST_COMMIT_MESSAGE" value="renaming into bundle" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/epic/launch.html">
@@ -292,8 +307,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="42" column="9" lean-forward="true" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
+        <state relative-caret-position="199">
+          <caret line="299" column="34" selection-start-line="299" selection-start-column="34" selection-end-line="299" selection-end-column="34" />
         </state>
       </provider>
     </entry>
