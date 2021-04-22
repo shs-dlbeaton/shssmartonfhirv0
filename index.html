@@ -116,13 +116,13 @@
 </div>
 <script type="text/javascript">
     var clientGlobalScope = {};
-    FHIR.oauth2.ready().then(function (client) {
+    FHIR.oauth2.ready().then(function (bundle) {
         // Render the current patient (or any error)
-        client.patient.read().then(
+        bundle.patient.read().then(
             function (pt) {
                 console.log(pt);
                 document.getElementById('patient').innerText = JSON.stringify(pt, null, 4);
-                client.patientResource = pt;
+                bundle.patientResource = pt;
             },
             function (error) {
                 document.getElementById('patient').innerText = error.stack;
@@ -130,10 +130,10 @@
         );
 
         // Render the current encounter (or any error)
-        client.encounter.read().then(
+        bundle.encounter.read().then(
             function (encounterLaunchContext) {
                 document.getElementById('encounterLaunchContext').innerText = JSON.stringify(encounterLaunchContext, null, 4);
-                client.encounterLaunchContextResource = encounterLaunchContext;
+                bundle.encounterLaunchContextResource = encounterLaunchContext;
             },
             function (error) {
                 document.getElementById('encounterLaunchContext').innerText = error.stack;
@@ -141,7 +141,7 @@
         );
 
         // Get Encounter for the selected patient
-        client.request('/Encounter?subject=Patient/' + client.patient.id, { //+ client.patient.id,
+        bundle.request('/Encounter?subject=Patient/' + bundle.patient.id, { //+ client.patient.id,
         })
 
             .then(function (data) {
@@ -155,7 +155,7 @@
             .then(
                 function (encounterByPatientId) {
                     document.getElementById('encounterByPatientId').innerText = JSON.stringify(encounterByPatientId, null, 4);
-                    client.encounterByPatientIdResource = encounterByPatientId;
+                    bundle.encounterByPatientIdResource = encounterByPatientId;
                 },
                 function (error) {
                     alert('Issue Fetching Encounter by PatientId');
@@ -164,7 +164,7 @@
             );
 
 
-        client.request('/Observation?subject=Patient/' + client.patient.id, { //+ client.patient.id,
+        bundle.request('/Observation?subject=Patient/' + bundle.patient.id, { //+ client.patient.id,
         })
 
             .then(function (data) {
@@ -178,7 +178,7 @@
             .then(
                 function (observation) {
                     document.getElementById('observation').innerText = JSON.stringify(observation, null, 4);
-                    client.observation = observation;
+                    bundle.observation = observation;
                 },
                 function (error) {
                     alert('Issue Fetching observation by PatientId');
@@ -186,7 +186,7 @@
                 }
             );
 
-        client.request('/Appointment?patient=' + client.patient.id, { //+ client.patient.id,
+        bundle.request('/Appointment?patient=' + bundle.patient.id, { //+ client.patient.id,
         })
 
             .then(function (data) {
@@ -200,7 +200,7 @@
             .then(
                 function (appointment) {
                     document.getElementById('appointment').innerText = JSON.stringify(appointment, null, 4);
-                    client.appointment = appointment;
+                    bundle.appointment = appointment;
                 },
                 function (error) {
                     alert('Issue Fetching appointment by PatientId');
@@ -208,7 +208,7 @@
                 }
             );
 
-        client.request('/AllergyIntolerance?patient=' + client.patient.id, { //+ client.patient.id,
+        bundle.request('/AllergyIntolerance?patient=' + bundle.patient.id, { //+ client.patient.id,
         })
 
             .then(function (data) {
@@ -222,7 +222,7 @@
             .then(
                 function (allergyIntolerance) {
                     document.getElementById('allergyIntolerance').innerText = JSON.stringify(allergyIntolerance, null, 4);
-                    client.allergyIntolerance = allergyIntolerance;
+                    bundle.allergyIntolerance = allergyIntolerance;
                 },
                 function (error) {
                     alert('Issue Fetching allergyIntolerance by PatientId');
@@ -230,7 +230,7 @@
                 }
             );
 
-        client.request('/DocumentReference?patient=' + client.patient.id, { //+ client.patient.id,
+        bundle.request('/DocumentReference?patient=' + bundle.patient.id, { //+ client.patient.id,
         })
 
             .then(function (data) {
@@ -244,7 +244,7 @@
             .then(
                 function (documentReference) {
                     document.getElementById('documentReference').innerText = JSON.stringify(documentReference, null, 4);
-                    client.documentReference = documentReference;
+                    bundle.documentReference = documentReference;
                 },
                 function (error) {
                     alert('Issue Fetching documentReference by PatientId');
@@ -253,7 +253,7 @@
             );
 
         // Get Organization for the selected patient
-        client.request('/Encounter?_id=' + client.encounter.id, { // client.patient.id,
+        bundle.request('/Encounter?_id=' + bundle.encounter.id, { // client.patient.id,
             resolveReferences: ['serviceProvider'],
             graph: true
         })
@@ -270,7 +270,7 @@
             .then(
                 function (encounter) {
                     document.getElementById('organization').innerText = JSON.stringify(encounter[0].resource.serviceProvider, null, 4);
-                    client.organizationResource = organization;
+                    bundle.organizationResource = organization;
                 },
                 function (error) {
                     alert('Issue Fetching Organization');
@@ -279,7 +279,7 @@
             );
 
         // Get Location for the selected patient
-        client.request('/Encounter?_id=' + client.encounter.id, { // client.patient.id,
+        bundle.request('/Encounter?_id=' + bundle.encounter.id, { // client.patient.id,
             resolveReferences: ['location'],
             graph: true
         })
@@ -296,7 +296,7 @@
             .then(
                 function (encounter) {
                     document.getElementById('location').innerText = JSON.stringify(encounter[0].resource.location, null, 4);
-                    client.locationResource = location;
+                    bundle.locationResource = location;
                 },
                 function (error) {
                     alert('Issue Fetching Location');
@@ -306,7 +306,7 @@
 
 
         // Get Practitioners for the selected patient
-        client.request('/Patient?_id=' + client.patient.id, {
+        bundle.request('/Patient?_id=' + bundle.patient.id, {
             resolveReferences: ['participant'],
             graph: true
         })
@@ -331,7 +331,7 @@
                     document.getElementById('practitioner').innerText = error.stack;
                 }
             );
-        clientGlobalScope.client = client;
+        clientGlobalScope.client = bundle;
 
     }).catch(console.error);
 
