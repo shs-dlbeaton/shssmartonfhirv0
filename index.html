@@ -116,14 +116,14 @@
 </div>
 <script type="text/javascript">
     var clientGlobalScope = {};
-    FHIR.oauth2.ready().then(function (bundle) {
+    FHIR.oauth2.ready().then(function (fhirBundle) {
         // Render the current patient (or any error)
-        bundle.bundle = {};
-        bundle.patient.read().then(
+        fhirBundle.fhirBundle = {};
+        fhirBundle.patient.read().then(
             function (pt) {
                 console.log(pt);
                 document.getElementById('patient').innerText = JSON.stringify(pt, null, 4);
-                bundle.bundle.patientResource = pt;
+                fhirBundle.fhirBundle.patientResource = pt;
             },
             function (error) {
                 document.getElementById('patient').innerText = error.stack;
@@ -131,10 +131,10 @@
         );
 
         // Render the current encounter (or any error)
-        bundle.encounter.read().then(
+        fhirBundle.encounter.read().then(
             function (encounterLaunchContext) {
                 document.getElementById('encounterLaunchContext').innerText = JSON.stringify(encounterLaunchContext, null, 4);
-                bundle.bundle.encounterLaunchContextResource = encounterLaunchContext;
+                fhirBundle.fhirBundle.encounterLaunchContextResource = encounterLaunchContext;
             },
             function (error) {
                 document.getElementById('encounterLaunchContext').innerText = error.stack;
@@ -142,7 +142,7 @@
         );
 
         // Get Encounter for the selected patient
-        bundle.request('/Encounter?subject=Patient/' + bundle.patient.id, { //+ client.patient.id,
+        fhirBundle.request('/Encounter?subject=Patient/' + fhirBundle.patient.id, { //+ client.patient.id,
         })
 
             .then(function (data) {
@@ -156,7 +156,7 @@
             .then(
                 function (encounterByPatientId) {
                     document.getElementById('encounterByPatientId').innerText = JSON.stringify(encounterByPatientId, null, 4);
-                    bundle.bundle.encounterByPatientIdResource = encounterByPatientId;
+                    fhirBundle.fhirBundle.encounterByPatientIdResource = encounterByPatientId;
                 },
                 function (error) {
                     alert('Issue Fetching Encounter by PatientId');
@@ -165,7 +165,7 @@
             );
 
 
-        bundle.request('/Observation?subject=Patient/' + bundle.patient.id, { //+ client.patient.id,
+        fhirBundle.request('/Observation?subject=Patient/' + fhirBundle.patient.id, { //+ client.patient.id,
         })
 
             .then(function (data) {
@@ -179,7 +179,7 @@
             .then(
                 function (observation) {
                     document.getElementById('observation').innerText = JSON.stringify(observation, null, 4);
-                    bundle.bundle.observation = observation;
+                    fhirBundle.fhirBundle.observation = observation;
                 },
                 function (error) {
                     alert('Issue Fetching observation by PatientId');
@@ -187,7 +187,7 @@
                 }
             );
 
-        bundle.request('/Appointment?patient=' + bundle.patient.id, { //+ client.patient.id,
+        fhirBundle.request('/Appointment?patient=' + fhirBundle.patient.id, { //+ client.patient.id,
         })
 
             .then(function (data) {
@@ -201,7 +201,7 @@
             .then(
                 function (appointment) {
                     document.getElementById('appointment').innerText = JSON.stringify(appointment, null, 4);
-                    bundle.bundle.appointment = appointment;
+                    fhirBundle.fhirBundle.appointment = appointment;
                 },
                 function (error) {
                     alert('Issue Fetching appointment by PatientId');
@@ -209,7 +209,7 @@
                 }
             );
 
-        bundle.request('/AllergyIntolerance?patient=' + bundle.patient.id, { //+ client.patient.id,
+        fhirBundle.request('/AllergyIntolerance?patient=' + fhirBundle.patient.id, { //+ client.patient.id,
         })
 
             .then(function (data) {
@@ -223,7 +223,7 @@
             .then(
                 function (allergyIntolerance) {
                     document.getElementById('allergyIntolerance').innerText = JSON.stringify(allergyIntolerance, null, 4);
-                    bundle.bundle.allergyIntolerance = allergyIntolerance;
+                    fhirBundle.fhirBundle.allergyIntolerance = allergyIntolerance;
                 },
                 function (error) {
                     alert('Issue Fetching allergyIntolerance by PatientId');
@@ -231,7 +231,7 @@
                 }
             );
 
-        bundle.request('/DocumentReference?patient=' + bundle.patient.id, { //+ client.patient.id,
+        fhirBundle.request('/DocumentReference?patient=' + fhirBundle.patient.id, { //+ client.patient.id,
         })
 
             .then(function (data) {
@@ -245,7 +245,7 @@
             .then(
                 function (documentReference) {
                     document.getElementById('documentReference').innerText = JSON.stringify(documentReference, null, 4);
-                    bundle.bundle.documentReference = documentReference;
+                    fhirBundle.fhirBundle.documentReference = documentReference;
                 },
                 function (error) {
                     alert('Issue Fetching documentReference by PatientId');
@@ -254,7 +254,7 @@
             );
 
         // Get Organization for the selected patient
-        bundle.request('/Encounter?_id=' + bundle.encounter.id, { // client.patient.id,
+        fhirBundle.request('/Encounter?_id=' + fhirBundle.encounter.id, { // client.patient.id,
             resolveReferences: ['serviceProvider'],
             graph: true
         })
@@ -271,7 +271,7 @@
             .then(
                 function (encounter) {
                     document.getElementById('organization').innerText = JSON.stringify(encounter[0].resource.serviceProvider, null, 4);
-                    bundle.bundle.organizationResource = organization;
+                    fhirBundle.fhirBundle.organizationResource = organization;
                 },
                 function (error) {
                     alert('Issue Fetching Organization');
@@ -280,7 +280,7 @@
             );
 
         // Get Location for the selected patient
-        bundle.request('/Encounter?_id=' + bundle.encounter.id, { // client.patient.id,
+        fhirBundle.request('/Encounter?_id=' + fhirBundle.encounter.id, { // client.patient.id,
             resolveReferences: ['location'],
             graph: true
         })
@@ -297,7 +297,7 @@
             .then(
                 function (encounter) {
                     document.getElementById('location').innerText = JSON.stringify(encounter[0].resource.location, null, 4);
-                    bundle.bundle.locationResource = location;
+                    fhirBundle.fhirBundle.locationResource = location;
                 },
                 function (error) {
                     alert('Issue Fetching Location');
@@ -307,7 +307,7 @@
 
 
         // Get Practitioners for the selected patient
-        bundle.request('/Patient?_id=' + bundle.patient.id, {
+        fhirBundle.request('/Patient?_id=' + fhirBundle.patient.id, {
             resolveReferences: ['participant'],
             graph: true
         })
@@ -332,7 +332,7 @@
                     document.getElementById('practitioner').innerText = error.stack;
                 }
             );
-        clientGlobalScope.client = bundle;
+        clientGlobalScope.client = fhirBundle;
 
     }).catch(console.error);
 
