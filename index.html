@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>SHS Referral Submit App</title>
+    <script src="https://cdn.jsdelivr.net/npm/fhirclient/build/fhir-client.js"></script>
+    <style>
+        #patient, #organization, #location, #practitioner, #encounterByPatientId, #encounterLaunchContext, #observation, #documentReference, #appointment, #allergyIntolerance, #headers {
+            font-family: Monaco, monospace;
+            white-space: pre;
+            font-size: 13px;
+            height: 30vh;
+            overflow: scroll;
+            border: 1px solid #CCC;
+        }
+
+        body {
+            padding: 20px;
+            font: 1em Helvetica Neue, Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        p {
+            margin: 0 0 1em 0;
+        }
+
+        .container {
+            border: 5px solid rgb(111, 41, 97);
+            border-radius: .5em;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 500px;
+        }
+
+        .item {
+            width: 100px;
+            height: 100px;
+            padding: 10px;
+            background-color: rgba(111, 41, 97, .3);
+            border: 2px solid rgba(111, 41, 97, .5);
+        }
+    </style>
+</head>
+<body>
+<img src="images/shs_logo2.png" height="128" width="170"/>
+<h2>SHS Referral Submit App</h2>
+<table>
+    <tr>
+        <th>
+            SEND TO PATHWAYS <!--in Pathways from the external Cerner HIS.-->
+        </th>
+        <th>
+            <button onclick="returnClient()">Send To PathWays</button>
+        </th>
+    </tr>
+</table>
+<h4>Current Patient</h4>
+<div id="patient">Loading...</div>
+<div class="container">
+    <h4>Encounter fetch from EHR launch context</h4>
+    <div id="encounterLaunchContext">Loading...</div>
+    <h4>Encounter fetch from Patient FHIR Resource reference</h4>
+    <div id="encounterByPatientId">Loading...</div>
+</div>
+<h4>Organization fetch from EHR launch context</h4>
+<div id="organization">Loading...</div>
+<h4>Location</h4>
+<div id="location">Loading...</div>
+<h4>Practitioners</h4>
+<div id="practitioner">Loading...</div>
+<h4>Observations</h4>
+<div id="observation">Loading...</div>
+<h4>Appointments</h4>
+<div id="appointment">Loading...</div>
+<h4>Allergy Intolerances</h4>
+<div id="allergyIntolerance">Loading...</div>
+<h4>Document Reference </h4>
+<div id="documentReference">Loading...</div>
+<div class="container">
+    <h4>Referral Submit Payload</h4>
+    <div class="item">Auth</div>
+    <div class="item">Referral</div>
+    <div id="headers">Loading...</div>
+</div>
+<script type="text/javascript">
+    var clientGlobalScope = {};
+    FHIR.oauth2.ready().then(function (client) {
+        // Render the current patient (or any error)
+        client.patient.read().then(
+            function (pt) {
+                console.log(pt);
+                document.getElementById('patient').innerText = JSON.stringify(pt, null, 4);
+                client.patientResource = pt;
+            },
+            function (error) {
+                document.getElementById('patient').innerText = error.stack;
+            }
+        );
+
+        // Render the current encounter (or any error)
+        client.encounter.read().then(
+            function (encounterLaunchContext) {
+                document.getElementById('encounterLaunchContext').innerText = JSON.stringify(encounterLaunchContext, null, 4);
+                client.encounterLaunchContextResource = encounterLaunchContext;
+            },
+            function (error) {
+                document.getElementById('encounterLaunchContext').innerText = error.stack;
+            }
+        );
+
+        // Get Encounter for the selected patient
+        client.request('/Encounter?subject=Patient/' + client.patient.id, { //+ client.patient.id,
+        })
+
+            .then(function (data) {
+                if (!data.entry || !data.entry.length) {
+                    throw new Error('No encounter found for the selected patient');
+                }
+                return data.entry;
+            })
+
+            // Render the current encounter (or any error)
+            .then(
+                function (encounterByPatientId) {
+                    document.getElementById('encounterByPatientId').innerText = JSON.stringify(encounterByPatientId, null, 4);
+                    client.encounterByPatientIdResource = encounterByPatientId;
+                },
+                function (error) {
+                    alert('Issue Fetching Encounter by PatientId');
+                    document.getElementById('encounterByPatientId').innerText = error.stack;
+                }
+            );
+
+
+        client.request('/Observation?subject=Patient/' + client.patient.id, { //+ client.patient.id,
+        })
+
+            .then(function (data) {
+                if (!data.entry || !data.entry.length) {
+                    throw new Error('No observations found for the selected patient');
+                }
+                return data.entry;
+            })
+
+            // Render the current observation (or any error)
+            .then(
+                function (observation) {
+                    document.getElementById('observation').innerText = JSON.stringify(observation, null, 4);
+                    client.observation = observation;
+                },
+                function (error) {
+                    alert('Issue Fetching observation by PatientId');
+                    document.getElementById('observation').innerText = error.stack;
+                }
+            );
+
+        client.request('/Appointment?patient=' + client.patient.id, { //+ client.patient.id,
+        })
+
+            .then(function (data) {
+                if (!data.entry || !data.entry.length) {
+                    throw new Error('No appointments found for the selected patient');
+                }
+                return data.entry;
+            })
+
+            // Render the current appointment (or any error)
+            .then(
+                function (appointment) {
+                    document.getElementById('appointment').innerText = JSON.stringify(appointment, null, 4);
+                    client.appointment = appointment;
+                },
+                function (error) {
+                    alert('Issue Fetching appointment by PatientId');
+                    document.getElementById('appointment').innerText = error.stack;
+                }
+            );
+
+        client.request('/AllergyIntolerance?patient=' + client.patient.id, { //+ client.patient.id,
+        })
+
+            .then(function (data) {
+                if (!data.entry || !data.entry.length) {
+                    throw new Error('No Allergy intolerances found for the selected patient');
+                }
+                return data.entry;
+            })
+
+            // Render the current allergy intolerance (or any error)
+            .then(
+                function (allergyIntolerance) {
+                    document.getElementById('allergyIntolerance').innerText = JSON.stringify(allergyIntolerance, null, 4);
+                    client.allergyIntolerance = allergyIntolerance;
+                },
+                function (error) {
+                    alert('Issue Fetching allergyIntolerance by PatientId');
+                    document.getElementById('allergyIntolerance').innerText = error.stack;
+                }
+            );
+
+        client.request('/DocumentReference?patient=' + client.patient.id, { //+ client.patient.id,
+        })
+
+            .then(function (data) {
+                if (!data.entry || !data.entry.length) {
+                    throw new Error('No DocumentReference found for the selected patient');
+                }
+                return data.entry;
+            })
+
+            // Render the current allergy intolerance (or any error)
+            .then(
+                function (documentReference) {
+                    document.getElementById('documentReference').innerText = JSON.stringify(documentReference, null, 4);
+                    client.documentReference = documentReference;
+                },
+                function (error) {
+                    alert('Issue Fetching documentReference by PatientId');
+                    document.getElementById('documentReference').innerText = error.stack;
+                }
+            );
+
+        // Get Organization for the selected patient
+        client.request('/Encounter?_id=' + client.encounter.id, { // client.patient.id,
+            resolveReferences: ['serviceProvider'],
+            graph: true
+        })
+
+        // Reject if no organization is found
+            .then(function (data) {
+                if (!data.entry || !data.entry.length) {
+                    throw new Error('No organization found for the selected patient');
+                }
+                return data.entry;
+            })
+
+            // Render the current location (or any error)
+            .then(
+                function (encounter) {
+                    document.getElementById('organization').innerText = JSON.stringify(encounter[0].resource.serviceProvider, null, 4);
+                    client.organizationResource = organization;
+                },
+                function (error) {
+                    alert('Issue Fetching Organization');
+                    document.getElementById('organization').innerText = error.stack;
+                }
+            );
+
+        // Get Location for the selected patient
+        client.request('/Encounter?_id=' + client.encounter.id, { // client.patient.id,
+            resolveReferences: ['location'],
+            graph: true
+        })
+
+        // Reject if no location is found
+            .then(function (data) {
+                if (!data.entry || !data.entry.length) {
+                    throw new Error('No location found for the selected patient');
+                }
+                return data.entry;
+            })
+
+            // Render the current location (or any error)
+            .then(
+                function (encounter) {
+                    document.getElementById('location').innerText = JSON.stringify(encounter[0].resource.location, null, 4);
+                    client.locationResource = location;
+                },
+                function (error) {
+                    alert('Issue Fetching Location');
+                    document.getElementById('location').innerText = error.stack;
+                }
+            );
+
+
+        // Get Practitioners for the selected patient
+        client.request('/Patient?_id=' + client.patient.id, {
+            resolveReferences: ['participant'],
+            graph: true
+        })
+
+
+        // Reject if no Practitioners are found
+            .then(function (data) {
+                if (!data.entry || !data.entry.length) {
+                    throw new Error('No practitioners for the selected patient');
+                }
+                return data.entry;
+            })
+
+
+            // Get Practitioners for the selected patient
+            .then(
+                function (practitioner) {
+                    document.getElementById('practitioner').innerText = JSON.stringify(practitioner, null, 4);
+                    //document.getElementById('headers').innerText = JSON.stringify(client, null, 4);
+                },
+                function (error) {
+                    document.getElementById('practitioner').innerText = error.stack;
+                }
+            );
+        clientGlobalScope.client = client;
+
+    }).catch(console.error);
+
+    function returnClient() {
+        document.getElementById('headers').innerText = JSON.stringify(clientGlobalScope, null, 4);
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'https://pathways.stratahealth.com:8885/inboundServiceRequest', true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+
+        xhr.onreadystatechange = function () {
+            if (this.readyState != 4) {
+                alert(this.responseText);
+            }
+            if (this.readyState == 4 && this.status == 200) {
+                alert(this.responseText);
+            }
+            // end of state change: it can be after some time (async)
+        };
+        xhr.send(JSON.stringify({
+            value: clientGlobalScope
+        }));
+    }
+</script>
+</body>
+</html>
