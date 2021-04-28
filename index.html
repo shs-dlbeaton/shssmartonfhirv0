@@ -339,7 +339,8 @@
     function returnClient() {
         document.getElementById('headers').innerText = JSON.stringify(clientGlobalScope, null, 4);
         var xhr = new XMLHttpRequest();
-        xhr.open('POST', 'https://pathways.stratahealth.com:8885/inboundServiceRequest', true);
+        //xhr.open('POST', 'https://pathways.stratahealth.com:8885/inboundServiceRequest', true);
+        xhr.open('POST', 'https://reqbin.com/echo/post/form', true);
         xhr.setRequestHeader('Content-Type', 'application/json');
 
         xhr.onreadystatechange = function () {
