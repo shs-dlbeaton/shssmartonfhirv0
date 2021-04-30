@@ -339,7 +339,7 @@
     function returnClient() {
         document.getElementById('headers').innerText = JSON.stringify(clientGlobalScope, null, 4);
         var xhr = new XMLHttpRequest();
-        xhr.open('POST', 'https://servicesbetarhap01.stratahealth.org:8882/smartInbound', true);
+        xhr.open('POST', 'https://services-qa-strataconnect.stratahealth.net:3141/smartInbound', true);
         xhr.setRequestHeader('Content-Type', 'application/json');
 
         xhr.onreadystatechange = function () {
