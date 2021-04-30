@@ -341,6 +341,7 @@
         var xhr = new XMLHttpRequest();
         xhr.open('POST', 'https://services-strataconnect.stratahealth.net:3141/shssmart', true);
         xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
         xhr.setRequestHeader('payload', clientGlobalScope);
 
         xhr.onreadystatechange = function () {
