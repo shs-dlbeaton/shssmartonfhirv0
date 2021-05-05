@@ -348,8 +348,7 @@
         xhr.setRequestHeader('paylaod', clientGlobalScope);
 
         xhr.onreadystatechange = function () {
-            if (this.readyState != 4 && this.status == 404) {
-                window.location.href = "http://www.w3schools.com";
+            if (this.readyState != 4 ) {
                 alert(this.responseText);
             }
             if (this.readyState == 4 && this.status == 200) {
