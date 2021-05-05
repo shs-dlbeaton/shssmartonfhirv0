@@ -356,6 +356,15 @@
                     window.location.href = 'onerror.html';
                 }, 1000);
             }
+            if (this.readyState == 4 && this.status == 409) {
+                if (typeof (Storage) !== 'undefined') {
+                    sessionStorage.setItem('_errorDescription', this.responseText);
+                } else {
+                }
+                setTimeout(function () {
+                    window.location.href = 'onerror.html';
+                }, 1000);
+            }
             if (this.readyState == 4 && this.status == 200) {
                 alert(this.responseText);
             }
