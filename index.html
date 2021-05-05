@@ -347,7 +347,7 @@
         xhr.setRequestHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH');
 
         xhr.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 404) {
+            if (this.readyState == 4 && this.status >= 400) {
                 if (typeof (Storage) !== 'undefined') {
                     sessionStorage.setItem('_errorDescription', this.responseText);
                 } else {
