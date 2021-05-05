@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="84128e52-38dc-4443-81e7-2a5ed93fef9a" name="Default Changelist" comment="">
+    <list default="true" id="84128e52-38dc-4443-81e7-2a5ed93fef9a" name="Default Changelist" comment="reregistered cerner app">
+      <change afterPath="$PROJECT_DIR$/onerror.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -12,14 +14,28 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="328" selection-start-line="328" selection-end-line="328" />
+            <state relative-caret-position="5400">
+              <caret line="360" column="53" selection-start-line="360" selection-start-column="53" selection-end-line="360" selection-end-column="53" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/onerror.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="13" column="7" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -29,7 +45,11 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cerner/launch.html">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -50,7 +70,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/cerner/launch.html" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/onerror.html" />
       </list>
     </option>
   </component>
@@ -68,18 +90,18 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="1280" />
-    <option name="width" value="1920" />
-    <option name="height" value="1080" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="y" value="23" />
+    <option name="width" value="1280" />
+    <option name="height" value="713" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -111,7 +133,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1619108312352" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1620247784834" />
     <property name="node.js.path.for.package.jscs" value="project" />
     <property name="node.js.selected.package.jscs" value="" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -120,6 +142,11 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.importing" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -145,6 +172,11 @@
       <updated>1619099475240</updated>
       <workItem from="1619099476383" duration="967000" />
       <workItem from="1619100646575" duration="3836000" />
+      <workItem from="1619641684686" duration="383000" />
+      <workItem from="1619794576159" duration="1049000" />
+      <workItem from="1619798363116" duration="2896000" />
+      <workItem from="1619806887015" duration="2946000" />
+      <workItem from="1620239658180" duration="3851000" />
     </task>
     <task id="LOCAL-00001" summary="git initial push">
       <created>1619099545925</created>
@@ -209,11 +241,144 @@
       <option name="project" value="LOCAL" />
       <updated>1619108072748</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="testing post">
+      <created>1619611132187</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1619611132187</updated>
+    </task>
+    <task id="LOCAL-00011" summary="reregistered cerner app">
+      <created>1619620216763</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1619620216763</updated>
+    </task>
+    <task id="LOCAL-00012" summary="reregistered cerner app">
+      <created>1619794918833</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1619794918833</updated>
+    </task>
+    <task id="LOCAL-00013" summary="reregistered cerner app">
+      <created>1619797428140</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1619797428140</updated>
+    </task>
+    <task id="LOCAL-00014" summary="reregistered cerner app">
+      <created>1619798798059</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1619798798059</updated>
+    </task>
+    <task id="LOCAL-00015" summary="reregistered cerner app">
+      <created>1619800010443</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1619800010443</updated>
+    </task>
+    <task id="LOCAL-00016" summary="srfaxnotify">
+      <created>1619802943848</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1619802943848</updated>
+    </task>
+    <task id="LOCAL-00017" summary="reregistered cerner app">
+      <created>1619806922920</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1619806922920</updated>
+    </task>
+    <task id="LOCAL-00018" summary="reregistered cerner app">
+      <created>1619807611823</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1619807611823</updated>
+    </task>
+    <task id="LOCAL-00019" summary="reregistered cerner app">
+      <created>1619807895051</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1619807895051</updated>
+    </task>
+    <task id="LOCAL-00020" summary="reregistered cerner app">
+      <created>1619808080901</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1619808080901</updated>
+    </task>
+    <task id="LOCAL-00021" summary="reregistered cerner app">
+      <created>1619810626815</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1619810626815</updated>
+    </task>
+    <task id="LOCAL-00022" summary="reregistered cerner app">
+      <created>1619811043872</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1619811043872</updated>
+    </task>
+    <task id="LOCAL-00023" summary="reregistered cerner app">
+      <created>1620241279218</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1620241279218</updated>
+    </task>
+    <task id="LOCAL-00024" summary="reregistered cerner app">
+      <created>1620241564774</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1620241564774</updated>
+    </task>
+    <task id="LOCAL-00025" summary="reregistered cerner app">
+      <created>1620241730532</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1620241730532</updated>
+    </task>
+    <task id="LOCAL-00026" summary="reregistered cerner app">
+      <created>1620241881333</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1620241881333</updated>
+    </task>
+    <task id="LOCAL-00027" summary="reregistered cerner app">
+      <created>1620242108123</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1620242108123</updated>
+    </task>
+    <task id="LOCAL-00028" summary="reregistered cerner app">
+      <created>1620245032209</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1620245032209</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4803000" />
+    <option name="totallyTimeSpent" value="17076000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -225,10 +390,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1280" y="0" width="1920" height="1080" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1280" height="713" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16613418" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2358643" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -243,10 +407,11 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32970297" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="8" visible="true" weight="0.22376238" />
+      <window_info anchor="bottom" id="Version Control" order="8" visible="true" weight="0.15619968" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32970297" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -309,22 +474,39 @@
     <MESSAGE value="adding boostrap css + r" />
     <MESSAGE value="renaming into bundle" />
     <MESSAGE value="fhir bundle" />
-    <option name="LAST_COMMIT_MESSAGE" value="fhir bundle" />
+    <MESSAGE value="testing post" />
+    <MESSAGE value="srfaxnotify" />
+    <MESSAGE value="reregistered cerner app" />
+    <option name="LAST_COMMIT_MESSAGE" value="reregistered cerner app" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/epic/launch.html">
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/cerner/launch.html">
+    <entry file="file://$PROJECT_DIR$/epic/launch.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/smarthealthit/launch.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/cerner/launch.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/onerror.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="7" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="328" selection-start-line="328" selection-end-line="328" />
+        <state relative-caret-position="5400">
+          <caret line="360" column="53" selection-start-line="360" selection-start-column="53" selection-end-line="360" selection-end-column="53" />
         </state>
       </provider>
     </entry>
