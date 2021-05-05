@@ -348,7 +348,6 @@
 
         xhr.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 404) {
-                alert('We got 404');
                 if (typeof (Storage) !== 'undefined') {
                     sessionStorage.setItem('_errorDescription', this.responseText);
                 } else {
