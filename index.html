@@ -349,6 +349,7 @@
         xhr.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 404) {
                 alert("We got 404");
+                location.replace("https://www.w3schools.com")
             }
             if (this.readyState == 4 && this.status == 200) {
                 alert(this.responseText);
