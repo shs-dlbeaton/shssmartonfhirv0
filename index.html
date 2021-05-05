@@ -347,8 +347,8 @@
         xhr.setRequestHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH');
 
         xhr.onreadystatechange = function () {
-            if (this.readyState != 4 ) {
-                alert(this.responseText);
+            if (this.readyState == 4 && this.status == 404) {
+                alert("We got 404");
             }
             if (this.readyState == 4 && this.status == 200) {
                 alert(this.responseText);
