@@ -349,16 +349,13 @@
         xhr.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 404) {
                 alert('We got 404');
-                // Check browser support
                 if (typeof (Storage) !== 'undefined') {
-                    // Store
-                    sessionStorage.setItem('lastname', 'Smith');
-                    // Retrieve
-                    //document.getElementById('result').innerHTML = localStorage.getItem('lastname');
+                    sessionStorage.setItem('_errorDescription', this.responseText);
                 } else {
-                    //document.getElementById('result').innerHTML = 'Sorry, your browser does not support Web Storage...';
                 }
-                window.location.replace('onerror.html');
+                setTimeout(function () {
+                    window.location.href = 'onerror.html';
+                }, 4000);
             }
             if (this.readyState == 4 && this.status == 200) {
                 alert(this.responseText);
