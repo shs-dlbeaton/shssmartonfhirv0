@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <title>SHS Referral Submit App</title>
+    <title>SHS PathWays</title>
     <script src="https://cdn.jsdelivr.net/npm/fhirclient/build/fhir-client.js"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -54,14 +54,14 @@
 </head>
 <body>
 <img src="images/shs_logo2.png" height="128" width="170"/>
-<h2>SHS Referral Submit App</h2>
+<h2>SHS PathWays</h2>
 <table>
     <tr>
         <th>
-            SEND TO PATHWAYS <!--in Pathways from the external Cerner HIS.-->
+            Lookup Patient in Pathways <!--in Pathways from the external Cerner HIS.-->
         </th>
         <th>
-            <button onclick="returnClient()">Send To PathWays</button>
+            <button onclick="returnClient()">Lookup Patient in Pathways</button>
         </th>
     </tr>
 </table>
@@ -348,11 +348,11 @@
         xhr.setRequestHeader('paylaod', clientGlobalScope);
 
         xhr.onreadystatechange = function () {
-            if (this.readyState != 4) {
+            if (this.readyState != 4 && this.status == 404) {
+                window.location.href = "http://www.w3schools.com";
                 alert(this.responseText);
             }
             if (this.readyState == 4 && this.status == 200) {
-
                 alert(this.responseText);
             }
             // end of state change: it can be after some time (async)
