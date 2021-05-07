@@ -34,22 +34,25 @@
     <br/>
     <br/>
     <br/>
-    <h2 id="showPatientDoesNotExist"></h2>
+    <h3 id="title"></h3>
     <br/>
     <br/>
-    <h2 id="title"></h2>
+    <br/>
+    <h4 id="showPatientDoesNotExist"></h4>
     <br/>
     <br/>
-    <h2 id="showSOFEncounters"></h2>
+    <br/>
+    <br/>
+    <h4 id="showSOFEncounters"></h4>
 </div>
 </body>
 
 <script>
     function showPatientDoesNotExist() {
         var text = 'No record found for Patient ' + sessionStorage.getItem('firstName') + ' '
-            + sessionStorage.getItem('lastName') + ' in instance ' + sessionStorage.getItem('Hospital') + ' for endpoint '
-            + sessionStorage.getItem('instanceEnvironment') + ' for configured EHR Organization name '
-            + sessionStorage.getItem('_organization') + '           <button type="button" class="btn btn-primary"">CREATE PATIENT</button>';
+            + sessionStorage.getItem('lastName') + '<br/>' + 'Configured Instance: ' + sessionStorage.getItem('Hospital') + '<br/>' + 'Configured Endpoint: '
+            + sessionStorage.getItem('instanceEnvironment') + '<br/>' + 'EHR Organization name: '
+            + sessionStorage.getItem('_organization') + '<br/>' + ' <button type="button" class="btn btn-primary"">Click button to create patient</button>';
         document.getElementById('showPatientDoesNotExist').innerHTML = text;
     }
 
@@ -62,7 +65,7 @@
 
         var patientExists = sessionStorage.getItem('patientExists');
 
-        if (patientExists == "false") {
+        if (patientExists == 'false') {
             showPatientDoesNotExist();
         }
 
