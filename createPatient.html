@@ -43,16 +43,16 @@
     <br/>
     <br/>
     <br/>
-    <h4 id="showSOFEncounters"></h4>
 </div>
+<h4 id="showSOFEncounters"></h4>
 </body>
 
 <script>
     function showPatientDoesNotExist() {
-        var text = 'No record found for Patient ' + sessionStorage.getItem('firstName') + ' '
-            + sessionStorage.getItem('lastName') + '<br/>' + 'Configured Instance: ' + sessionStorage.getItem('Hospital') + '<br/>' + 'Configured Endpoint: '
-            + sessionStorage.getItem('instanceEnvironment') + '<br/>' + 'EHR Organization name: '
-            + sessionStorage.getItem('_organization') + '<br/>' + ' <button type="button" class="btn btn-primary"">Click button to create patient</button>';
+        var text = 'No record found for Patient ' + '<p style="color:blue"><b>' + sessionStorage.getItem('firstName') + ' '
+            + sessionStorage.getItem('lastName') + '</b></p>' + '<br/>' + 'Configured Instance: ' + '<p style="color:blue"><b>' + sessionStorage.getItem('Hospital') + '</b></p>' + '<br/>'
+            + 'Configured Endpoint: ' + '<p style="color:blue"><b>' + sessionStorage.getItem('instanceEnvironment') + '</b></p>' + '<br/>' + 'EHR Organization name: '
+            + '<p style="color:blue"><b>' + sessionStorage.getItem('organization') + '</b></p>' + '<br/>' + ' <button type="button" class="btn btn-primary"">Click button to create patient</button>';
         document.getElementById('showPatientDoesNotExist').innerHTML = text;
     }
 
