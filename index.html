@@ -125,7 +125,6 @@
                     console.log(pt);
                     document.getElementById('patient').innerText = JSON.stringify(pt, null, 4);
                     fhirBundle.fhirBundle.patientResource = pt;
-                    sessionStorage.setItem('_patient', pt);
                 },
                 function (error) {
                     document.getElementById('patient').innerText = error.stack;
@@ -336,7 +335,7 @@
                     }
                 );
             clientGlobalScope.client = fhirBundle;
-            sessionStorage.setItem('_payload', clientGlobalScope.client);
+            sessionStorage.setItem('_payload', JSON.stringify(clientGlobalScope.client));
 
         }).catch(console.error);
 
