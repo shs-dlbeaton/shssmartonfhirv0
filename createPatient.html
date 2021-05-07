@@ -62,7 +62,7 @@
 
         var patientExists = sessionStorage.getItem('patientExists');
 
-        if (!patientExists) {
+        if (patientExists == false) {
             showPatientDoesNotExist();
         }
 
