@@ -56,7 +56,7 @@
     // Check browser support
     if (typeof (Storage) !== 'undefined') {
         // Retrieve
-        document.getElementById('result').innerHTML = 'Oups, session Storage is not supported by your browser';
+        document.getElementById('title').innerHTML = 'Oups, session Storage is not supported by your browser';
     } else {
         var encounterResource = JSON.parse(sessionStorage.getItem('_encounterByPatientIdResource'));
 
