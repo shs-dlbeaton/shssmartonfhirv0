@@ -38,7 +38,7 @@
     <br/>
     <br/>
     <br/>
-    <h4 id="showPatientDoesNotExist"></h4>
+    <h5 id="showPatientDoesNotExist"></h5>
     <br/>
     <br/>
     <br/>
@@ -52,7 +52,7 @@
         var text = 'No record found for Patient ' + '<p style="color:blue"><b>' + sessionStorage.getItem('firstName') + ' '
             + sessionStorage.getItem('lastName') + '</b></p>' + '<br/>' + 'Configured Instance: ' + '<p style="color:blue"><b>' + sessionStorage.getItem('Hospital') + '</b></p>' + '<br/>'
             + 'Configured Endpoint: ' + '<p style="color:blue"><b>' + sessionStorage.getItem('instanceEnvironment') + '</b></p>' + '<br/>' + 'EHR Organization name: '
-            + '<p style="color:blue"><b>' + sessionStorage.getItem('organization') + '</b></p>' + '<br/>' + ' <button type="button" class="btn btn-primary"">CREATE PATIENT </button>' + '<p style="color:blue"><b> in instance ' + sessionStorage.getItem('Hospital') + '</b></p>';
+            + '<p style="color:blue"><b>' + sessionStorage.getItem('organization') + '</b></p>' + '<br/>' + ' <button type="button" class="btn btn-primary"">CREATE PATIENT </button>';
         document.getElementById('showPatientDoesNotExist').innerHTML = text;
     }
 
@@ -92,7 +92,7 @@
 
             encounterResource.forEach(function (FHIRresource) {
                 var encounter = FHIRresource.resource;
-                txt += '<tr><td>' + sanitize(encounter.status) + '</td><td>' + sanitize(encounter.type[0].text) + '</td><td>' + sanitizeEncounterTextDiv(encounter) + '</td><td><button class="editbtn">Create Encounter In PathWays</button></td></tr>';
+                txt += '<tr><td>' + sanitize(encounter.status) + '</td><td>' + sanitize(encounter.type[0].text) + '</td><td>' + sanitizeEncounterTextDiv(encounter) + '</td><td><button type="button" class="btn btn-primary"">Create / Update Encounter In Instance</button></td></tr>';
             });
             txt += '</table>';
             document.getElementById('showSOFEncounters').innerHTML = txt;
