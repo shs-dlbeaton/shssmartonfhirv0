@@ -4,7 +4,10 @@
     <title>Bootstrap 101 Template</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <style>
         table {
             font-family: arial, sans-serif;
@@ -25,20 +28,20 @@
     </style>
 </head>
 <body>
-<img src="images/shs_logo2.png" height="128" width="170"/>
-<h2>SHS PathWays</h2>
-<br/>
-<br/>
-<br/>
-<h2 id="showPatientDoesNotExist"></h2>
-<br/>
-<br/>
-<h2 id="title"></h2>
-<br/>
-<br/>
-<h2 id="showSOFEncounters"></h2>
-<script src="https://code.jquery.com/jquery.js"></script>
-<script src="js/bootstrap.min.js"></script>
+<div class="jumbotron text-center" style="margin-bottom:0">
+    <img src="images/shs_logo2.png" height="128" width="170"/>
+    <h2>SHS PathWays</h2>
+    <br/>
+    <br/>
+    <br/>
+    <h2 id="showPatientDoesNotExist"></h2>
+    <br/>
+    <br/>
+    <h2 id="title"></h2>
+    <br/>
+    <br/>
+    <h2 id="showSOFEncounters"></h2>
+</div>
 </body>
 
 <script>
@@ -46,7 +49,7 @@
         var text = 'No record found for Patient ' + sessionStorage.getItem('firstName') + ' '
             + sessionStorage.getItem('lastName') + ' in instance ' + sessionStorage.getItem('Hospital') + ' for endpoint '
             + sessionStorage.getItem('instanceEnvironment') + ' for configured EHR Organization name '
-            + sessionStorage.getItem('_organization') + '           <button type="button">Create Patient</button>';
+            + sessionStorage.getItem('_organization') + '           <button type="button" class="btn btn-primary"">CREATE PATIENT</button>';
         document.getElementById('showPatientDoesNotExist').innerHTML = text;
     }
 
