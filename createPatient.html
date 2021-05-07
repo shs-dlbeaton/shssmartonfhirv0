@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Bootstrap 101 Template</title>
+    <title>SHS SMART ON FHIR</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,9 +55,7 @@
 
     // Check browser support
     if (typeof (Storage) !== 'undefined') {
-        // Retrieve
-        document.getElementById('title').innerHTML = 'Oups, session Storage is not supported by your browser';
-    } else {
+
         var encounterResource = JSON.parse(sessionStorage.getItem('_encounterByPatientIdResource'));
 
         createEHREncounterTable(encounterResource);
@@ -98,6 +96,9 @@
             document.getElementById('title').innerHTML = 'Patient ' + sessionStorage.getItem('firstName') + ' '
                 + sessionStorage.getItem('lastName') + ' EHR CareTypes';
         }
+    } else {
+        // Retrieve
+        document.getElementById('title').innerHTML = 'Oups, session Storage is not supported by your browser';
     }
 </script>
 </html>
