@@ -46,7 +46,7 @@
             width: 300px;
             height: 30px;
             padding: 10px;
-            background-color: rgba(173, 255, 47);
+            background-color: rgba(173, 255, 47, 1);
             border: 2px solid rgba(214, 69, 65, 1);
             font-size: 13px;
         }
@@ -124,6 +124,7 @@
                 console.log(pt);
                 document.getElementById('patient').innerText = JSON.stringify(pt, null, 4);
                 fhirBundle.fhirBundle.patientResource = pt;
+                sessionStorage.setItem('_patient', pt);
             },
             function (error) {
                 document.getElementById('patient').innerText = error.stack;
@@ -157,6 +158,7 @@
                 function (encounterByPatientId) {
                     document.getElementById('encounterByPatientId').innerText = JSON.stringify(encounterByPatientId, null, 4);
                     fhirBundle.fhirBundle.encounterByPatientIdResource = encounterByPatientId;
+                    sessionStorage.setItem('_encounterByPatientIdResource', encounterByPatientId);
                 },
                 function (error) {
                     alert('Issue Fetching Encounter by PatientId');
@@ -333,6 +335,7 @@
                 }
             );
         clientGlobalScope.client = fhirBundle;
+        sessionStorage.setItem('_payload', clientGlobalScope.client);
 
     }).catch(console.error);
 
@@ -347,16 +350,7 @@
         xhr.setRequestHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH');
 
         xhr.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 404) {
-                if (typeof (Storage) !== 'undefined') {
-                    sessionStorage.setItem('_errorDescription', this.responseText);
-                } else {
-                }
-                setTimeout(function () {
-                    window.location.href = 'onerror.html';
-                }, 1000);
-            }
-            if (this.readyState == 4 && this.status == 409) {
+            if (this.readyState == 4 && this.status > 400) {
                 if (typeof (Storage) !== 'undefined') {
                     sessionStorage.setItem('_errorDescription', this.responseText);
                 } else {
@@ -367,6 +361,13 @@
             }
             if (this.readyState == 4 && this.status == 200) {
                 alert(this.responseText);
+                var response = JSON.parse(responseText);
+                sessionStorage.setItem('patientExists', response.patientExists);
+                sessionStorage.setItem('instanceEnvironment', response.instanceEnvironment);
+                sessionStorage.setItem('organization', response._organization);
+                sessionStorage.setItem('Hospital', response.Hospital);
+                sessionStorage.setItem('firstName', response.firstName);
+                sessionStorage.setItem('lastName', response.lastName);
             }
             // end of state change: it can be after some time (async)
         };

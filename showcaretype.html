@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bootstrap 101 Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 10%;
+            font-size: 8px;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 3px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+<img src="images/shs_logo2.png" height="128" width="170"/>
+<h2>SHS PathWays</h2>
+<br/>
+<br/>
+<br/>
+<h2 id="showPatientDoesNotExist"></h2>
+<br/>
+<br/>
+<h2 id="title"></h2>
+<br/>
+<br/>
+<h2 id="showSOFEncounters"></h2>
+<script src="https://code.jquery.com/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+
+<script>
+    function showPatientDoesNotExist() {
+        var text = 'No record found for Patient ' + sessionStorage.getItem('firstName') + ' '
+            + sessionStorage.getItem('lastName') + ' in instance ' + sessionStorage.getItem('Hospital') + ' for endpoint '
+            + sessionStorage.getItem('instanceEnvironment') + ' for configured EHR Organization name '
+            + sessionStorage.getItem('_organization') + '           <button type="button">Create Patient</button>';
+        document.getElementById('showPatientDoesNotExist').innerHTML = text;
+    }
+
+    // Check browser support
+    if (typeof (Storage) !== 'undefined') {
+        // Retrieve
+        document.getElementById('result').innerHTML = 'Oups, session Storage is not supported by your browser';
+    } else {
+        var encounterResource = JSON.parse(sessionStorage.getItem('_encounterByPatientIdResource'));
+
+        createEHREncounterTable(encounterResource);
+
+        var patientExists = sessionStorage.getItem('patientExists');
+
+        if (!patientExists) {
+            showPatientDoesNotExist();
+        }
+
+        function createEHREncounterTable(encounterResource) {
+            var obj, txt = '';
+
+            obj = {table: 'customers', limit: 20};
+            dbParam = JSON.stringify(obj);
+            xmlhttp = new XMLHttpRequest();
+            txt += '<table border=\'1\'>';
+            txt += '<tr><th>Status</th><th>CareType</th><th>Clinical Profile</th><th>Create Encounter In PathWays</th></tr>';
+
+            function sanitizeEncounterTextDiv(encounter) {
+                if (encounter && encounter.text && encounter.text.div)
+                    return encounter.text.div;
+                else return '';
+            }
+
+            function sanitize(input) {
+                if (input == undefined)
+                    return '';
+                else return input;
+            }
+
+            encounterResource.forEach(function (FHIRresource) {
+                var encounter = FHIRresource.resource;
+                txt += '<tr><td>' + sanitize(encounter.status) + '</td><td>' + sanitize(encounter.type[0].text) + '</td><td>' + sanitizeEncounterTextDiv(encounter) + '</td><td><button class="editbtn">Create Encounter In PathWays</button></td></tr>';
+            });
+            txt += '</table>';
+            document.getElementById('showSOFEncounters').innerHTML = txt;
+            document.getElementById('title').innerHTML = 'Patient ' + sessionStorage.getItem('firstName') + ' '
+                + sessionStorage.getItem('lastName') + ' EHR CareTypes';
+        }
+    }
+</script>
+</html>

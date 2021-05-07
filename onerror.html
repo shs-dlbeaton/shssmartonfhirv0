@@ -10,7 +10,7 @@
 <img src="images/shs_logo2.png" height="128" width="170"/>
 <h2>SHS PathWays</h2>
 <h1>
-    <div id="result"></div>
+    <div id="errorDescription"></div>
 </h1>
 <script src="https://code.jquery.com/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
@@ -20,9 +20,9 @@
     // Check browser support
     if (typeof (Storage) !== 'undefined') {
         // Retrieve
-        document.getElementById('result').innerHTML = 'Oups, ' + sessionStorage.getItem('_errorDescription');
+        document.getElementById('errorDescription').innerHTML = 'Oups, ' + sessionStorage.getItem('_errorDescription');
     } else {
-        document.getElementById('result').innerHTML = 'Sorry, your browser does not support Web Storage...';
+        document.getElementById('errorDescription').innerHTML = 'Sorry, your browser does not support Web Storage...';
     }
 </script>
 </html>
