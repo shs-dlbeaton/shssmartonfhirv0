@@ -353,21 +353,25 @@
             if (this.readyState == 4 && this.status > 400) {
                 if (typeof (Storage) !== 'undefined') {
                     sessionStorage.setItem('_errorDescription', this.responseText);
-                } else {
-                }
-                setTimeout(function () {
                     window.location.href = 'onerror.html';
-                }, 1000);
+                } else {
+                    alert('Sorry, your browser does not support Web Storage...');
+                }
             }
             if (this.readyState == 4 && this.status == 200) {
-                alert(this.responseText);
-                var response = JSON.parse(responseText);
-                sessionStorage.setItem('patientExists', response.patientExists);
-                sessionStorage.setItem('instanceEnvironment', response.instanceEnvironment);
-                sessionStorage.setItem('organization', response._organization);
-                sessionStorage.setItem('Hospital', response.Hospital);
-                sessionStorage.setItem('firstName', response.firstName);
-                sessionStorage.setItem('lastName', response.lastName);
+                if (typeof (Storage) !== 'undefined') {
+                    var response = JSON.parse(this.responseText);
+                    sessionStorage.setItem('patientExists', response.patientExists);
+                    sessionStorage.setItem('instanceEnvironment', response.instanceEnvironment);
+                    sessionStorage.setItem('organization', response._organization);
+                    sessionStorage.setItem('Hospital', response.Hospital);
+                    sessionStorage.setItem('firstName', response.firstName);
+                    sessionStorage.setItem('lastName', response.lastName);
+
+                    window.location.href = 'onerror.html';
+                } else {
+                    alert('Sorry, your browser does not support Web Storage...');
+                }
             }
             // end of state change: it can be after some time (async)
         };
