@@ -52,7 +52,7 @@
         var text = 'No record found for Patient ' + '<p style="color:blue"><b>' + sessionStorage.getItem('firstName') + ' '
             + sessionStorage.getItem('lastName') + '</b></p>' + '<br/>' + 'Configured Instance: ' + '<p style="color:blue"><b>' + sessionStorage.getItem('Hospital') + '</b></p>' + '<br/>'
             + 'Configured Endpoint: ' + '<p style="color:blue"><b>' + sessionStorage.getItem('instanceEnvironment') + '</b></p>' + '<br/>' + 'EHR Organization name: '
-            + '<p style="color:blue"><b>' + sessionStorage.getItem('organization') + '</b></p>' + '<br/>' + ' <button type="button" class="btn btn-primary"">Click button to create patient</button>';
+            + '<p style="color:blue"><b>' + sessionStorage.getItem('organization') + '</b></p>' + '<br/>' + ' <button type="button" class="btn btn-primary"">CREATE PATIENT </button>' + '<p style="color:blue"><b> in instance ' + sessionStorage.getItem('Hospital') + '</b></p>';
         document.getElementById('showPatientDoesNotExist').innerHTML = text;
     }
 
