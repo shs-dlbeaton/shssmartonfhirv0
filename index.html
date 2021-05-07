@@ -159,7 +159,7 @@
                     function (encounterByPatientId) {
                         document.getElementById('encounterByPatientId').innerText = JSON.stringify(encounterByPatientId, null, 4);
                         fhirBundle.fhirBundle.encounterByPatientIdResource = encounterByPatientId;
-                        sessionStorage.setItem('_encounterByPatientIdResource', encounterByPatientId);
+                        sessionStorage.setItem('_encounterByPatientIdResource', JSON.stringify(encounterByPatientId));
                     },
                     function (error) {
                         alert('Issue Fetching Encounter by PatientId');
