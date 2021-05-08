@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <title>SHS SMART ON FHIR</title>
+    <title>SHS Smart App Launch</title>
     <script src="https://cdn.jsdelivr.net/npm/fhirclient/build/fhir-client.js"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -36,7 +36,6 @@
         }
 
         .container {
-            border: 5px solid rgb(30, 144, 255);
             border-radius: .5em;
             padding: 10px;
             display: flex;
@@ -56,63 +55,77 @@
     </style>
 </head>
 <body>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">SHS Smart App Launch</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="index.html">EHR Launch</a></li>
+            class="caret"></span></a>
+            <ul class="dropdown-menu">
+            </ul>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+        </ul>
+    </div>
+</nav>
 <div class="jumbotron text-center" style="margin-bottom:0">
     <img src="images/shs_logo2.png" height="128" width="170"/>
     <h2>SHS PathWays</h2>
-    <table>
-        <tr>
-            <th>
-                <button type="button" class="btn btn-primary" onclick="returnClient()">LOOKUP PATIENT</button>
-            </th>
-        </tr>
-    </table>
     <div class="container">
+        <div class="container my-3 bg-light">
+            <div class="col-md-12 text-center">
+                <table>
+                    <tr>
+                        <th>
+                            <div style="text-align: center;">
+                                <button type="button" class="btn btn-primary" onclick="returnClient()">LOOKUP PATIENT
+                                </button>
+                                <button type="button" class="btn btn-warning" onclick="showLaunchParameters()">SHOW
+                                    LAUNCH
+                                    PARAMETERS
+                                </button>
+                            </div>
+                        </th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div id="main" style="display: none">
         <h4>Current Patient</h4>
         <div id="patient">Loading...</div>
-    </div>
-    <div class="container">
         <h4>Encounter fetch from EHR launch context</h4>
         <div id="encounterLaunchContext">Loading...</div>
         <h4>Encounter fetch from Patient FHIR Resource reference</h4>
         <div id="encounterByPatientId">Loading...</div>
-    </div>
-    <div class="container">
         <h4>Organization fetch from EHR launch context</h4>
         <div id="organization">Loading...</div>
-    </div>
-    <div class="container">
         <h4>Location</h4>
         <div id="location">Loading...</div>
-    </div>
-    <div class="container">
         <h4>Practitioners</h4>
         <div id="practitioner">Loading...</div>
-    </div>
-    <div class="container">
         <h4>Observations</h4>
         <div id="observation">Loading...</div>
-    </div>
-    <div class="container">
         <h4>Appointments</h4>
         <div id="appointment">Loading...</div>
-    </div>
-    <div class="container">
         <h4>Allergy Intolerances</h4>
         <div id="allergyIntolerance">Loading...</div>
-    </div>
-    <div class="container">
         <h4>Document Reference </h4>
         <div id="documentReference">Loading...</div>
-    </div>
-    <div class="container">
+
         <h4>Referral Submit Payload Structure </h4>
-        <div class="item">Location Resource</div>
-        <div class="item">Patient Resource</div>
-        <div class="item">Organization Resource</div>
-        <div class="item">DocumentReference Resource</div>
-        <div class="item">Encounter Resource</div>
-        <div class="item">Observation Resource</div>
-        <div class="item">Appointment Resource</div>
+        <center>
+            <div class="item">Location Resource</div>
+            <div class="item">Patient Resource</div>
+            <div class="item">Organization Resource</div>
+            <div class="item">DocumentReference Resource</div>
+            <div class="item">Encounter Resource</div>
+            <div class="item">Observation Resource</div>
+            <div class="item">Appointment Resource</div>
+        </center>
         <div id="headers">Loading...</div>
     </div>
     <script type="text/javascript">
@@ -361,23 +374,44 @@
                 if (this.readyState == 4 && this.status == 200) {
                     if (typeof (Storage) !== 'undefined') {
                         var response = JSON.parse(this.responseText);
-                        sessionStorage.setItem('patientExists', response.patientExists);
-                        sessionStorage.setItem('instanceEnvironment', response.instanceEnvironment);
-                        sessionStorage.setItem('organization', response._organization);
-                        sessionStorage.setItem('Hospital', response.Hospital);
-                        sessionStorage.setItem('firstName', response.firstName);
-                        sessionStorage.setItem('lastName', response.lastName);
-                        window.location.href = 'createPatient.html';
-                    } else {
-                        alert('Sorry, your browser does not support Web Storage...');
+                        if (response.patientExists) {
+                            sessionStorage.setItem('patientExists', response.patientExists);
+                        } else if (response.instanceEnvironment) {
+                            sessionStorage.setItem('instanceEnvironment', response.instanceEnvironment);
+                        } else if (response._organization) {
+                            sessionStorage.setItem('organization', response._organization);
+                        } else if (response.Hospital) {
+                            sessionStorage.setItem('Hospital', response.Hospital);
+                        } else if (response.firstName) {
+                            sessionStorage.setItem('firstName', response.firstName);
+                        } else if (response.lastName) {
+                            sessionStorage.setItem('lastName', response.lastName);
+                        } else if (response.encountersWithReferralsExists) {
+                            sessionStorage.setItem('encountersWithReferralsExists', response.encountersWithReferralsExists);
+                        } else if (response.encountersWithReferrals) {
+                            sessionStorage.setItem('encountersWithReferrals', response.encountersWithReferrals);
+                        }
                     }
+                    window.location.href = 'createPatient.html';
+                } else {
+                    alert('Sorry, your browser does not support Web Storage...');
                 }
-                // end of state change: it can be after some time (async)
             };
-            xhr.send(JSON.stringify({
-                value: clientGlobalScope
-            }));
+            // end of state change: it can be after some time (async)
+        };
+
+        function showLaunchParameters() {
+            var x = document.getElementById('main');
+            if (x.style.display === 'none') {
+                x.style.display = 'block';
+            } else {
+                x.style.display = 'none';
+            }
         }
+
+        xhr.send(JSON.stringify({
+            value: clientGlobalScope
+        }));
     </script>
 </div>
 </body>
