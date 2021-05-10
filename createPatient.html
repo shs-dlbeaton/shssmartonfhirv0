@@ -70,7 +70,7 @@
     function showPatientDoesNotExist() {
         var text = 'No record found for Patient ' + '<p style="color:blue"><b>' + sessionStorage.getItem('firstName') + ' '
             + sessionStorage.getItem('lastName') + '</b></p>' + '<br/>' + 'Configured Instance: ' + '<p style="color:blue"><b>' + sessionStorage.getItem('Hospital') + '</b></p>' + '<br/>'
-            + 'Configured Endpoint: ' + '<p style="color:blue"><b>' + sessionStorage.getItem('instanceEnvironment') + '</b></p>' + '<br/>' + 'EHR Organization name: '
+            + 'Configured Endpoint: ' + '<p style="color:blue"><b>' + sessionStorage.getItem('instanceEnvironment') + '</b></p>' + ' ' + '<button type="button" class="btn btn-primary"">Login to Patient Assessment DashBoard</button> ' + '<br/>' + 'EHR Organization name: '
             + '<p style="color:blue"><b>' + sessionStorage.getItem('organization') + '</b></p>' + '<br/>' + ' <button type="button" class="btn btn-primary"">CREATE PATIENT </button>';
         document.getElementById('showPatientInfo').innerHTML = text;
     }
