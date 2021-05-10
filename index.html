@@ -373,22 +373,31 @@
                 }
                 if (this.readyState == 4 && this.status == 200) {
                     if (typeof (Storage) !== 'undefined') {
+
                         var response = JSON.parse(this.responseText);
+
                         if (response.patientExists) {
                             sessionStorage.setItem('patientExists', response.patientExists);
-                        } else if (response.instanceEnvironment) {
+                        }
+                        if (response.instanceEnvironment) {
                             sessionStorage.setItem('instanceEnvironment', response.instanceEnvironment);
-                        } else if (response._organization) {
+                        }
+                        if (response._organization) {
                             sessionStorage.setItem('organization', response._organization);
-                        } else if (response.Hospital) {
+                        }
+                        if (response.Hospital) {
                             sessionStorage.setItem('Hospital', response.Hospital);
-                        } else if (response.firstName) {
+                        }
+                        if (response.firstName) {
                             sessionStorage.setItem('firstName', response.firstName);
-                        } else if (response.lastName) {
+                        }
+                        if (response.lastName) {
                             sessionStorage.setItem('lastName', response.lastName);
-                        } else if (response.encountersWithReferralsExists) {
+                        }
+                        if (response.encountersWithReferralsExists) {
                             sessionStorage.setItem('encountersWithReferralsExists', response.encountersWithReferralsExists);
-                        } else if (response.encountersWithReferrals) {
+                        }
+                        if (response.encountersWithReferrals) {
                             sessionStorage.setItem('encountersWithReferrals', response.encountersWithReferrals);
                         }
                     } else {
