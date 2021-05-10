@@ -95,7 +95,7 @@
         var encountersWithReferralsExists = sessionStorage.getItem('encountersWithReferralsExists');
 
         if (encountersWithReferralsExists == 'true') {
-            txt += '<p style="color:blue"><b>' + 'Active Patient PathWays Instance Encounter with Referral statuses' + '</b></p>';
+            txt += '<p style="color:blue" align="right"><b>' + 'Active Patient PathWays Instance Encounter with Referral statuses' + '</b></p>';
             txt += '<table border=\'1\' align="right">';
             txt += '<tr><th>CareType Name</th><th>Status</th><th>Service Provider Name</th></tr>';
 
@@ -139,7 +139,7 @@
             obj = {table: 'customers', limit: 20};
             dbParam = JSON.stringify(obj);
             xmlhttp = new XMLHttpRequest();
-            txt += '<h3>Show Encounter Selector</h3><br><br><br>';
+            txt += '<p style="color:blue" align="left"><b><h3>Show Encounter Selector</h3></b></p><br><br><br>';
             txt += '<table border=\'1\'>';
             txt += '<tr><th>Status</th><th>CareType</th><th>Clinical Profile</th><th>Create EHR Encounter In PathWay Instance</th></tr>';
 
