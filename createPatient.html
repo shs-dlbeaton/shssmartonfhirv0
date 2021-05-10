@@ -94,8 +94,8 @@
         var encountersWithReferrals = JSON.parse(sessionStorage.getItem('encountersWithReferrals'));
         var encountersWithReferralsExists = sessionStorage.getItem('encountersWithReferralsExists');
 
-        if (encountersWithReferralsExists == "true") {
-
+        if (encountersWithReferralsExists == 'true') {
+            txt += '<p style="color:blue"><b>' + 'Active Patient PathWays Instance Encounter with Referral statuses' + '</b></p>';
             txt += '<table border=\'1\' align="right">';
             txt += '<tr><th>CareType Name</th><th>Status</th><th>Service Provider Name</th></tr>';
 
