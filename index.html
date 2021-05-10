@@ -397,6 +397,9 @@
                     alert('Sorry, your browser does not support Web Storage...');
                 }
             };
+            xhr.send(JSON.stringify({
+                value: clientGlobalScope
+            }));
             // end of state change: it can be after some time (async)
         };
 
@@ -408,10 +411,6 @@
                 x.style.display = 'none';
             }
         }
-
-        xhr.send(JSON.stringify({
-            value: clientGlobalScope
-        }));
     </script>
 </div>
 </body>
