@@ -376,9 +376,8 @@
 
                         var response = JSON.parse(this.responseText);
 
-                        if (response.patientExists) {
-                            sessionStorage.setItem('patientExists', response.patientExists);
-                        }
+                        sessionStorage.setItem('patientExists', response.patientExists);
+
                         if (response.instanceEnvironment) {
                             sessionStorage.setItem('instanceEnvironment', response.instanceEnvironment);
                         }
@@ -394,9 +393,8 @@
                         if (response.lastName) {
                             sessionStorage.setItem('lastName', response.lastName);
                         }
-                        if (response.encountersWithReferralsExists) {
-                            sessionStorage.setItem('encountersWithReferralsExists', response.encountersWithReferralsExists);
-                        }
+                        sessionStorage.setItem('encountersWithReferralsExists', response.encountersWithReferralsExists);
+
                         if (response.encountersWithReferrals) {
                             sessionStorage.setItem('encountersWithReferrals', JSON.stringify(response.encountersWithReferrals));
                         }
