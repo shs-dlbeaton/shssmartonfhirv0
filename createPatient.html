@@ -77,8 +77,8 @@
 
     function showPatientExists() {
         var text = 'Patient ' + '<p style="color:blue"><b>' + sessionStorage.getItem('firstName') + ' ';
-        text += sessionStorage.getItem('lastName') + +'</b></p>' + ', ' + 'Configured Instance: ' + '<p style="color:blue"><b>' + sessionStorage.getItem('Hospital') + '</b></p>' + '<br/>';
-        text += 'Configured Endpoint: ' + '<p style="color:blue"><b>' + sessionStorage.getItem('instanceEnvironment') + '</b></p>' + '<br/>' + 'EHR Organization name: ';
+        text += sessionStorage.getItem('lastName') + '</b></p>' + ', ' + 'Configured Instance: ' + '<p style="color:blue">' + sessionStorage.getItem('Hospital') + '</b></p>' + '<br/>';
+        text += 'Configured Endpoint: ' + '<p style="color:blue"><b>' + '<button type="button" class="btn btn-primary"">Create Patient In Instance </button> ' + '</b></p>' + '<br/>' + 'EHR Organization name: ';
         text += '<p style="color:blue"><b>' + sessionStorage.getItem('organization') + '</b></p>' + '<br/>';
         document.getElementById('showPatientDoesNotExist').innerHTML = text;
 
