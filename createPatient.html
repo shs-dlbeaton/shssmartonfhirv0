@@ -154,8 +154,7 @@
             });
             txt += '</table>';
             document.getElementById('showSOFEncounters').innerHTML = txt;
-            document.getElementById('title').innerHTML = 'Patient ' + sessionStorage.getItem('firstName') + ' '
-                + sessionStorage.getItem('lastName') + ' EHR CareTypes';
+            document.getElementById('title').innerHTML = 'Patient ' + sessionStorage.getItem('firstName') + ' ' + sessionStorage.getItem('lastName') + ' instance ' + sessionStorage.getItem('instanceEnvironment') + ' status';
 
         }
     } else {
