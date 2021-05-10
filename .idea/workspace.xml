@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="84128e52-38dc-4443-81e7-2a5ed93fef9a" name="Default Changelist" comment="">
+    <list default="true" id="84128e52-38dc-4443-81e7-2a5ed93fef9a" name="Default Changelist" comment="encounterWithReferrals">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/createPatient.html" beforeDir="false" afterPath="$PROJECT_DIR$/createPatient.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,11 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="523">
-              <caret line="395" column="21" selection-start-line="395" selection-start-column="21" selection-end-line="395" selection-end-column="21" />
+            <state relative-caret-position="773">
+              <caret line="396" selection-start-line="396" selection-end-line="396" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#th#0;n#tr#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -28,13 +28,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/createPatient.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1740">
-              <caret line="116" column="68" selection-start-line="116" selection-start-column="68" selection-end-line="116" selection-end-column="68" />
+            <state relative-caret-position="382">
+              <caret line="89" column="44" lean-forward="true" selection-start-line="89" selection-start-column="44" selection-end-line="89" selection-end-column="44" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -43,8 +50,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/onerror.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" selection-start-line="18" selection-end-line="33" selection-end-column="6" />
+            <state relative-caret-position="505">
+              <caret line="36" column="29" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -94,6 +101,9 @@
       <find>alert</find>
       <find>patient</find>
       <find>session</find>
+      <find>showPatientExists</find>
+      <find>Configure</find>
+      <find>SHS PathWays</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -110,8 +120,8 @@
         <option value="$PROJECT_DIR$/cerner/launch.html" />
         <option value="$PROJECT_DIR$/showcaretype.html" />
         <option value="$PROJECT_DIR$/onerror.html" />
-        <option value="$PROJECT_DIR$/createPatient.html" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/createPatient.html" />
       </list>
     </option>
   </component>
@@ -130,10 +140,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="1754" />
-    <option name="y" value="91" />
-    <option name="width" value="1280" />
-    <option name="height" value="777" />
+    <option name="x" value="1280" />
+    <option name="width" value="1920" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -173,7 +182,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1620649783297" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1620664043091" />
     <property name="node.js.path.for.package.jscs" value="project" />
     <property name="node.js.selected.package.jscs" value="" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -238,154 +247,7 @@
       <workItem from="1620307173109" duration="1963000" />
       <workItem from="1620399842884" duration="8570000" />
       <workItem from="1620503833619" duration="3999000" />
-      <workItem from="1620654701733" duration="255000" />
-    </task>
-    <task id="LOCAL-00008" summary="renaming into bundle">
-      <created>1619107955331</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1619107955331</updated>
-    </task>
-    <task id="LOCAL-00009" summary="fhir bundle">
-      <created>1619108072748</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1619108072748</updated>
-    </task>
-    <task id="LOCAL-00010" summary="testing post">
-      <created>1619611132187</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1619611132187</updated>
-    </task>
-    <task id="LOCAL-00011" summary="reregistered cerner app">
-      <created>1619620216763</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1619620216763</updated>
-    </task>
-    <task id="LOCAL-00012" summary="reregistered cerner app">
-      <created>1619794918833</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1619794918833</updated>
-    </task>
-    <task id="LOCAL-00013" summary="reregistered cerner app">
-      <created>1619797428140</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1619797428140</updated>
-    </task>
-    <task id="LOCAL-00014" summary="reregistered cerner app">
-      <created>1619798798059</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1619798798059</updated>
-    </task>
-    <task id="LOCAL-00015" summary="reregistered cerner app">
-      <created>1619800010443</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1619800010443</updated>
-    </task>
-    <task id="LOCAL-00016" summary="srfaxnotify">
-      <created>1619802943848</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1619802943848</updated>
-    </task>
-    <task id="LOCAL-00017" summary="reregistered cerner app">
-      <created>1619806922920</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1619806922920</updated>
-    </task>
-    <task id="LOCAL-00018" summary="reregistered cerner app">
-      <created>1619807611823</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1619807611823</updated>
-    </task>
-    <task id="LOCAL-00019" summary="reregistered cerner app">
-      <created>1619807895051</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1619807895051</updated>
-    </task>
-    <task id="LOCAL-00020" summary="reregistered cerner app">
-      <created>1619808080901</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1619808080901</updated>
-    </task>
-    <task id="LOCAL-00021" summary="reregistered cerner app">
-      <created>1619810626815</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1619810626815</updated>
-    </task>
-    <task id="LOCAL-00022" summary="reregistered cerner app">
-      <created>1619811043872</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1619811043872</updated>
-    </task>
-    <task id="LOCAL-00023" summary="reregistered cerner app">
-      <created>1620241279218</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1620241279218</updated>
-    </task>
-    <task id="LOCAL-00024" summary="reregistered cerner app">
-      <created>1620241564774</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1620241564774</updated>
-    </task>
-    <task id="LOCAL-00025" summary="reregistered cerner app">
-      <created>1620241730532</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1620241730532</updated>
-    </task>
-    <task id="LOCAL-00026" summary="reregistered cerner app">
-      <created>1620241881333</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1620241881333</updated>
-    </task>
-    <task id="LOCAL-00027" summary="reregistered cerner app">
-      <created>1620242108123</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1620242108123</updated>
-    </task>
-    <task id="LOCAL-00028" summary="reregistered cerner app">
-      <created>1620245032209</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1620245032209</updated>
+      <workItem from="1620654701733" duration="6879000" />
     </task>
     <task id="LOCAL-00029" summary="reregistered cerner app">
       <created>1620247783508</created>
@@ -583,11 +445,158 @@
       <option name="project" value="LOCAL" />
       <updated>1620654778461</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="undefined">
+      <created>1620654968641</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1620654968641</updated>
+    </task>
+    <task id="LOCAL-00058" summary="encounterWithReferrals">
+      <created>1620656524753</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1620656524753</updated>
+    </task>
+    <task id="LOCAL-00059" summary="encounterWithReferrals">
+      <created>1620656750315</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1620656750315</updated>
+    </task>
+    <task id="LOCAL-00060" summary="encounterWithReferrals">
+      <created>1620657231412</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1620657231412</updated>
+    </task>
+    <task id="LOCAL-00061" summary="encounterWithReferrals">
+      <created>1620657879252</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1620657879252</updated>
+    </task>
+    <task id="LOCAL-00062" summary="encounterWithReferrals">
+      <created>1620658012679</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1620658012679</updated>
+    </task>
+    <task id="LOCAL-00063" summary="encounterWithReferrals">
+      <created>1620658198701</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1620658198701</updated>
+    </task>
+    <task id="LOCAL-00064" summary="encounterWithReferrals">
+      <created>1620658299008</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1620658299008</updated>
+    </task>
+    <task id="LOCAL-00065" summary="encounterWithReferrals">
+      <created>1620658420956</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1620658420956</updated>
+    </task>
+    <task id="LOCAL-00066" summary="encounterWithReferrals">
+      <created>1620659401520</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1620659401520</updated>
+    </task>
+    <task id="LOCAL-00067" summary="encounterWithReferrals">
+      <created>1620659439620</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1620659439620</updated>
+    </task>
+    <task id="LOCAL-00068" summary="encounterWithReferrals">
+      <created>1620659708087</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1620659708087</updated>
+    </task>
+    <task id="LOCAL-00069" summary="encounterWithReferrals">
+      <created>1620659772669</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1620659772669</updated>
+    </task>
+    <task id="LOCAL-00070" summary="encounterWithReferrals">
+      <created>1620660108199</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1620660108199</updated>
+    </task>
+    <task id="LOCAL-00071" summary="encounterWithReferrals">
+      <created>1620660152693</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1620660152693</updated>
+    </task>
+    <task id="LOCAL-00072" summary="encounterWithReferrals">
+      <created>1620660611160</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1620660611160</updated>
+    </task>
+    <task id="LOCAL-00073" summary="encounterWithReferrals">
+      <created>1620660748945</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1620660748945</updated>
+    </task>
+    <task id="LOCAL-00074" summary="encounterWithReferrals">
+      <created>1620660910387</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1620660910387</updated>
+    </task>
+    <task id="LOCAL-00075" summary="encounterWithReferrals">
+      <created>1620660971977</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1620660971977</updated>
+    </task>
+    <task id="LOCAL-00076" summary="encounterWithReferrals">
+      <created>1620661257887</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1620661257887</updated>
+    </task>
+    <task id="LOCAL-00077" summary="encounterWithReferrals">
+      <created>1620663469357</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1620663469357</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34646000" />
+    <option name="totallyTimeSpent" value="41270000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -600,8 +609,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1280" y="0" width="1920" height="1080" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1656017" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1656017" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -616,7 +626,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32970297" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="8" visible="true" weight="0.24059406" />
+      <window_info anchor="bottom" id="Version Control" order="8" visible="true" weight="0.19504951" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32970297" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
@@ -687,42 +697,12 @@
     <MESSAGE value="srfaxnotify" />
     <MESSAGE value="reregistered cerner app" />
     <MESSAGE value="404" />
-    <option name="LAST_COMMIT_MESSAGE" value="404" />
+    <MESSAGE value="undefined" />
+    <MESSAGE value="encounterWithReferrals" />
+    <option name="LAST_COMMIT_MESSAGE" value="encounterWithReferrals" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/smarthealthit/index.html" />
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="523">
-          <caret line="395" column="21" selection-start-line="395" selection-start-column="21" selection-end-line="395" selection-end-column="21" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#th#0;n#tr#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/createPatient.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1740">
-          <caret line="116" column="68" selection-start-line="116" selection-start-column="68" selection-end-line="116" selection-end-column="68" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/onerror.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" selection-start-line="18" selection-end-line="33" selection-end-column="6" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -746,6 +726,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/smarthealthit/launch.html">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/onerror.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="505">
+          <caret line="36" column="29" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="773">
+          <caret line="396" selection-start-line="396" selection-end-line="396" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#th#0;n#tr#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/createPatient.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="89" column="44" lean-forward="true" selection-start-line="89" selection-start-column="44" selection-end-line="89" selection-end-column="44" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">

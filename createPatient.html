@@ -87,7 +87,7 @@
         var encountersWithReferrals = JSON.parse(sessionStorage.getItem('encountersWithReferrals'));
         var encountersWithReferralsExists = sessionStorage.getItem('encountersWithReferralsExists');
 
-        if (encountersWithReferralsExists) {
+        if (encountersWithReferralsExists == true) {
 
             txt += '<table border=\'1\' class = table2>';
             txt += '<tr><th>CareType Name</th><th>Status</th><th>Service Provider Name</th></tr>';
@@ -154,7 +154,7 @@
             });
             txt += '</table>';
             document.getElementById('showSOFEncounters').innerHTML = txt;
-            document.getElementById('title').innerHTML = 'Patient ' + sessionStorage.getItem('firstName') + ' ' + sessionStorage.getItem('lastName') + ' instance ' + sessionStorage.getItem('Hospital') + 'Referral status';
+            document.getElementById('title').innerHTML = 'Patient ' + sessionStorage.getItem('firstName') + ' ' + sessionStorage.getItem('lastName') + ' instance ' + sessionStorage.getItem('Hospital') + ' Referral status';
 
         }
     } else {
