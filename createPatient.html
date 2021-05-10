@@ -64,6 +64,7 @@
 </body>
 
 <script>
+
     function showPatientDoesNotExist() {
         var text = 'No record found for Patient ' + '<p style="color:blue"><b>' + sessionStorage.getItem('firstName') + ' '
             + sessionStorage.getItem('lastName') + '</b></p>' + '<br/>' + 'Configured Instance: ' + '<p style="color:blue"><b>' + sessionStorage.getItem('Hospital') + '</b></p>' + '<br/>'
@@ -73,39 +74,42 @@
     }
 
 
-    function encountersWithReferrals(encountersWithReferrals) {
-        var encountersWithReferrals = sessionStorage.getItem('encountersWithReferrals');
-        var encountersWithReferralsExists = sessionStorage.getItem('encountersWithReferralsExists');
-
-
-        sessionStorage.getItem('firstName');
-        var txt = '';
-        text += '<table border=\'1\' class = table2>';
-        txt += '<tr><th>CareType Name</th><th>Status</th><th>Service Provider Name</th></tr>';
-
-        function sanitize(input) {
-            if (input == undefined)
-                return '';
-            else return input;
-        }
-
-        encountersWithReferrals.forEach(function (encounterWithReferral) {
-            txt += '<tr><td>' + sanitize(encounterWithReferral.careTypeName) + '</td><td>' + sanitize(encounterWithReferral.status) + '</td><td>' + sanitize(encounterWithReferral.serviceProviderName) + '</td></tr>';
-        });
-        txt += '</table>';
-        document.getElementById('patientEncountersWithReferrals').innerHTML = txt;
-    }
-
-
     function showPatientExists() {
         var text = 'Patient ' + '<p style="color:blue"><b>' + sessionStorage.getItem('firstName') + ' '
             + sessionStorage.getItem('lastName') + '</b></p>' + ' found' + '<br/>' + 'Configured Instance: ' + '<p style="color:blue"><b>' + sessionStorage.getItem('Hospital') + '</b></p>' + '<br/>'
             + 'Configured Endpoint: ' + '<p style="color:blue"><b>' + sessionStorage.getItem('instanceEnvironment') + '</b></p>' + '<br/>' + 'EHR Organization name: '
-            + '<p style="color:blue"><b>' + sessionStorage.getItem('organization') + '</b></p>' + '<br/>' + ' <button type="button" onclick="encountersWithReferrals()" class="btn btn-primary"">SHOW PATIENT ENCOUNTERS AND REFERRALS</button>';
+            + '<p style="color:blue"><b>' + sessionStorage.getItem('organization') + '</b></p>' + '<br/>' +
+            '<button onclick= "encountersWithReferrals()" type="button" class="btn btn-primary"">SHOW PATIENT ENCOUNTERS AND REFERRALS</button>';
         document.getElementById('showPatientDoesNotExist').innerHTML = text;
 
-    }
+        function encountersWithReferrals() {
+            var encountersWithReferrals = JSON.parse(sessionStorage.getItem('encountersWithReferrals'));
+            var encountersWithReferralsExists = sessionStorage.getItem('encountersWithReferralsExists');
+            var txt = '';
+            if (encountersWithReferralsExists) {
 
+                txt += '<table border=\'1\' class = table2>';
+                txt += '<tr><th>CareType Name</th><th>Status</th><th>Service Provider Name</th></tr>';
+
+                function sanitize(input) {
+                    if (input == undefined)
+                        return '';
+                    else return input;
+                }
+
+                encountersWithReferrals.forEach(function (encounterWithReferral) {
+                    txt += '<tr><td>' + sanitize(encounterWithReferral.careTypeName) + '</td><td>' + sanitize(encounterWithReferral.status) + '</td><td>' + sanitize(encounterWithReferral.serviceProviderName) + '</td></tr>';
+                });
+                txt += '</table>';
+            } else {
+                txt += 'Patient ' + '<p style="color:blue"><b>' + sessionStorage.getItem('firstName') + ' '
+                    + sessionStorage.getItem('lastName') + ' does not have any any existing encounters and referrals in PathWays. Please use the encounter selector to create one for that instance';
+            }
+
+            document.getElementById('patientEncountersWithReferrals').innerHTML = txt;
+        }
+
+    }
 
     // Check browser support
     if (typeof (Storage) !== 'undefined') {
@@ -152,10 +156,13 @@
             document.getElementById('showSOFEncounters').innerHTML = txt;
             document.getElementById('title').innerHTML = 'Patient ' + sessionStorage.getItem('firstName') + ' '
                 + sessionStorage.getItem('lastName') + ' EHR CareTypes';
+
         }
     } else {
         // Retrieve
         document.getElementById('title').innerHTML = 'Oups, session Storage is not supported by your browser';
     }
+
+
 </script>
 </html>
