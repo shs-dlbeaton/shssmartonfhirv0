@@ -398,7 +398,7 @@
                             sessionStorage.setItem('encountersWithReferralsExists', response.encountersWithReferralsExists);
                         }
                         if (response.encountersWithReferrals) {
-                            sessionStorage.setItem('encountersWithReferrals', response.encountersWithReferrals);
+                            sessionStorage.setItem('encountersWithReferrals', JSON.stringify(response.encountersWithReferrals));
                         }
                     } else {
                         alert('Sorry, your browser does not support Web Storage...');
