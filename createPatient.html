@@ -16,6 +16,15 @@
             font-size: 16px;
         }
 
+        table {
+            font-family: arial, sans-serif;
+            float:right;
+            align:right
+            border-collapse: collapse;
+            width: 25%;
+            font-size: 16px;
+        }
+
         td, th {
             border: 1px solid #dddddd;
             text-align: left;
@@ -89,7 +98,7 @@
 
         if (encountersWithReferralsExists == "true") {
 
-            txt += '<table border=\'1\' class = table2 align="left">';
+            txt += '<table border=\'1\' class = table2 align="right">';
             txt += '<tr><th>CareType Name</th><th>Status</th><th>Service Provider Name</th></tr>';
 
             function sanitize(input) {
