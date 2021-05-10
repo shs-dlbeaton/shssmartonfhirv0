@@ -391,10 +391,10 @@
                         } else if (response.encountersWithReferrals) {
                             sessionStorage.setItem('encountersWithReferrals', response.encountersWithReferrals);
                         }
+                    } else {
+                        alert('Sorry, your browser does not support Web Storage...');
                     }
                     window.location.href = 'createPatient.html';
-                } else {
-                    alert('Sorry, your browser does not support Web Storage...');
                 }
             };
             xhr.send(JSON.stringify({
