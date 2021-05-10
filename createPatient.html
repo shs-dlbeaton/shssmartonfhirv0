@@ -104,7 +104,7 @@
             txt += '</table>';
         } else {
             txt += '<p style="color:blue"><b>' + sessionStorage.getItem('firstName') + ' '
-                + sessionStorage.getItem('lastName') + ' does not have any existing encounters and referrals in PathWays. Please use the encounter selector functionality to push one encounter for that instance or use ' + '<button type="button" class="btn btn-primary"">Login to Patient Assessment DashBoard</button> ' + 'to create one in PathWays';
+                + sessionStorage.getItem('lastName') + ' does not have any existing encounters and referrals in PathWays. Please use the encounter selector functionality to push one encounter for that instance or use ' + '<button type="button" class="btn btn-primary"">Login to Patient Assessment DashBoard</button>';
         }
 
         document.getElementById('patientEncountersWithReferrals').innerHTML = txt;
