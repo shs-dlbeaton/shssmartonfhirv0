@@ -393,6 +393,9 @@
                         if (response.lastName) {
                             sessionStorage.setItem('lastName', response.lastName);
                         }
+                        if (response.lastName) {
+                            sessionStorage.setItem('patientDTO', response.patientDTO);
+                        }
                         sessionStorage.setItem('encountersWithReferralsExists', response.encountersWithReferralsExists);
 
                         if (response.encountersWithReferrals) {
