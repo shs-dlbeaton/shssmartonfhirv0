@@ -55,12 +55,6 @@
     <img src="images/shs_logo2.png" height="128" width="170"/>
     <h2>SHS SMART ON FHIR POC</h2>
     <br/>
-    <ul>
-        <li class="button1 clickable" id="bold-button" title="bold">B</li>
-        <li class="button2 clickable" id="italic-button" title="bold">I</li>
-        <li class="button3 clickable" id="underline-button" title="bold">U</li>
-        <li class="button4 clickable" id="strikethrough-button" title="bold">S</li>
-    </ul>
     <br/>
     <br/>
     <h3 id="title"></h3>
@@ -79,10 +73,11 @@
 </body>
 
 <script>
-
-    $('h5').on('click', 'li.button1', function () {
+//li.button1
+    $('h5').on('click', 'button1', function () {
         alert('Creating Patient in PathWays Instance');
-        createPatientInstance()
+        createPatientInstance();
+
         function createPatientInstance() {
             var patientDTO = {};
             patientDTO.organization = localStorage.getItem('organization');
@@ -113,7 +108,8 @@
     function showPatientDoesNotExist() {
         var text = 'No record found for Patient ' + '<p style="color:blue"><b>' + localStorage.getItem('firstName') + ' '
             + localStorage.getItem('lastName') + '</b></p>' + 'in configured instance: ' + '<p style="color:blue"><b>' + localStorage.getItem('Hospital') + '</b></p>' + '<br/>'
-            + ' <li class="button1" id="bold-button" title="bold">Create Patient In Instance</li>';
+            // + ' <li class="button1" id="bold-button" title="bold">Create Patient In Instance</li>' + 'button type="button" class="btn btn-primary">Primary</button>';
+            + 'button type="button button1" class="btn btn-primary">Create Patient In Instance</button>';
         document.getElementById('showPatientInfo').innerHTML = text;
 
         function createPatientInstance() {
