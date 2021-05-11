@@ -66,7 +66,7 @@
     <br/>
     <h5 id="showPatientDoesNotExist"></h5>
     <br/>
-    <button type="button" onclick="showEncounterSelector()" class="btn btn-primary">EHR Encounter Selector</button>
+    <button type="button" onclick="showEncounterSelector()" class="btn btn-primary">EHR Encounter Selector</button> + ' ' + <h5 id="stateOfIntegration"></h5>
     <br/>
     <h5 id="patientEncountersWithReferrals" style="display: none"></h5>
 </div>
@@ -162,7 +162,7 @@
         var encountersWithReferralsExists = localStorage.getItem('encountersWithReferralsExists');
 
         if (encountersWithReferralsExists == 'true') {
-            txt += '<p style="color:blue" align="right"><b>' + ' <button class="button2" id="bold-button" title="bold">ACTIVE PATIENT PATHWAYS INSTANCE CURRENT STATE OF INTEGRATION</button>' + '</b></p>';
+            document.getElementById('stateOfIntegration').innerHTML= '<p style="color:blue" align="right"><b>' + ' <button class="button2" id="bold-button" title="bold">Active Patient State Of Integration</button>' + '</b></p>';
             txt += '<table border=\'1\' align="right">';
             txt += '<tr><th>CareType Name</th><th>Status</th><th>Service Provider Name</th></tr>';
 
