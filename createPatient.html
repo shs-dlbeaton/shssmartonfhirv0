@@ -67,10 +67,10 @@
     <h5 id="showPatientDoesNotExist"></h5>
     <br/>
     <br/>
-    <h5 id="patientEncountersWithReferrals"></h5>
+    <h5 id="patientEncountersWithReferrals" style="display: none"></h5>
 </div>
 <br>
-<button type="button" onclick="showEncounterSelector()" class="btn btn-primary">Show Encounter Selector</button>
+<button type="button" onclick="showEncounterSelector()" class="btn btn-primary">EHR Encounter Selector</button>
 <br><br><br>
 <h4 id="encountersSelector" style="display: none"></h4>
 </body>
@@ -126,6 +126,20 @@
         };
     });
 
+
+    $('h5').on('click', 'button.button2', function () {
+        showCurrentStateOfIntegration();
+
+        function showCurrentStateOfIntegration() {
+            var x = document.getElementById('patientEncountersWithReferrals');
+            if (x.style.display !== 'none') {
+                x.style.display = 'block';
+            } else {
+                x.style.display = 'none';
+            }
+        }
+    });
+
     function showEncounterSelector() {
         var x = document.getElementById('encountersSelector');
         if (x.style.display !== 'none') {
@@ -148,7 +162,7 @@
         var encountersWithReferralsExists = localStorage.getItem('encountersWithReferralsExists');
 
         if (encountersWithReferralsExists == 'true') {
-            txt += '<p style="color:blue" align="right"><b>' + 'Active Patient PathWays Instance Encounter with Referral statuses' + '</b></p>';
+            txt += '<p style="color:blue" align="right"><b>' + ' <button class="button2" id="bold-button" title="bold">PathWays Current State of Integration for Patient</button>' + '</b></p>';
             txt += '<table border=\'1\' align="right">';
             txt += '<tr><th>CareType Name</th><th>Status</th><th>Service Provider Name</th></tr>';
 
