@@ -109,7 +109,7 @@
 
 
     function showPatientDoesNotExist() {
-        var text = 'No record found for Patient ' + '<p style="color:blue"><b>' + localStorage.getItem('firstName') + ' '
+        var text = '<h3>No record found for Patient </h3>' + '<p style="color:blue"><b>' + localStorage.getItem('firstName') + ' '
             + localStorage.getItem('lastName') + '</b></p>' + 'in configured instance: ' + '<p style="color:blue"><b>' + localStorage.getItem('Hospital') + '</b></p>' + '<br/>'
             + ' <button class="button1" id="bold-button" title="bold">CREATE PATIENT IN INSTANCE</button>';
         document.getElementById('showPatientInfo').innerHTML = text;
