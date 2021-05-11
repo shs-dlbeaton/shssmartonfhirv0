@@ -80,14 +80,40 @@
 
 <script>
 
-    $("h5").on("click", "li.button1", function(){
-        alert("click test");
+    $('h5').on('click', 'li.btn btn-primary', function () {
+        alert('Creating Patient in PathWays Instance');
+        createPatientInstance()
+        function createPatientInstance() {
+            var patientDTO = {};
+            patientDTO.organization = localStorage.getItem('organization');
+            patientDTO.patientDTO = localStorage.getItem('patientDTO');
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'https://services-strataconnect.stratahealth.net:3141/createPatient', true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
+            xhr.setRequestHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+            xhr.setRequestHeader('Access-Control-Allow-Credentials', true);
+            xhr.setRequestHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH');
+
+            xhr.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status > 400) {
+                    alert('error creating patient in instance. ' + JSON.stringify(this.responseText));
+                }
+                if (this.readyState == 4 && this.status == 200) {
+                    alert('Patient was created in instance ');
+                }
+            };
+            xhr.send(JSON.stringify({
+                value: patientDTO
+            }));
+        };
     });
+
 
     function showPatientDoesNotExist() {
         var text = 'No record found for Patient ' + '<p style="color:blue"><b>' + localStorage.getItem('firstName') + ' '
             + localStorage.getItem('lastName') + '</b></p>' + 'in configured instance: ' + '<p style="color:blue"><b>' + localStorage.getItem('Hospital') + '</b></p>' + '<br/>'
-            + ' <li class="button1" id="bold-button" title="bold">Create Patient In Instance</li><button type="button" class="btn btn-primary clickable"></button>';
+            + ' <li class="button1" id="bold-button" title="bold">Create Patient In Instance</li>';
         document.getElementById('showPatientInfo').innerHTML = text;
 
         function createPatientInstance() {
