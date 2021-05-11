@@ -55,6 +55,12 @@
     <img src="images/shs_logo2.png" height="128" width="170"/>
     <h2>SHS SMART ON FHIR POC</h2>
     <br/>
+    <ul>
+        <li class="button1 clickable" id="bold-button" title="bold">B</li>
+        <li class="button2 clickable" id="italic-button" title="bold">I</li>
+        <li class="button3 clickable" id="underline-button" title="bold">U</li>
+        <li class="button4 clickable" id="strikethrough-button" title="bold">S</li>
+    </ul>
     <br/>
     <br/>
     <h3 id="title"></h3>
@@ -74,10 +80,14 @@
 
 <script>
 
+    $('.clickable').click(function () {
+        alert('test');
+    });
+
     function showPatientDoesNotExist() {
         var text = 'No record found for Patient ' + '<p style="color:blue"><b>' + localStorage.getItem('firstName') + ' '
             + localStorage.getItem('lastName') + '</b></p>' + 'in configured instance: ' + '<p style="color:blue"><b>' + localStorage.getItem('Hospital') + '</b></p>' + '<br/>'
-            + ' <button type="button" onclick="createPatientInstance()" class="btn btn-primary"">Create Patient In Instance </button>';
+            + ' <button type="button" class="btn btn-primary clickable">Create Patient In Instance </button>';
         document.getElementById('showPatientInfo').innerHTML = text;
 
         function createPatientInstance() {
