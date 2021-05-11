@@ -80,14 +80,14 @@
 
 <script>
 
-    $('.clickable').click(function () {
-        alert('test');
+    $("h5").on("click", "li.button1", function(){
+        alert("click test");
     });
 
     function showPatientDoesNotExist() {
         var text = 'No record found for Patient ' + '<p style="color:blue"><b>' + localStorage.getItem('firstName') + ' '
             + localStorage.getItem('lastName') + '</b></p>' + 'in configured instance: ' + '<p style="color:blue"><b>' + localStorage.getItem('Hospital') + '</b></p>' + '<br/>'
-            + ' <li class="button1 clickable" id="bold-button" title="bold">Create Patient In Instance</li><button type="button" class="btn btn-primary clickable"></button>';
+            + ' <li class="button1" id="bold-button" title="bold">Create Patient In Instance</li><button type="button" class="btn btn-primary clickable"></button>';
         document.getElementById('showPatientInfo').innerHTML = text;
 
         function createPatientInstance() {
