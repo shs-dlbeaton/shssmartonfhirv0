@@ -74,7 +74,7 @@
 
 <script>
 //li.button1
-    $('h5').on('click', 'btn btn-primary button1', function () {
+    $('h5').on('click', 'li.button1', function () {
         alert('Creating Patient in PathWays Instance');
         createPatientInstance();
 
@@ -108,8 +108,7 @@
     function showPatientDoesNotExist() {
         var text = 'No record found for Patient ' + '<p style="color:blue"><b>' + localStorage.getItem('firstName') + ' '
             + localStorage.getItem('lastName') + '</b></p>' + 'in configured instance: ' + '<p style="color:blue"><b>' + localStorage.getItem('Hospital') + '</b></p>' + '<br/>'
-            // + ' <li class="button1" id="bold-button" title="bold">Create Patient In Instance</li>' + 'button type="button" class="btn btn-primary">Primary</button>';
-            + '<button type="button button1" class="btn btn-primary button1">Create Patient In Instance</button>';
+            + ' <li class="button1" id="bold-button" title="bold">CREATE PATIENT IN INSTANCE</li>'
         document.getElementById('showPatientInfo').innerHTML = text;
 
         function createPatientInstance() {
