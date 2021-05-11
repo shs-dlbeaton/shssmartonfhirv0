@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="84128e52-38dc-4443-81e7-2a5ed93fef9a" name="Default Changelist" comment="">
+    <list default="true" id="84128e52-38dc-4443-81e7-2a5ed93fef9a" name="Default Changelist" comment="encounterWithReferrals">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/createPatient.html" beforeDir="false" afterPath="$PROJECT_DIR$/createPatient.html" afterDir="false" />
     </list>
@@ -17,8 +17,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="85" column="87" selection-start-line="85" selection-start-column="87" selection-end-line="85" selection-end-column="87" />
+            <state relative-caret-position="228">
+              <caret line="96" column="19" lean-forward="true" selection-start-line="96" selection-start-column="19" selection-end-line="96" selection-end-column="40" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#th#0;n#tr#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -31,19 +31,21 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/createPatient.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="305">
-              <caret line="101" column="33" lean-forward="true" selection-start-line="101" selection-start-column="33" selection-end-line="101" selection-end-column="33" />
+            <state relative-caret-position="196">
+              <caret line="161" column="98" lean-forward="true" selection-start-line="161" selection-start-column="98" selection-end-line="161" selection-end-column="98" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h5#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h4#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -108,6 +110,10 @@
       <find>SHS PathWays</find>
       <find>class</find>
       <find>Connect</find>
+      <find>onCl</find>
+      <find>No</find>
+      <find>main</find>
+      <find>stateOfIntegration</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -187,7 +193,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1620744953376" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1620750934701" />
     <property name="node.js.path.for.package.jscs" value="project" />
     <property name="node.js.selected.package.jscs" value="" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -214,7 +220,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.index.html">
+  <component name="RunManager" selected="JavaScript Debug.createPatient.html">
     <configuration name="createPatient.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/shssmartonfhirv0/createPatient.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -226,8 +232,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JavaScript Debug.index.html" />
         <item itemvalue="JavaScript Debug.createPatient.html" />
+        <item itemvalue="JavaScript Debug.index.html" />
         <item itemvalue="JavaScript Debug.onerror.html" />
       </list>
     </recent_temporary>
@@ -253,147 +259,7 @@
       <workItem from="1620399842884" duration="8570000" />
       <workItem from="1620503833619" duration="3999000" />
       <workItem from="1620654701733" duration="8891000" />
-      <workItem from="1620737516042" duration="5321000" />
-    </task>
-    <task id="LOCAL-00050" summary="404">
-      <created>1620407793823</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1620407793824</updated>
-    </task>
-    <task id="LOCAL-00051" summary="404">
-      <created>1620409837705</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1620409837705</updated>
-    </task>
-    <task id="LOCAL-00052" summary="404">
-      <created>1620410061819</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1620410061820</updated>
-    </task>
-    <task id="LOCAL-00053" summary="404">
-      <created>1620410206570</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1620410206570</updated>
-    </task>
-    <task id="LOCAL-00054" summary="404">
-      <created>1620410501916</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1620410501916</updated>
-    </task>
-    <task id="LOCAL-00055" summary="404">
-      <created>1620517931516</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1620517931516</updated>
-    </task>
-    <task id="LOCAL-00056" summary="404">
-      <created>1620654778461</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1620654778461</updated>
-    </task>
-    <task id="LOCAL-00057" summary="undefined">
-      <created>1620654968641</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1620654968641</updated>
-    </task>
-    <task id="LOCAL-00058" summary="encounterWithReferrals">
-      <created>1620656524753</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1620656524753</updated>
-    </task>
-    <task id="LOCAL-00059" summary="encounterWithReferrals">
-      <created>1620656750315</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1620656750315</updated>
-    </task>
-    <task id="LOCAL-00060" summary="encounterWithReferrals">
-      <created>1620657231412</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1620657231412</updated>
-    </task>
-    <task id="LOCAL-00061" summary="encounterWithReferrals">
-      <created>1620657879252</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
-      <option name="project" value="LOCAL" />
-      <updated>1620657879252</updated>
-    </task>
-    <task id="LOCAL-00062" summary="encounterWithReferrals">
-      <created>1620658012679</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1620658012679</updated>
-    </task>
-    <task id="LOCAL-00063" summary="encounterWithReferrals">
-      <created>1620658198701</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1620658198701</updated>
-    </task>
-    <task id="LOCAL-00064" summary="encounterWithReferrals">
-      <created>1620658299008</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1620658299008</updated>
-    </task>
-    <task id="LOCAL-00065" summary="encounterWithReferrals">
-      <created>1620658420956</created>
-      <option name="number" value="00065" />
-      <option name="presentableId" value="LOCAL-00065" />
-      <option name="project" value="LOCAL" />
-      <updated>1620658420956</updated>
-    </task>
-    <task id="LOCAL-00066" summary="encounterWithReferrals">
-      <created>1620659401520</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1620659401520</updated>
-    </task>
-    <task id="LOCAL-00067" summary="encounterWithReferrals">
-      <created>1620659439620</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1620659439620</updated>
-    </task>
-    <task id="LOCAL-00068" summary="encounterWithReferrals">
-      <created>1620659708087</created>
-      <option name="number" value="00068" />
-      <option name="presentableId" value="LOCAL-00068" />
-      <option name="project" value="LOCAL" />
-      <updated>1620659708087</updated>
-    </task>
-    <task id="LOCAL-00069" summary="encounterWithReferrals">
-      <created>1620659772669</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1620659772669</updated>
+      <workItem from="1620737516042" duration="10313000" />
     </task>
     <task id="LOCAL-00070" summary="encounterWithReferrals">
       <created>1620660108199</created>
@@ -598,11 +464,151 @@
       <option name="project" value="LOCAL" />
       <updated>1620744807038</updated>
     </task>
-    <option name="localTasksCounter" value="99" />
+    <task id="LOCAL-00099" summary="encounterWithReferrals">
+      <created>1620745226011</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1620745226011</updated>
+    </task>
+    <task id="LOCAL-00100" summary="encounterWithReferrals">
+      <created>1620745406543</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1620745406543</updated>
+    </task>
+    <task id="LOCAL-00101" summary="encounterWithReferrals">
+      <created>1620745679020</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1620745679020</updated>
+    </task>
+    <task id="LOCAL-00102" summary="encounterWithReferrals">
+      <created>1620745867600</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1620745867600</updated>
+    </task>
+    <task id="LOCAL-00103" summary="encounterWithReferrals">
+      <created>1620746428205</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1620746428205</updated>
+    </task>
+    <task id="LOCAL-00104" summary="encounterWithReferrals">
+      <created>1620746551561</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1620746551561</updated>
+    </task>
+    <task id="LOCAL-00105" summary="encounterWithReferrals">
+      <created>1620746719788</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1620746719788</updated>
+    </task>
+    <task id="LOCAL-00106" summary="encounterWithReferrals">
+      <created>1620746771517</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1620746771517</updated>
+    </task>
+    <task id="LOCAL-00107" summary="encounterWithReferrals">
+      <created>1620746863485</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1620746863485</updated>
+    </task>
+    <task id="LOCAL-00108" summary="encounterWithReferrals">
+      <created>1620747203054</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1620747203054</updated>
+    </task>
+    <task id="LOCAL-00109" summary="encounterWithReferrals">
+      <created>1620747964099</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1620747964099</updated>
+    </task>
+    <task id="LOCAL-00110" summary="encounterWithReferrals">
+      <created>1620748245373</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1620748245373</updated>
+    </task>
+    <task id="LOCAL-00111" summary="encounterWithReferrals">
+      <created>1620748700932</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1620748700932</updated>
+    </task>
+    <task id="LOCAL-00112" summary="encounterWithReferrals">
+      <created>1620749023244</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1620749023244</updated>
+    </task>
+    <task id="LOCAL-00113" summary="encounterWithReferrals">
+      <created>1620749929507</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1620749929507</updated>
+    </task>
+    <task id="LOCAL-00114" summary="encounterWithReferrals">
+      <created>1620749997300</created>
+      <option name="number" value="00114" />
+      <option name="presentableId" value="LOCAL-00114" />
+      <option name="project" value="LOCAL" />
+      <updated>1620749997300</updated>
+    </task>
+    <task id="LOCAL-00115" summary="encounterWithReferrals">
+      <created>1620750153735</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1620750153735</updated>
+    </task>
+    <task id="LOCAL-00116" summary="encounterWithReferrals">
+      <created>1620750258473</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1620750258473</updated>
+    </task>
+    <task id="LOCAL-00117" summary="encounterWithReferrals">
+      <created>1620750429345</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1620750429345</updated>
+    </task>
+    <task id="LOCAL-00118" summary="encounterWithReferrals">
+      <created>1620750477938</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1620750477938</updated>
+    </task>
+    <option name="localTasksCounter" value="119" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48603000" />
+    <option name="totallyTimeSpent" value="53595000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -616,7 +622,7 @@
   <component name="ToolWindowManager">
     <frame x="1280" y="23" width="1920" height="981" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16719915" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20074548" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -631,7 +637,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32970297" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" visible="true" weight="0.22384702" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="8" visible="true" weight="0.57030374" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32970297" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
@@ -744,8 +750,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="85" column="87" selection-start-line="85" selection-start-column="87" selection-end-line="85" selection-end-column="87" />
+        <state relative-caret-position="228">
+          <caret line="96" column="19" lean-forward="true" selection-start-line="96" selection-start-column="19" selection-end-line="96" selection-end-column="40" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#th#0;n#tr#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -756,19 +762,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/createPatient.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="101" column="33" lean-forward="true" selection-start-line="101" selection-start-column="33" selection-end-line="101" selection-end-column="33" />
+        <state relative-caret-position="196">
+          <caret line="161" column="98" lean-forward="true" selection-start-line="161" selection-start-column="98" selection-end-line="161" selection-end-column="98" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h5#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h4#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
