@@ -74,26 +74,13 @@
 <div class="jumbotron text-center" style="margin-bottom:0">
     <img src="images/shs_logo2.png" height="128" width="170"/>
     <h2>SHS SMART ON FHIR POC</h2>
-    <div class="container">
-        <div class="container my-3 bg-light">
-            <div class="col-md-12 text-center">
-                <table>
-                    <tr>
-                        <th>
-                            <div style="text-align: center;">
-                                <button type="button" class="btn btn-primary" onclick="returnClient()">LOOKUP PATIENT
-                                </button>
-                                <button type="button" class="btn btn-warning" onclick="showLaunchParameters()">SHOW
-                                    LAUNCH
-                                    PARAMETERS
-                                </button>
-                            </div>
-                        </th>
-                    </tr>
-                </table>
-            </div>
-        </div>
-    </div>
+    <br><br>
+    <button type="button" class="btn btn-primary" onclick="returnClient()">LOOKUP PATIENT
+    </button>
+    <button type="button" class="btn btn-warning" onclick="showLaunchParameters()">SHOW
+        LAUNCH
+        PARAMETERS
+    </button>
     <div id="main" style="display: none">
         <h4>Current Patient</h4>
         <div id="patient">Loading...</div>

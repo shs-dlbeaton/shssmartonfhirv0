@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="84128e52-38dc-4443-81e7-2a5ed93fef9a" name="Default Changelist" comment="encounterWithReferrals">
+    <list default="true" id="84128e52-38dc-4443-81e7-2a5ed93fef9a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/createPatient.html" beforeDir="false" afterPath="$PROJECT_DIR$/createPatient.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,8 +30,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/createPatient.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="161" column="98" lean-forward="true" selection-start-line="161" selection-start-column="98" selection-end-line="161" selection-end-column="98" />
+            <state relative-caret-position="274">
+              <caret line="72" column="4" selection-start-line="72" selection-start-column="4" selection-end-line="72" selection-end-column="4" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#h5#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -193,7 +192,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1620750934701" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1620752566987" />
     <property name="node.js.path.for.package.jscs" value="project" />
     <property name="node.js.selected.package.jscs" value="" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -220,7 +219,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.createPatient.html">
+  <component name="RunManager" selected="JavaScript Debug.index.html">
     <configuration name="createPatient.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/shssmartonfhirv0/createPatient.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -232,8 +231,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JavaScript Debug.createPatient.html" />
         <item itemvalue="JavaScript Debug.index.html" />
+        <item itemvalue="JavaScript Debug.createPatient.html" />
         <item itemvalue="JavaScript Debug.onerror.html" />
       </list>
     </recent_temporary>
@@ -259,28 +258,7 @@
       <workItem from="1620399842884" duration="8570000" />
       <workItem from="1620503833619" duration="3999000" />
       <workItem from="1620654701733" duration="8891000" />
-      <workItem from="1620737516042" duration="10313000" />
-    </task>
-    <task id="LOCAL-00070" summary="encounterWithReferrals">
-      <created>1620660108199</created>
-      <option name="number" value="00070" />
-      <option name="presentableId" value="LOCAL-00070" />
-      <option name="project" value="LOCAL" />
-      <updated>1620660108199</updated>
-    </task>
-    <task id="LOCAL-00071" summary="encounterWithReferrals">
-      <created>1620660152693</created>
-      <option name="number" value="00071" />
-      <option name="presentableId" value="LOCAL-00071" />
-      <option name="project" value="LOCAL" />
-      <updated>1620660152693</updated>
-    </task>
-    <task id="LOCAL-00072" summary="encounterWithReferrals">
-      <created>1620660611160</created>
-      <option name="number" value="00072" />
-      <option name="presentableId" value="LOCAL-00072" />
-      <option name="project" value="LOCAL" />
-      <updated>1620660611160</updated>
+      <workItem from="1620737516042" duration="10858000" />
     </task>
     <task id="LOCAL-00073" summary="encounterWithReferrals">
       <created>1620660748945</created>
@@ -604,11 +582,32 @@
       <option name="project" value="LOCAL" />
       <updated>1620750477938</updated>
     </task>
-    <option name="localTasksCounter" value="119" />
+    <task id="LOCAL-00119" summary="encounterWithReferrals">
+      <created>1620751729773</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
+      <option name="project" value="LOCAL" />
+      <updated>1620751729773</updated>
+    </task>
+    <task id="LOCAL-00120" summary="encounterWithReferrals">
+      <created>1620751796922</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1620751796922</updated>
+    </task>
+    <task id="LOCAL-00121" summary="encounterWithReferrals">
+      <created>1620751874834</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
+      <option name="project" value="LOCAL" />
+      <updated>1620751874834</updated>
+    </task>
+    <option name="localTasksCounter" value="122" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53595000" />
+    <option name="totallyTimeSpent" value="54140000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -621,6 +620,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1280" y="23" width="1920" height="981" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20074548" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -637,7 +637,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32970297" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="8" visible="true" weight="0.57030374" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="8" visible="true" weight="0.23622048" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32970297" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
@@ -762,8 +762,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/createPatient.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="161" column="98" lean-forward="true" selection-start-line="161" selection-start-column="98" selection-end-line="161" selection-end-column="98" />
+        <state relative-caret-position="274">
+          <caret line="72" column="4" selection-start-line="72" selection-start-column="4" selection-end-line="72" selection-end-column="4" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h5#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
