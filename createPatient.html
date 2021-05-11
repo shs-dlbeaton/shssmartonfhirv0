@@ -70,10 +70,17 @@
     <h5 id="patientEncountersWithReferrals"></h5>
 </div>
 <h4 id="showSOFEncounters"></h4>
+<p style="color:blue" align="left"><b>
+    <h3>
+        <button type="button" onclick="createEHREncounterTable()" class="btn btn-primary">Show Encounter Selector
+        </button>
+    </h3>
+</b></p>
+<br><br><br>
 </body>
 
 <script>
-//li.button1
+    //li.button1
     $('h5').on('click', 'li.button1', function () {
         alert('Creating Patient in PathWays Instance');
         createPatientInstance();
@@ -108,7 +115,7 @@
     function showPatientDoesNotExist() {
         var text = 'No record found for Patient ' + '<p style="color:blue"><b>' + localStorage.getItem('firstName') + ' '
             + localStorage.getItem('lastName') + '</b></p>' + 'in configured instance: ' + '<p style="color:blue"><b>' + localStorage.getItem('Hospital') + '</b></p>' + '<br/>'
-            + ' <li class="button1" id="bold-button" title="bold">CREATE PATIENT IN INSTANCE</li>'
+            + ' <li class="button1" id="bold-button" title="bold">CREATE PATIENT IN INSTANCE</li>';
         document.getElementById('showPatientInfo').innerHTML = text;
 
         function createPatientInstance() {
@@ -177,7 +184,6 @@
     // Check browser support
     if (typeof (Storage) !== 'undefined') {
 
-        var encounterResource = JSON.parse(localStorage.getItem('_encounterByPatientIdResource'));
 
         createEHREncounterTable(encounterResource);
 
@@ -189,7 +195,9 @@
             showPatientExists();
         }
 
-        function createEHREncounterTable(encounterResource) {
+        function createEHREncounterTable() {
+
+            var encounterResource = JSON.parse(localStorage.getItem('_encounterByPatientIdResource'));
             var obj, txt = '';
 
             obj = {table: 'customers', limit: 20};
