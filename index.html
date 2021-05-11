@@ -171,7 +171,7 @@
                     function (encounterByPatientId) {
                         document.getElementById('encounterByPatientId').innerText = JSON.stringify(encounterByPatientId, null, 4);
                         fhirBundle.fhirBundle.encounterByPatientIdResource = encounterByPatientId;
-                        sessionStorage.setItem('_encounterByPatientIdResource', JSON.stringify(encounterByPatientId));
+                        localStorage.setItem('_encounterByPatientIdResource', JSON.stringify(encounterByPatientId));
                     },
                     function (error) {
                         alert('Issue Fetching Encounter by PatientId');
@@ -348,7 +348,7 @@
                     }
                 );
             clientGlobalScope.client = fhirBundle;
-            sessionStorage.setItem('_payload', JSON.stringify(clientGlobalScope.client));
+            localStorage.setItem('_payload', JSON.stringify(clientGlobalScope.client));
 
         }).catch(console.error);
 
@@ -365,7 +365,7 @@
             xhr.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status > 400) {
                     if (typeof (Storage) !== 'undefined') {
-                        sessionStorage.setItem('_errorDescription', this.responseText);
+                        localStorage.setItem('_errorDescription', this.responseText);
                         window.location.href = 'onerror.html';
                     } else {
                         alert('Sorry, your browser does not support Web Storage...');
@@ -376,30 +376,30 @@
 
                         var response = JSON.parse(this.responseText);
 
-                        sessionStorage.setItem('patientExists', response.patientExists);
+                        localStorage.setItem('patientExists', response.patientExists);
 
                         if (response.instanceEnvironment) {
-                            sessionStorage.setItem('instanceEnvironment', response.instanceEnvironment);
+                            localStorage.setItem('instanceEnvironment', response.instanceEnvironment);
                         }
                         if (response._organization) {
-                            sessionStorage.setItem('organization', response._organization);
+                            localStorage.setItem('organization', response._organization);
                         }
                         if (response.Hospital) {
-                            sessionStorage.setItem('Hospital', response.Hospital);
+                            localStorage.setItem('Hospital', response.Hospital);
                         }
                         if (response.firstName) {
-                            sessionStorage.setItem('firstName', response.firstName);
+                            localStorage.setItem('firstName', response.firstName);
                         }
                         if (response.lastName) {
-                            sessionStorage.setItem('lastName', response.lastName);
+                            localStorage.setItem('lastName', response.lastName);
                         }
                         if (response.lastName) {
-                            sessionStorage.setItem('patientDTO', response.patientDTO);
+                            localStorage.setItem('patientDTO', response.patientDTO);
                         }
-                        sessionStorage.setItem('encountersWithReferralsExists', response.encountersWithReferralsExists);
+                        localStorage.setItem('encountersWithReferralsExists', response.encountersWithReferralsExists);
 
                         if (response.encountersWithReferrals) {
-                            sessionStorage.setItem('encountersWithReferrals', JSON.stringify(response.encountersWithReferrals));
+                            localStorage.setItem('encountersWithReferrals', JSON.stringify(response.encountersWithReferrals));
                         }
                     } else {
                         alert('Sorry, your browser does not support Web Storage...');

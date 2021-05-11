@@ -47,7 +47,7 @@
     // Check browser support
     if (typeof (Storage) !== 'undefined') {
         // Retrieve
-        document.getElementById('errorDescription').innerHTML = 'Oups, ' + sessionStorage.getItem('_errorDescription');
+        document.getElementById('errorDescription').innerHTML = 'Oups, ' + localStorage.getItem('_errorDescription');
     } else {
         document.getElementById('errorDescription').innerHTML = 'Sorry, your browser does not support Web Storage...';
     }

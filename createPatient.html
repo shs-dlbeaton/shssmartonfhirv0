@@ -75,24 +75,24 @@
 <script>
 
     function showPatientDoesNotExist() {
-        var text = 'No record found for Patient ' + '<p style="color:blue"><b>' + sessionStorage.getItem('firstName') + ' '
-            + sessionStorage.getItem('lastName') + '</b></p>' + 'in configured instance: ' + '<p style="color:blue"><b>' + sessionStorage.getItem('Hospital') + '</b></p>' + '<br/>'
+        var text = 'No record found for Patient ' + '<p style="color:blue"><b>' + localStorage.getItem('firstName') + ' '
+            + localStorage.getItem('lastName') + '</b></p>' + 'in configured instance: ' + '<p style="color:blue"><b>' + localStorage.getItem('Hospital') + '</b></p>' + '<br/>'
             + ' <button type="button" class="btn btn-primary"">Create Patient In Instance </button>';
         document.getElementById('showPatientInfo').innerHTML = text;
     }
 
 
     function showPatientExists() {
-        var text = 'Patient ' + '<p style="color:blue"><b>' + sessionStorage.getItem('firstName') + ' ';
-        text += sessionStorage.getItem('lastName') + '</b></p>' + 'Configured Instance: ' + '<p style="color:blue">' + sessionStorage.getItem('Hospital') + '</b></p>' + '<br/>';
-        text += 'Configured Endpoint: ' + '<p style="color:blue"><b>' + '<button type="button" onclick=window.location.href=sessionStorage.getItem("instanceEnvironment") "class="btn btn-primary"">Connect to Instance</button> ' + 'or SSO ' + '<button type="button" "class="btn btn-primary"">SSO</button>' + '</b></p>' + '<br/>' + 'EHR Organization name: ';
-        text += '<p style="color:blue"><b>' + sessionStorage.getItem('organization') + '</b></p>' + '<br/>';
+        var text = 'Patient ' + '<p style="color:blue"><b>' + localStorage.getItem('firstName') + ' ';
+        text += localStorage.getItem('lastName') + '</b></p>' + 'Configured Instance: ' + '<p style="color:blue">' + localStorage.getItem('Hospital') + '</b></p>' + '<br/>';
+        text += 'Configured Endpoint: ' + '<p style="color:blue"><b>' + '<button type="button" onclick=window.location.href=localStorage.getItem("instanceEnvironment") "class="btn btn-primary"">Connect to Instance</button> ' + 'or SSO ' + '<button type="button" "class="btn btn-primary"">SSO</button>' + '</b></p>' + '<br/>' + 'EHR Organization name: ';
+        text += '<p style="color:blue"><b>' + localStorage.getItem('organization') + '</b></p>' + '<br/>';
         document.getElementById('showPatientDoesNotExist').innerHTML = text;
 
         var txt = '<br><br/>';
 
-        var encountersWithReferrals = JSON.parse(sessionStorage.getItem('encountersWithReferrals'));
-        var encountersWithReferralsExists = sessionStorage.getItem('encountersWithReferralsExists');
+        var encountersWithReferrals = JSON.parse(localStorage.getItem('encountersWithReferrals'));
+        var encountersWithReferralsExists = localStorage.getItem('encountersWithReferralsExists');
 
         if (encountersWithReferralsExists == 'true') {
             txt += '<p style="color:blue" align="right"><b>' + 'Active Patient PathWays Instance Encounter with Referral statuses' + '</b></p>';
@@ -110,8 +110,8 @@
             });
             txt += '</table>';
         } else {
-            txt += '<p style="color:blue"><b>' + sessionStorage.getItem('firstName') + ' '
-                + sessionStorage.getItem('lastName') + ' does not have any existing encounters and referrals in PathWays. Please use the encounter selector functionality to push one encounter for that instance / To create on manually use ' + '<button type="button" class="btn btn-primary"">Login to Patient Assessment DashBoard</button>';
+            txt += '<p style="color:blue"><b>' + localStorage.getItem('firstName') + ' '
+                + localStorage.getItem('lastName') + ' does not have any existing encounters and referrals in PathWays. Please use the encounter selector functionality to push one encounter for that instance / To create on manually use ' + '<button type="button" class="btn btn-primary"">Login to Patient Assessment DashBoard</button>';
         }
 
         document.getElementById('patientEncountersWithReferrals').innerHTML = txt;
@@ -121,11 +121,11 @@
     // Check browser support
     if (typeof (Storage) !== 'undefined') {
 
-        var encounterResource = JSON.parse(sessionStorage.getItem('_encounterByPatientIdResource'));
+        var encounterResource = JSON.parse(localStorage.getItem('_encounterByPatientIdResource'));
 
         createEHREncounterTable(encounterResource);
 
-        var patientExists = sessionStorage.getItem('patientExists');
+        var patientExists = localStorage.getItem('patientExists');
 
         if (patientExists == 'false') {
             showPatientDoesNotExist();
@@ -161,7 +161,7 @@
             });
             txt += '</table>';
             document.getElementById('showSOFEncounters').innerHTML = txt;
-            document.getElementById('title').innerHTML = 'Patient ' + sessionStorage.getItem('firstName') + ' ' + sessionStorage.getItem('lastName') + ' instance ' + sessionStorage.getItem('Hospital') + ' Referral status';
+            document.getElementById('title').innerHTML = 'Patient ' + localStorage.getItem('firstName') + ' ' + localStorage.getItem('lastName') + ' instance ' + localStorage.getItem('Hospital') + ' Referral status';
 
         }
     } else {
