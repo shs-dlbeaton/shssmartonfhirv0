@@ -76,8 +76,12 @@
 
     function showPatientDoesNotExist() {
         var text = 'No record found for Patient ' + '<p style="color:blue"><b>' + localStorage.getItem('firstName') + ' '
-            + localStorage.getItem('lastName') + '</b></p>' + 'in configured instance: ' + '<p style="color:blue"><b>' + localStorage.getItem('Hospital') + '</b></p>' + '<br/>'
-            + ' <button type="button" onclick="createPatientInstance()" class="btn btn-primary"">Create Patient In Instance </button>';
+            + localStorage.getItem('lastName') + '</bfunction createPatientInstance() {
+        ;
+    }
+
+    ></p>' + 'in configured instance: ' + '<p style="color:blue"><b>' + localStorage.getItem('Hospital') + '</b></p>' + '<br/>'
+            + ' <button type="button" onclick="function() { alert(\'hi there!\')}" class="btn btn-primary"">Create Patient In Instance </button>';
         document.getElementById('showPatientInfo').innerHTML = text;
 
         function createPatientInstance() {
