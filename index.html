@@ -122,7 +122,7 @@
             fhirBundle.fhirBundle = {};
             fhirBundle.patient.read().then(
                 function (pt) {
-                    console.log(pt);
+                    console.log(JSON.stringify(fhirBundle));
                     document.getElementById('patient').innerText = JSON.stringify(pt, null, 4);
                     fhirBundle.fhirBundle.patientResource = pt;
                 },
