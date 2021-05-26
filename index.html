@@ -88,7 +88,7 @@
         <div id="user">Loading...</div>
         <h4>EHR Launch (encounter)</h4>
         <div id="encounterLaunchContext">Loading...</div>
-        <h4>all encounters/h4>
+        <h4>all encounters</h4>
         <div id="encounterByPatientId">Loading...</div>
         <h4>Organization</h4>
         <div id="organization">Loading...</div>
@@ -339,7 +339,7 @@
                 // Get Practitioners for the selected patient
                 .then(
                     function (practitioner) {
-                        document.getElementById('practitioner').innerText = JSON.stringify(practitioner, null, 4);
+                        document.getElementById('practitioner').innerText = JSON.stringify(practitioner.resource.generalPractitioner, null, 4);
                         fhirBundle.fhirBundle.practitionerResource = practitioner;
                     },
                     function (error) {
