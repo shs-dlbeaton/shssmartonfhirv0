@@ -92,7 +92,7 @@
         <div id="organization">Loading...</div>
         <h4>Location</h4>
         <div id="location">Loading...</div>
-        <h4>Practitioners</h4>
+        <h4>Practitioner</h4>
         <div id="practitioner">Loading...</div>
         <h4>Observations</h4>
         <div id="observation">Loading...</div>
@@ -100,7 +100,7 @@
         <div id="appointment">Loading...</div>
         <h4>Allergy Intolerances</h4>
         <div id="allergyIntolerance">Loading...</div>
-        <h4>Document Reference </h4>
+        <h4>Documents</h4>
         <div id="documentReference">Loading...</div>
 
         <h4>Referral Submit Payload Structure </h4>
@@ -310,7 +310,7 @@
 
             // Get Practitioners for the selected patient
             fhirBundle.request('/Patient?_id=' + fhirBundle.patient.id, {
-                resolveReferences: ['participant'],
+                resolveReferences: ['generalPractitioner'],
                 graph: true
             })
 
