@@ -145,6 +145,8 @@
             );
 
             // Render the current user (or any error)
+            console.log(JSON.stringify(fhirBundle.user.fhirUser));
+
             fhirBundle.user.read().then(
                 function (user) {
                     document.getElementById('user').innerText = JSON.stringify(user, null, 4);
