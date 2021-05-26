@@ -13,7 +13,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <style>
-        #patient, #organization, #location, #practitioner, #encounterByPatientId, #encounterLaunchContext, #observation, #documentReference, #appointment, #allergyIntolerance, #headers {
+        #patient, #organization, #location, #practitioner, #encounterByPatientId, #encounterLaunchContext, #observation, #documentReference, #appointment, #user, #allergyIntolerance, #headers {
             font-family: Monaco, monospace;
             white-space: pre;
             font-size: 13px;
@@ -88,6 +88,8 @@
         <div id="encounterLaunchContext">Loading...</div>
         <h4>Encounter fetch from Patient FHIR Resource reference</h4>
         <div id="encounterByPatientId">Loading...</div>
+        <h4>User from EHR Launch context</h4>
+        <div id="user">Loading...</div>
         <h4>Organization fetch from EHR launch context</h4>
         <div id="organization">Loading...</div>
         <h4>Location</h4>
@@ -133,17 +135,28 @@
 
             // Render the current encounter (or any error)
             fhirBundle.encounter.read().then(
-                function (encounterLaunchContext) {
-                    document.getElementById('encounterLaunchContext').innerText = JSON.stringify(encounterLaunchContext, null, 4);
-                    fhirBundle.fhirBundle.encounterLaunchContextResource = encounterLaunchContext;
+                function (encounter) {
+                    document.getElementById('encounterLaunchContext').innerText = JSON.stringify(encounter, null, 4);
+                    fhirBundle.fhirBundle.encounterLaunchContextResource = encounter;
                 },
                 function (error) {
                     document.getElementById('encounterLaunchContext').innerText = error.stack;
                 }
             );
 
+            // Render the current user (or any error)
+            fhirBundle.user.read().then(
+                function (user) {
+                    document.getElementById('user').innerText = JSON.stringify(user, null, 4);
+                    fhirBundle.fhirBundle.userResource = user;
+                },
+                function (error) {
+                    document.getElementById('user').innerText = error.stack;
+                }
+            );
+
             // Get Encounter for the selected patient
-            fhirBundle.request('/Encounter?subject=Patient/' + fhirBundle.patient.id, { //+ client.patient.id,
+            fhirBundle.request('/Encounter?subject=Patient/' + fhirBundle.patient.id, {
             })
 
                 .then(function (data) {
@@ -233,7 +246,7 @@
                     }
                 );
 
-            fhirBundle.request('/DocumentReference?patient=' + fhirBundle.patient.id, { //+ client.patient.id,
+            fhirBundle.request('/DocumentReference?patient=' + fhirBundle.patient.id, {
             })
 
                 .then(function (data) {
@@ -256,7 +269,7 @@
                 );
 
             // Get Organization for the selected patient
-            fhirBundle.request('/Encounter?_id=' + fhirBundle.encounter.id, { // client.patient.id,
+            fhirBundle.request('/Encounter?_id=' + fhirBundle.encounter.id, {
                 resolveReferences: ['serviceProvider'],
                 graph: true
             })
@@ -282,7 +295,7 @@
                 );
 
             // Get Location for the selected patient
-            fhirBundle.request('/Encounter?_id=' + fhirBundle.encounter.id, { // client.patient.id,
+            fhirBundle.request('/Encounter?_id=' + fhirBundle.encounter.id, {
                 resolveReferences: ['location'],
                 graph: true
             })
