@@ -179,7 +179,7 @@
                     }
                 );
 
-            fhirBundle.request('/Appointment?actor=patient/' + fhirBundle.patient.id, { //+ client.patient.id,
+            fhirBundle.request('/Appointment?actor=Patient/' + fhirBundle.patient.id, { //+ client.patient.id,
             })
 
                 .then(function (data) {
@@ -201,7 +201,7 @@
                     }
                 );
 
-            fhirBundle.request('/Consent?actor=patient/' + fhirBundle.patient.id, { //+ client.patient.id,
+            fhirBundle.request('/Consent?actor=Patient/' + fhirBundle.patient.id, { //+ client.patient.id,
             })
 
                 .then(function (data) {
@@ -245,7 +245,7 @@
                     }
                 );
 
-            fhirBundle.request('/MedicationRequest?patient=' + fhirBundle.patient.id, { //+ client.patient.id,
+            fhirBundle.request('/MedicationRequest?subject=Patient/' + fhirBundle.patient.id, { //+ client.patient.id,
             })
 
                 .then(function (data) {
@@ -267,7 +267,7 @@
                     }
                 );
 
-            fhirBundle.request('/ServiceRequest?patient=' + fhirBundle.patient.id, { //+ client.patient.id,
+            fhirBundle.request('/ServiceRequest?subject=Patient/' + fhirBundle.patient.id, { //+ client.patient.id,
             })
 
                 .then(function (data) {
@@ -289,7 +289,7 @@
                     }
                 );
 
-            fhirBundle.request('/DiagnosticReport?patient=' + fhirBundle.patient.id, { //+ client.patient.id,
+            fhirBundle.request('/DiagnosticReport?subject=Patient/' + fhirBundle.patient.id, { //+ client.patient.id,
             })
 
                 .then(function (data) {
