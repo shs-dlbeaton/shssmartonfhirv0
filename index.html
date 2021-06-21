@@ -75,7 +75,7 @@
         <div id="practitioner">Loading...</div>
         <h4>Observation</h4>
         <div id="observation">Loading...</div>
-        <h4>Apointment</h4>
+        <h4>Appointment</h4>
         <div id="appointment">Loading...</div>
         <h4>AllergyIntolerance</h4>
         <div id="allergyIntolerance">Loading...</div>
@@ -157,7 +157,7 @@
                 );
 
 
-            fhirBundle.request('/Observation?subject=Patient/' + fhirBundle.patient.id, { //+ client.patient.id,
+            fhirBundle.request('/Observation?subject=Patient/' + fhirBundle.patient.id + '&category=http://hl7.org/fhir/observation-category|laboratory', { //+ client.patient.id,
             })
 
                 .then(function (data) {
@@ -179,7 +179,7 @@
                     }
                 );
 
-            fhirBundle.request('/Appointment?patient=' + fhirBundle.patient.id, { //+ client.patient.id,
+            fhirBundle.request('/Appointment?actor=patient/' + fhirBundle.patient.id, { //+ client.patient.id,
             })
 
                 .then(function (data) {
@@ -201,7 +201,7 @@
                     }
                 );
 
-            fhirBundle.request('/Consent?patient=' + fhirBundle.patient.id, { //+ client.patient.id,
+            fhirBundle.request('/Consent?actor=patient/' + fhirBundle.patient.id, { //+ client.patient.id,
             })
 
                 .then(function (data) {
@@ -223,7 +223,7 @@
                     }
                 );
 
-            fhirBundle.request('/MedicationAdministration?patient=' + fhirBundle.patient.id, { //+ client.patient.id,
+            fhirBundle.request('/MedicationAdministration?subject=Patient/' + fhirBundle.patient.id, { //+ client.patient.id,
             })
 
                 .then(function (data) {
