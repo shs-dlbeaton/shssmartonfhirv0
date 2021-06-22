@@ -309,7 +309,7 @@
                 );
 
             // Get Organization for the selected patient
-            fhirBundle.request('/Patient?identifier=' + fhirBundle.patient.id, {
+            fhirBundle.request('/Patient?_id=' + fhirBundle.patient.id, {
                 resolveReferences: ['managingOrganization'],
                 graph: true
             })
@@ -362,7 +362,7 @@
 
 
             // Get Practitioners for the selected patient
-            fhirBundle.request('/Patient?identifier=' + fhirBundle.patient.id, {
+            fhirBundle.request('/Patient?id=' + fhirBundle.patient.id, {
                 resolveReferences: ['generalPractitioner'],
                 graph: true
             })
