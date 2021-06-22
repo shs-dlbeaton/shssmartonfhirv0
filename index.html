@@ -118,9 +118,9 @@
             );
 
             // Render the current user (or any error)
-            console.log("client.user.id" + JSON.stringify(fhirClient.user.id));
-            console.log("client.user.fhirUser" + JSON.stringify(fhirClient.user.fhirUser));
-            console.log("client.user.resourceType" + JSON.stringify(fhirClient.user.resourceType));
+            console.log('client.user.id' + JSON.stringify(fhirClient.user.id));
+            console.log('client.user.fhirUser' + JSON.stringify(fhirClient.user.fhirUser));
+            console.log('client.user.resourceType' + JSON.stringify(fhirClient.user.resourceType));
 
             fhirClient.user.read().then(
                 function (user) {
@@ -387,11 +387,11 @@
                         document.getElementById('practitioner').innerText = error.stack;
                     }
                 );
+
             clientGlobalScope.client = fhirClient;
 
+            console.log('clientGlobalScope', JSON.stringify(clientGlobalScope));
             document.getElementById('fhirBundle').innerText = JSON.stringify(clientGlobalScope, null, 4);
-
-
         }).catch(console.error);
 
         function showLaunchParameters() {
