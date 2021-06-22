@@ -325,9 +325,8 @@
                 // Render the current organization(or any error)
                 .then(
                     function (encounter) {
-                        document.getElementById('organization').innerText = JSON.stringify(encounter, null, 4);
-                        fhirBundle.fhirBundle.organizationResource = encounter;
-                        //fhirBundle.fhirBundle.organizationResource = encounter[0].resource.serviceProvider;
+                        document.getElementById('organization').innerText = JSON.stringify(encounter[0].resource.managingOrganization, null, 4);
+                        fhirBundle.fhirBundle.organizationResource = encounter[0].resource.managingOrganization;
                     },
                     function (error) {
                         alert('Issue Fetching Organization');
