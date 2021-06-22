@@ -379,9 +379,9 @@
 
                 // Get Practitioners for the selected patient
                 .then(
-                    function (practitioner) {
-                        document.getElementById('practitioner').innerText = JSON.stringify(practitioner, null, 4);
-                        fhirBundle.fhirBundle.practitionerResource = practitioner;
+                    function (encounter) {
+                        document.getElementById('practitioner').innerText = JSON.stringify(encounter[0].resource.participant, null, 4);
+                        fhirBundle.fhirBundle.practitionerResource = encounter[0].resource.participant;
                     },
                     function (error) {
                         document.getElementById('practitioner').innerText = error.stack;
