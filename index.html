@@ -13,7 +13,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <style>
-        #patient, #organization, #medicationAdministration, #medicationRequest, #serviceRequest, #diagnosticReport, #consent, #location, #practitioner, #encounterHistory, #activeEncounter, #observation, #documentReference, #appointment, #user, #allergyIntolerance, #fhirBundle {
+        #patient, #organization, #medicationRequest, #serviceRequest, #diagnosticReport, #consent, #location, #practitioner, #encounterHistory, #activeEncounter, #observation, #documentReference, #appointment, #user, #allergyIntolerance, #fhirBundle {
             font-family: Monaco, monospace;
             white-space: pre;
             font-size: 13px;
@@ -81,8 +81,6 @@
         <div id="allergyIntolerance">Loading...</div>
         <h4>DocumentReference</h4>
         <div id="documentReference">Loading...</div>
-        <h4>MedicationAdministration</h4>
-        <div id="medicationAdministration">Loading...</div>
         <h4>MedicationRequest</h4>
         <div id="medicationRequest">Loading...</div>
         <h4>ServiceRequest</h4>
@@ -220,28 +218,6 @@
                     function (error) {
                         alert('Issue fetching Consent by PatientId');
                         document.getElementById('consent').innerText = error.stack;
-                    }
-                );
-
-            fhirBundle.request('/MedicationAdministration?subject=Patient/' + fhirBundle.patient.id, { //+ client.patient.id,
-            })
-
-                .then(function (data) {
-                    if (!data.entry || !data.entry.length) {
-                        throw new Error('No MedicationAdministration found for the selected patient');
-                    }
-                    return data.entry;
-                })
-
-                // Render the current medicationAdministration (or any error)
-                .then(
-                    function (medicationAdministration) {
-                        document.getElementById('medicationAdministration').innerText = JSON.stringify(medicationAdministration, null, 4);
-                        fhirBundle.fhirBundle.medicationAdministration = medicationAdministration;
-                    },
-                    function (error) {
-                        alert('Issue fetching MedicationAdministration by PatientId');
-                        document.getElementById('medicationAdministration').innerText = error.stack;
                     }
                 );
 
