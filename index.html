@@ -201,7 +201,7 @@
                     }
                 );
 
-            fhirBundle.request('/Consent?patient=' + fhirBundle.patient.id, { //+ client.patient.id,
+            fhirBundle.request('/Consent?patient=' + fhirBundle.patient.id + '&status=active', { //+ client.patient.id,
             })
 
                 .then(function (data) {
