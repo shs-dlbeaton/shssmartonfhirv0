@@ -362,8 +362,8 @@
 
 
             // Get Practitioners for the selected patient
-            fhirBundle.request('/Patient?_id=' + fhirBundle.patient.id, {
-                resolveReferences: ['generalPractitioner'],
+            fhirBundle.request('/Encounter?_id=' + fhirBundle.encounter.id, {
+                resolveReferences: ['reference'],
                 graph: true
             })
 
