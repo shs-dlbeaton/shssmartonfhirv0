@@ -333,7 +333,7 @@
                 );
 
             // Get Organization for the selected patient
-            fhirBundle.request('/Patient?_id=' + fhirBundle.encounter.id, {
+            fhirBundle.request('/Patient?identifier=' + fhirBundle.patient.id, {
                 resolveReferences: ['managingOrganization'],
                 graph: true
             })
@@ -346,7 +346,7 @@
                     return data.entry;
                 })
 
-                // Render the current location (or any error)
+                // Render the current organization(or any error)
                 .then(
                     function (encounter) {
                         document.getElementById('organization').innerText = JSON.stringify(encounter[0].resource.serviceProvider, null, 4);
@@ -358,7 +358,7 @@
                     }
                 );
 
-            // Get Location for the selected patient
+            // Get Location for the selected encounter
             fhirBundle.request('/Encounter?_id=' + fhirBundle.encounter.id, {
                 resolveReferences: ['location'],
                 graph: true
