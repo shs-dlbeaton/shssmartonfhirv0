@@ -94,14 +94,14 @@
     </div>
     <script type="text/javascript">
         var clientGlobalScope = {};
-        FHIR.oauth2.ready().then(function (fhirBundle) {
+        FHIR.oauth2.ready().then(function (fhirClient) {
             // Render the current patient (or any error)
-            fhirBundle.fhirBundle = {};
-            fhirBundle.patient.read().then(
+            fhirClient.fhirBundle = {};
+            fhirClient.patient.read().then(
                 function (pt) {
-                    console.log(JSON.stringify(fhirBundle));
+                    console.log(JSON.stringify(fhirClient));
                     document.getElementById('patient').innerText = JSON.stringify(pt, null, 4);
-                    fhirBundle.fhirBundle.patientResource = pt;
+                    fhirClient.fhirBundle.patientResource = pt;
                 },
                 function (error) {
                     document.getElementById('patient').innerText = error.stack;
@@ -109,10 +109,10 @@
             );
 
             // Render the current encounter (or any error)
-            fhirBundle.encounter.read().then(
+            fhirClient.encounter.read().then(
                 function (encounter) {
                     document.getElementById('activeEncounter').innerText = JSON.stringify(encounter, null, 4);
-                    fhirBundle.fhirBundle.encounterLaunchContextResource = encounter;
+                    fhirClient.fhirBundle.encounterLaunchContextResource = encounter;
                 },
                 function (error) {
                     document.getElementById('activeEncounter').innerText = error.stack;
@@ -120,12 +120,12 @@
             );
 
             // Render the current user (or any error)
-            console.log(JSON.stringify(fhirBundle.user.fhirUser));
+            console.log(JSON.stringify(fhirClient.user.fhirUser));
 
-            fhirBundle.user.read().then(
+            fhirClient.user.read().then(
                 function (user) {
                     document.getElementById('user').innerText = JSON.stringify(user, null, 4);
-                    fhirBundle.fhirBundle.userResource = user;
+                    fhirClient.fhirBundle.userResource = user;
                 },
                 function (error) {
                     document.getElementById('user').innerText = error.stack;
@@ -133,7 +133,7 @@
             );
 
             // Get Encounter History for selected patient
-            fhirBundle.request('/Encounter?subject=Patient/' + fhirBundle.patient.id, {})
+            fhirClient.request('/Encounter?subject=Patient/' + fhirClient.patient.id, {})
 
                 .then(function (data) {
                     if (!data.entry || !data.entry.length) {
@@ -146,7 +146,7 @@
                 .then(
                     function (encounterByPatientId) {
                         document.getElementById('encounterHistory').innerText = JSON.stringify(encounterByPatientId, null, 4);
-                        fhirBundle.fhirBundle.encounterByPatientIdResource = encounterByPatientId;
+                        fhirClient.fhirBundle.encounterByPatientIdResource = encounterByPatientId;
                     },
                     function (error) {
                         alert('Issue fetching Encounter by patientId');
@@ -155,7 +155,7 @@
                 );
 
 
-            fhirBundle.request('/Observation?subject=Patient/' + fhirBundle.patient.id + '&category=http://hl7.org/fhir/observation-category|laboratory', { //+ client.patient.id,
+            fhirClient.request('/Observation?subject=Patient/' + fhirClient.patient.id + '&category=http://hl7.org/fhir/observation-category|laboratory', { //+ client.patient.id,
             })
 
                 .then(function (data) {
@@ -169,7 +169,7 @@
                 .then(
                     function (observation) {
                         document.getElementById('observation').innerText = JSON.stringify(observation, null, 4);
-                        fhirBundle.fhirBundle.observation = observation;
+                        fhirClient.fhirBundle.observation = observation;
                     },
                     function (error) {
                         alert('Issue Fetching Observation by patientId');
@@ -177,7 +177,7 @@
                     }
                 );
 
-            fhirBundle.request('/Appointment?actor=Patient/' + fhirBundle.patient.id, { //+ client.patient.id,
+            fhirClient.request('/Appointment?actor=Patient/' + fhirClient.patient.id, { //+ client.patient.id,
             })
 
                 .then(function (data) {
@@ -191,7 +191,7 @@
                 .then(
                     function (appointment) {
                         document.getElementById('appointment').innerText = JSON.stringify(appointment, null, 4);
-                        fhirBundle.fhirBundle.appointment = appointment;
+                        fhirClient.fhirBundle.appointment = appointment;
                     },
                     function (error) {
                         alert('Issue fetching Appointment by PatientId');
@@ -199,7 +199,7 @@
                     }
                 );
 
-            fhirBundle.request('/Consent?patient=' + fhirBundle.patient.id + '&status=active', { //+ client.patient.id,
+            fhirClient.request('/Consent?patient=' + fhirClient.patient.id + '&status=active', { //+ client.patient.id,
             })
 
                 .then(function (data) {
@@ -213,7 +213,7 @@
                 .then(
                     function (consent) {
                         document.getElementById('consent').innerText = JSON.stringify(consent, null, 4);
-                        fhirBundle.fhirBundle.consent = consent;
+                        fhirClient.fhirBundle.consent = consent;
                     },
                     function (error) {
                         alert('Issue fetching Consent by PatientId');
@@ -221,7 +221,7 @@
                     }
                 );
 
-            fhirBundle.request('/MedicationRequest?subject=Patient/' + fhirBundle.patient.id, { //+ client.patient.id,
+            fhirClient.request('/MedicationRequest?subject=Patient/' + fhirClient.patient.id, { //+ client.patient.id,
             })
 
                 .then(function (data) {
@@ -235,7 +235,7 @@
                 .then(
                     function (medicationRequest) {
                         document.getElementById('medicationRequest').innerText = JSON.stringify(medicationRequest, null, 4);
-                        fhirBundle.fhirBundle.medicationRequest = medicationRequest;
+                        fhirClient.fhirBundle.medicationRequest = medicationRequest;
                     },
                     function (error) {
                         alert('Issue fetching MedicationRequest by PatientId');
@@ -243,7 +243,7 @@
                     }
                 );
 
-            fhirBundle.request('/ServiceRequest?subject=Patient/' + fhirBundle.patient.id, { //+ client.patient.id,
+            fhirClient.request('/ServiceRequest?subject=Patient/' + fhirClient.patient.id, { //+ client.patient.id,
             })
 
                 .then(function (data) {
@@ -257,7 +257,7 @@
                 .then(
                     function (serviceRequest) {
                         document.getElementById('serviceRequest').innerText = JSON.stringify(serviceRequest, null, 4);
-                        fhirBundle.fhirBundle.serviceRequest = serviceRequest;
+                        fhirClient.fhirBundle.serviceRequest = serviceRequest;
                     },
                     function (error) {
                         alert('Issue fetching Service Request by PatientId');
@@ -265,7 +265,7 @@
                     }
                 );
 
-            fhirBundle.request('/DiagnosticReport?subject=Patient/' + fhirBundle.patient.id, { //+ client.patient.id,
+            fhirClient.request('/DiagnosticReport?subject=Patient/' + fhirClient.patient.id, { //+ client.patient.id,
             })
 
                 .then(function (data) {
@@ -279,7 +279,7 @@
                 .then(
                     function (diagnosticReport) {
                         document.getElementById('diagnosticReport').innerText = JSON.stringify(diagnosticReport, null, 4);
-                        fhirBundle.fhirBundle.diagnosticReport = diagnosticReport;
+                        fhirClient.fhirBundle.diagnosticReport = diagnosticReport;
                     },
                     function (error) {
                         alert('Issue fetching DiagnosticReport by PatientId');
@@ -287,7 +287,7 @@
                     }
                 );
 
-            fhirBundle.request('/DocumentReference?patient=' + fhirBundle.patient.id, {})
+            fhirClient.patient.request('DocumentReference', {})
 
                 .then(function (data) {
                     if (!data.entry || !data.entry.length) {
@@ -300,7 +300,7 @@
                 .then(
                     function (documentReference) {
                         document.getElementById('documentReference').innerText = JSON.stringify(documentReference, null, 4);
-                        fhirBundle.fhirBundle.documentReference = documentReference;
+                        fhirClient.fhirBundle.documentReference = documentReference;
                     },
                     function (error) {
                         alert('Issue fetching DocumentReference by patientId');
@@ -309,7 +309,7 @@
                 );
 
             // Get Organization for the selected patient
-            fhirBundle.request('/Patient?_id=' + fhirBundle.patient.id, {
+            fhirClient.request('/Patient?_id=' + fhirClient.patient.id, {
                 resolveReferences: ['managingOrganization'],
                 graph: true
             })
@@ -326,7 +326,7 @@
                 .then(
                     function (encounter) {
                         document.getElementById('organization').innerText = JSON.stringify(encounter[0].resource.managingOrganization, null, 4);
-                        fhirBundle.fhirBundle.organizationResource = encounter[0].resource.managingOrganization;
+                        fhirClient.fhirBundle.organizationResource = encounter[0].resource.managingOrganization;
                     },
                     function (error) {
                         alert('Issue Fetching Organization');
@@ -335,7 +335,7 @@
                 );
 
             // Get Location for the selected encounter
-            fhirBundle.request('/Encounter?_id=' + fhirBundle.encounter.id, {
+            fhirClient.request('/Encounter?_id=' + fhirClient.encounter.id, {
                 resolveReferences: ['location'],
                 graph: true
             })
@@ -352,7 +352,7 @@
                 .then(
                     function (encounter) {
                         document.getElementById('location').innerText = JSON.stringify(encounter[0].resource.location, null, 4);
-                        fhirBundle.fhirBundle.locationResource = encounter[0].resource.location;
+                        fhirClient.fhirBundle.locationResource = encounter[0].resource.location;
                     },
                     function (error) {
                         alert('Issue Fetching Location');
@@ -362,7 +362,7 @@
 
 
             // Get Practitioners for the selected patient
-            fhirBundle.request('/Encounter?_id=' + fhirBundle.encounter.id, {
+            fhirClient.request('/Encounter?_id=' + fhirClient.encounter.id, {
                 resolveReferences: ['participant.0, participant.1, participant.0.individual, participant.1.individual'],
                 graph: true
             })
@@ -381,13 +381,13 @@
                 .then(
                     function (encounter) {
                         document.getElementById('practitioner').innerText = JSON.stringify(encounter, null, 4);
-                        fhirBundle.fhirBundle.practitionerResource = encounter;
+                        fhirClient.fhirBundle.practitionerResource = encounter;
                     },
                     function (error) {
                         document.getElementById('practitioner').innerText = error.stack;
                     }
                 );
-            clientGlobalScope.client = fhirBundle;
+            clientGlobalScope.client = fhirClient;
 
             document.getElementById('fhirBundle').innerText = JSON.stringify(clientGlobalScope, null, 4);
 
