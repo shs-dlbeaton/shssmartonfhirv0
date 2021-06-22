@@ -13,7 +13,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <style>
-        #patient, #organization, #medicationRequest, #serviceRequest, #diagnosticReport, #consent, #location, #practitioner, #encounterHistory, #activeEncounter, #observation, #documentReference, #appointment, #user, #allergyIntolerance, #fhirBundle {
+        #patient, #organization, #medicationRequest, #serviceRequest, #diagnosticReport, #consent, #location, #practitioner, #encounterHistory, #activeEncounter, #observation, #documentReference, #appointment, #user, #fhirClient {
             font-family: Monaco, monospace;
             white-space: pre;
             font-size: 13px;
@@ -87,11 +87,10 @@
         <div id="diagnosticReport">Loading...</div>
         <h4>Consent</h4>
         <div id="consent">Loading...</div>
-        <h4>FHIR Bundle</h4>
-        <div id="fhirBundle">Loading...</div>
+        <h4>FHIR Client</h4>
+        <div id="fhirClient">Loading...</div>
     </div>
     <script type="text/javascript">
-        var clientGlobalScope = {};
         FHIR.oauth2.ready().then(function (fhirClient) {
             // Render the current patient (or any error)
             fhirClient.fhirBundle = {};
@@ -387,11 +386,8 @@
                         document.getElementById('practitioner').innerText = error.stack;
                     }
                 );
-
-            clientGlobalScope.client = fhirClient;
-
-            console.log('clientGlobalScope', JSON.stringify(clientGlobalScope));
-            document.getElementById('fhirBundle').innerText = JSON.stringify(clientGlobalScope, null, 4);
+            console.log('fhirClient', JSON.stringify(fhirClient));
+            document.getElementById('fhirClient').innerText = JSON.stringify(fhirClient, null, 4);
         }).catch(console.error);
 
         function showLaunchParameters() {
