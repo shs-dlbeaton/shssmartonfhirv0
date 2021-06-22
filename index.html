@@ -363,7 +363,7 @@
 
             // Get Practitioners for the selected patient
             fhirBundle.request('/Encounter?_id=' + fhirBundle.encounter.id, {
-                resolveReferences: ['participant'],
+                resolveReferences: ['participant.0, participant.1, participant.0.individual, participant.1.individual'],
                 graph: true
             })
 
