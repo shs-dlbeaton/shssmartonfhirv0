@@ -380,7 +380,7 @@
                 // Get Practitioners for the selected patient
                 .then(
                     function (practitioner) {
-                        document.getElementById('practitioner').innerText = JSON.stringify(practitioner.resource.generalPractitioner, null, 4);
+                        document.getElementById('practitioner').innerText = JSON.stringify(practitioner, null, 4);
                         fhirBundle.fhirBundle.practitionerResource = practitioner;
                     },
                     function (error) {
