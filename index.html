@@ -361,7 +361,7 @@
 
             // Get Practitioners for the selected patient
             fhirClient.request('/Encounter?_id=' + fhirClient.encounter.id, {
-                resolveReferences: ['participant.0.individual.reference'],
+                resolveReferences: ['participant.0.individual.reference', 'subject'],
                 graph: true
             })
 
