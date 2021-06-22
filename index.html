@@ -77,8 +77,6 @@
         <div id="observation">Loading...</div>
         <h4>Appointment</h4>
         <div id="appointment">Loading...</div>
-        <h4>AllergyIntolerance</h4>
-        <div id="allergyIntolerance">Loading...</div>
         <h4>DocumentReference</h4>
         <div id="documentReference">Loading...</div>
         <h4>MedicationRequest</h4>
@@ -133,7 +131,7 @@
             );
 
             // Get Encounter History for selected patient
-            fhirClient.request('/Encounter?subject=Patient/' + fhirClient.patient.id, {})
+            fhirClient.patient.request('Encounter', {})
 
                 .then(function (data) {
                     if (!data.entry || !data.entry.length) {
@@ -177,7 +175,7 @@
                     }
                 );
 
-            fhirClient.request('/Appointment?actor=Patient/' + fhirClient.patient.id, { //+ client.patient.id,
+            fhirClient.patient.request('Appointment', { //+ client.patient.id,
             })
 
                 .then(function (data) {
@@ -221,7 +219,7 @@
                     }
                 );
 
-            fhirClient.request('/MedicationRequest?subject=Patient/' + fhirClient.patient.id, { //+ client.patient.id,
+            fhirClient.patient.request('MedicationRequest', { //+ client.patient.id,
             })
 
                 .then(function (data) {
@@ -243,7 +241,7 @@
                     }
                 );
 
-            fhirClient.request('/ServiceRequest?subject=Patient/' + fhirClient.patient.id, { //+ client.patient.id,
+            fhirClient.patient.request('ServiceRequest', { //+ client.patient.id,
             })
 
                 .then(function (data) {
@@ -265,7 +263,7 @@
                     }
                 );
 
-            fhirClient.request('/DiagnosticReport?subject=Patient/' + fhirClient.patient.id, { //+ client.patient.id,
+            fhirClient.patient.request('DiagnosticReport', { //+ client.patient.id,
             })
 
                 .then(function (data) {
@@ -363,7 +361,7 @@
 
             // Get Practitioners for the selected patient
             fhirClient.request('/Encounter?_id=' + fhirClient.encounter.id, {
-                resolveReferences: ['participant.0, participant.1, participant.0.individual, participant.1.individual'],
+                resolveReferences: ['participant.0.individual.reference'],
                 graph: true
             })
 
