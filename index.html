@@ -333,8 +333,8 @@
                 );
 
             // Get Organization for the selected patient
-            fhirBundle.request('/Encounter?_id=' + fhirBundle.encounter.id, {
-                resolveReferences: ['serviceProvider'],
+            fhirBundle.request('/Patient?_id=' + fhirBundle.encounter.id, {
+                resolveReferences: ['managingOrganization'],
                 graph: true
             })
 
