@@ -99,7 +99,6 @@
                     console.log(JSON.stringify(fhirClient));
                     document.getElementById('patient').innerText = JSON.stringify(pt, null, 4);
                     fhirClient.fhirBundle.Patient = pt;
-                    fhirClient.Patient = pt;
                 },
                 function (error) {
                     document.getElementById('patient').innerText = error.stack;
@@ -111,7 +110,6 @@
                 function (encounter) {
                     document.getElementById('activeEncounter').innerText = JSON.stringify(encounter, null, 4);
                     fhirClient.fhirBundle.EncounterLaunch = encounter;
-                    fhirClient.EncounterLaunch = encounter;
                 },
                 function (error) {
                     document.getElementById('activeEncounter').innerText = error.stack;
@@ -383,13 +381,14 @@
                     function (encounter) {
                         document.getElementById('practitioner').innerText = JSON.stringify(encounter, null, 4);
                         fhirClient.fhirBundle.Practitioner = encounter;
+                        document.getElementById('fhirClient').innerText = JSON.stringify(fhirClient, null, 4);
                     },
                     function (error) {
                         document.getElementById('practitioner').innerText = error.stack;
                     }
                 );
             console.log('fhirBundle', JSON.stringify(fhirClient.fhirBundle));
-            document.getElementById('fhirClient').innerText = JSON.stringify(fhirClient, null, 4);
+
         }).catch(console.error);
 
         function showLaunchParameters() {
