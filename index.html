@@ -196,7 +196,7 @@
                 );
 
             // Get Organization for the selected patient
-            fhirClient.request('/Patient?_id=' + fhirClient.patient.id, {
+            fhirClient.request('/Patient?_id=' + fhirBundle.patient.id, {
                 resolveReferences: ['managingOrganization'],
                 graph: true
             })
