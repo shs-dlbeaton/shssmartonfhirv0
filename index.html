@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <title>SHS SMART ON FHIR POC</title>
     <script src="https://cdn.jsdelivr.net/npm/fhirclient/build/fhir-client.js"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,31 +54,11 @@
     </style>
 </head>
 <body>
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#">SHS Smart App Launch</a>
-        </div>
-        <ul class="nav navbar-nav">
-            <li class="active"><a href="index.html">EHR Launch</a></li>
-            class="caret"></span></a>
-            <ul class="dropdown-menu">
-            </ul>
-            </li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-        </ul>
-    </div>
-</nav>
 <div class="jumbotron text-center" style="margin-bottom:0">
-    <img src="images/shs_logo2.png" height="128" width="170"/>
-    <h2>SHS SMART ON FHIR POC</h2>
-    <br><br>
-    <button type="button" class="btn btn-primary" onclick="returnClient()">LOOKUP PATIENT
+
+    <button type="button" class="btn btn-primary" onclick="returnClient()">fhir payload
     </button>
-    <button type="button" class="btn btn-warning" onclick="showLaunchParameters()">SHOW
-        LAUNCH
-        PARAMETERS
+    <button type="button" class="btn btn-warning" onclick="showLaunchParameters()">debug
     </button>
     <div id="main" style="display: none">
         <h4>smart on fhir Patient launch context</h4>
