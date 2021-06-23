@@ -29,12 +29,21 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="203" column="86" selection-start-line="203" selection-start-column="86" selection-end-line="203" selection-end-column="86" />
+            <state relative-caret-position="249">
+              <caret line="126" column="21" selection-start-line="126" selection-start-column="21" selection-end-line="126" selection-end-column="21" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -84,6 +93,17 @@
       <find>headers</find>
       <find>Appo</find>
       <find>Medicat</find>
+      <find>Organization</find>
+      <find>location</find>
+      <find>Organi</find>
+      <find>particip</find>
+      <find>AllergyI</find>
+      <find>Consent</find>
+      <find>clientGl</find>
+      <find>fhirClient.</find>
+      <find>fhirBundle</find>
+      <find>clientGlobalScope</find>
+      <find>fhirbundl</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -121,11 +141,11 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="1551" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1284" />
     <option name="y" value="23" />
-    <option name="width" value="1280" />
-    <option name="height" value="708" />
+    <option name="width" value="1920" />
+    <option name="height" value="981" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -156,7 +176,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1624391529405" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1624410620650" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
     <property name="node.js.path.for.package.jscs" value="project" />
     <property name="node.js.selected.package.jscs" value="" />
@@ -230,189 +250,7 @@
       <workItem from="1621607479784" duration="364000" />
       <workItem from="1624293154441" duration="3198000" />
       <workItem from="1624299871461" duration="2584000" />
-      <workItem from="1624366369149" duration="1613000" />
-    </task>
-    <task id="LOCAL-00085" summary="encounterWithReferrals">
-      <created>1620671167138</created>
-      <option name="number" value="00085" />
-      <option name="presentableId" value="LOCAL-00085" />
-      <option name="project" value="LOCAL" />
-      <updated>1620671167138</updated>
-    </task>
-    <task id="LOCAL-00086" summary="encounterWithReferrals">
-      <created>1620674581361</created>
-      <option name="number" value="00086" />
-      <option name="presentableId" value="LOCAL-00086" />
-      <option name="project" value="LOCAL" />
-      <updated>1620674581361</updated>
-    </task>
-    <task id="LOCAL-00087" summary="encounterWithReferrals">
-      <created>1620737573345</created>
-      <option name="number" value="00087" />
-      <option name="presentableId" value="LOCAL-00087" />
-      <option name="project" value="LOCAL" />
-      <updated>1620737573345</updated>
-    </task>
-    <task id="LOCAL-00088" summary="encounterWithReferrals">
-      <created>1620739158049</created>
-      <option name="number" value="00088" />
-      <option name="presentableId" value="LOCAL-00088" />
-      <option name="project" value="LOCAL" />
-      <updated>1620739158049</updated>
-    </task>
-    <task id="LOCAL-00089" summary="encounterWithReferrals">
-      <created>1620740803091</created>
-      <option name="number" value="00089" />
-      <option name="presentableId" value="LOCAL-00089" />
-      <option name="project" value="LOCAL" />
-      <updated>1620740803091</updated>
-    </task>
-    <task id="LOCAL-00090" summary="encounterWithReferrals">
-      <created>1620741761237</created>
-      <option name="number" value="00090" />
-      <option name="presentableId" value="LOCAL-00090" />
-      <option name="project" value="LOCAL" />
-      <updated>1620741761237</updated>
-    </task>
-    <task id="LOCAL-00091" summary="encounterWithReferrals">
-      <created>1620741875008</created>
-      <option name="number" value="00091" />
-      <option name="presentableId" value="LOCAL-00091" />
-      <option name="project" value="LOCAL" />
-      <updated>1620741875008</updated>
-    </task>
-    <task id="LOCAL-00092" summary="encounterWithReferrals">
-      <created>1620742665719</created>
-      <option name="number" value="00092" />
-      <option name="presentableId" value="LOCAL-00092" />
-      <option name="project" value="LOCAL" />
-      <updated>1620742665719</updated>
-    </task>
-    <task id="LOCAL-00093" summary="encounterWithReferrals">
-      <created>1620743215052</created>
-      <option name="number" value="00093" />
-      <option name="presentableId" value="LOCAL-00093" />
-      <option name="project" value="LOCAL" />
-      <updated>1620743215052</updated>
-    </task>
-    <task id="LOCAL-00094" summary="encounterWithReferrals">
-      <created>1620743361748</created>
-      <option name="number" value="00094" />
-      <option name="presentableId" value="LOCAL-00094" />
-      <option name="project" value="LOCAL" />
-      <updated>1620743361748</updated>
-    </task>
-    <task id="LOCAL-00095" summary="encounterWithReferrals">
-      <created>1620743754518</created>
-      <option name="number" value="00095" />
-      <option name="presentableId" value="LOCAL-00095" />
-      <option name="project" value="LOCAL" />
-      <updated>1620743754518</updated>
-    </task>
-    <task id="LOCAL-00096" summary="encounterWithReferrals">
-      <created>1620744023043</created>
-      <option name="number" value="00096" />
-      <option name="presentableId" value="LOCAL-00096" />
-      <option name="project" value="LOCAL" />
-      <updated>1620744023043</updated>
-    </task>
-    <task id="LOCAL-00097" summary="encounterWithReferrals">
-      <created>1620744250634</created>
-      <option name="number" value="00097" />
-      <option name="presentableId" value="LOCAL-00097" />
-      <option name="project" value="LOCAL" />
-      <updated>1620744250634</updated>
-    </task>
-    <task id="LOCAL-00098" summary="encounterWithReferrals">
-      <created>1620744807037</created>
-      <option name="number" value="00098" />
-      <option name="presentableId" value="LOCAL-00098" />
-      <option name="project" value="LOCAL" />
-      <updated>1620744807038</updated>
-    </task>
-    <task id="LOCAL-00099" summary="encounterWithReferrals">
-      <created>1620745226011</created>
-      <option name="number" value="00099" />
-      <option name="presentableId" value="LOCAL-00099" />
-      <option name="project" value="LOCAL" />
-      <updated>1620745226011</updated>
-    </task>
-    <task id="LOCAL-00100" summary="encounterWithReferrals">
-      <created>1620745406543</created>
-      <option name="number" value="00100" />
-      <option name="presentableId" value="LOCAL-00100" />
-      <option name="project" value="LOCAL" />
-      <updated>1620745406543</updated>
-    </task>
-    <task id="LOCAL-00101" summary="encounterWithReferrals">
-      <created>1620745679020</created>
-      <option name="number" value="00101" />
-      <option name="presentableId" value="LOCAL-00101" />
-      <option name="project" value="LOCAL" />
-      <updated>1620745679020</updated>
-    </task>
-    <task id="LOCAL-00102" summary="encounterWithReferrals">
-      <created>1620745867600</created>
-      <option name="number" value="00102" />
-      <option name="presentableId" value="LOCAL-00102" />
-      <option name="project" value="LOCAL" />
-      <updated>1620745867600</updated>
-    </task>
-    <task id="LOCAL-00103" summary="encounterWithReferrals">
-      <created>1620746428205</created>
-      <option name="number" value="00103" />
-      <option name="presentableId" value="LOCAL-00103" />
-      <option name="project" value="LOCAL" />
-      <updated>1620746428205</updated>
-    </task>
-    <task id="LOCAL-00104" summary="encounterWithReferrals">
-      <created>1620746551561</created>
-      <option name="number" value="00104" />
-      <option name="presentableId" value="LOCAL-00104" />
-      <option name="project" value="LOCAL" />
-      <updated>1620746551561</updated>
-    </task>
-    <task id="LOCAL-00105" summary="encounterWithReferrals">
-      <created>1620746719788</created>
-      <option name="number" value="00105" />
-      <option name="presentableId" value="LOCAL-00105" />
-      <option name="project" value="LOCAL" />
-      <updated>1620746719788</updated>
-    </task>
-    <task id="LOCAL-00106" summary="encounterWithReferrals">
-      <created>1620746771517</created>
-      <option name="number" value="00106" />
-      <option name="presentableId" value="LOCAL-00106" />
-      <option name="project" value="LOCAL" />
-      <updated>1620746771517</updated>
-    </task>
-    <task id="LOCAL-00107" summary="encounterWithReferrals">
-      <created>1620746863485</created>
-      <option name="number" value="00107" />
-      <option name="presentableId" value="LOCAL-00107" />
-      <option name="project" value="LOCAL" />
-      <updated>1620746863485</updated>
-    </task>
-    <task id="LOCAL-00108" summary="encounterWithReferrals">
-      <created>1620747203054</created>
-      <option name="number" value="00108" />
-      <option name="presentableId" value="LOCAL-00108" />
-      <option name="project" value="LOCAL" />
-      <updated>1620747203054</updated>
-    </task>
-    <task id="LOCAL-00109" summary="encounterWithReferrals">
-      <created>1620747964099</created>
-      <option name="number" value="00109" />
-      <option name="presentableId" value="LOCAL-00109" />
-      <option name="project" value="LOCAL" />
-      <updated>1620747964099</updated>
-    </task>
-    <task id="LOCAL-00110" summary="encounterWithReferrals">
-      <created>1620748245373</created>
-      <option name="number" value="00110" />
-      <option name="presentableId" value="LOCAL-00110" />
-      <option name="project" value="LOCAL" />
-      <updated>1620748245373</updated>
+      <workItem from="1624366369149" duration="11133000" />
     </task>
     <task id="LOCAL-00111" summary="encounterWithReferrals">
       <created>1620748700932</created>
@@ -575,11 +413,193 @@
       <option name="project" value="LOCAL" />
       <updated>1624391200017</updated>
     </task>
-    <option name="localTasksCounter" value="134" />
+    <task id="LOCAL-00134" summary="consent search by patientId">
+      <created>1624391556170</created>
+      <option name="number" value="00134" />
+      <option name="presentableId" value="LOCAL-00134" />
+      <option name="project" value="LOCAL" />
+      <updated>1624391556170</updated>
+    </task>
+    <task id="LOCAL-00135" summary="consent search by patientId">
+      <created>1624392021043</created>
+      <option name="number" value="00135" />
+      <option name="presentableId" value="LOCAL-00135" />
+      <option name="project" value="LOCAL" />
+      <updated>1624392021044</updated>
+    </task>
+    <task id="LOCAL-00136" summary="consent search by patientId">
+      <created>1624392501665</created>
+      <option name="number" value="00136" />
+      <option name="presentableId" value="LOCAL-00136" />
+      <option name="project" value="LOCAL" />
+      <updated>1624392501665</updated>
+    </task>
+    <task id="LOCAL-00137" summary="consent search by patientId">
+      <created>1624392631702</created>
+      <option name="number" value="00137" />
+      <option name="presentableId" value="LOCAL-00137" />
+      <option name="project" value="LOCAL" />
+      <updated>1624392631702</updated>
+    </task>
+    <task id="LOCAL-00138" summary="consent search by patientId">
+      <created>1624392763172</created>
+      <option name="number" value="00138" />
+      <option name="presentableId" value="LOCAL-00138" />
+      <option name="project" value="LOCAL" />
+      <updated>1624392763172</updated>
+    </task>
+    <task id="LOCAL-00139" summary="consent search by patientId">
+      <created>1624393305974</created>
+      <option name="number" value="00139" />
+      <option name="presentableId" value="LOCAL-00139" />
+      <option name="project" value="LOCAL" />
+      <updated>1624393305974</updated>
+    </task>
+    <task id="LOCAL-00140" summary="consent search by patientId">
+      <created>1624396425118</created>
+      <option name="number" value="00140" />
+      <option name="presentableId" value="LOCAL-00140" />
+      <option name="project" value="LOCAL" />
+      <updated>1624396425118</updated>
+    </task>
+    <task id="LOCAL-00141" summary="consent search by patientId">
+      <created>1624397282831</created>
+      <option name="number" value="00141" />
+      <option name="presentableId" value="LOCAL-00141" />
+      <option name="project" value="LOCAL" />
+      <updated>1624397282831</updated>
+    </task>
+    <task id="LOCAL-00142" summary="consent search by patientId">
+      <created>1624398084910</created>
+      <option name="number" value="00142" />
+      <option name="presentableId" value="LOCAL-00142" />
+      <option name="project" value="LOCAL" />
+      <updated>1624398084910</updated>
+    </task>
+    <task id="LOCAL-00143" summary="consent search by patientId">
+      <created>1624399553828</created>
+      <option name="number" value="00143" />
+      <option name="presentableId" value="LOCAL-00143" />
+      <option name="project" value="LOCAL" />
+      <updated>1624399553828</updated>
+    </task>
+    <task id="LOCAL-00144" summary="consent search by patientId">
+      <created>1624399794336</created>
+      <option name="number" value="00144" />
+      <option name="presentableId" value="LOCAL-00144" />
+      <option name="project" value="LOCAL" />
+      <updated>1624399794336</updated>
+    </task>
+    <task id="LOCAL-00145" summary="consent search by patientId">
+      <created>1624399976245</created>
+      <option name="number" value="00145" />
+      <option name="presentableId" value="LOCAL-00145" />
+      <option name="project" value="LOCAL" />
+      <updated>1624399976245</updated>
+    </task>
+    <task id="LOCAL-00146" summary="consent search by patientId">
+      <created>1624400505040</created>
+      <option name="number" value="00146" />
+      <option name="presentableId" value="LOCAL-00146" />
+      <option name="project" value="LOCAL" />
+      <updated>1624400505040</updated>
+    </task>
+    <task id="LOCAL-00147" summary="consent search by patientId">
+      <created>1624402685109</created>
+      <option name="number" value="00147" />
+      <option name="presentableId" value="LOCAL-00147" />
+      <option name="project" value="LOCAL" />
+      <updated>1624402685109</updated>
+    </task>
+    <task id="LOCAL-00148" summary="consent search by patientId">
+      <created>1624403124000</created>
+      <option name="number" value="00148" />
+      <option name="presentableId" value="LOCAL-00148" />
+      <option name="project" value="LOCAL" />
+      <updated>1624403124000</updated>
+    </task>
+    <task id="LOCAL-00149" summary="consent search by patientId">
+      <created>1624403273049</created>
+      <option name="number" value="00149" />
+      <option name="presentableId" value="LOCAL-00149" />
+      <option name="project" value="LOCAL" />
+      <updated>1624403273049</updated>
+    </task>
+    <task id="LOCAL-00150" summary="consent search by patientId">
+      <created>1624403691515</created>
+      <option name="number" value="00150" />
+      <option name="presentableId" value="LOCAL-00150" />
+      <option name="project" value="LOCAL" />
+      <updated>1624403691515</updated>
+    </task>
+    <task id="LOCAL-00151" summary="consent search by patientId">
+      <created>1624404215954</created>
+      <option name="number" value="00151" />
+      <option name="presentableId" value="LOCAL-00151" />
+      <option name="project" value="LOCAL" />
+      <updated>1624404215954</updated>
+    </task>
+    <task id="LOCAL-00152" summary="consent search by patientId">
+      <created>1624404472905</created>
+      <option name="number" value="00152" />
+      <option name="presentableId" value="LOCAL-00152" />
+      <option name="project" value="LOCAL" />
+      <updated>1624404472905</updated>
+    </task>
+    <task id="LOCAL-00153" summary="consent search by patientId">
+      <created>1624405306274</created>
+      <option name="number" value="00153" />
+      <option name="presentableId" value="LOCAL-00153" />
+      <option name="project" value="LOCAL" />
+      <updated>1624405306274</updated>
+    </task>
+    <task id="LOCAL-00154" summary="consent search by patientId">
+      <created>1624406187205</created>
+      <option name="number" value="00154" />
+      <option name="presentableId" value="LOCAL-00154" />
+      <option name="project" value="LOCAL" />
+      <updated>1624406187205</updated>
+    </task>
+    <task id="LOCAL-00155" summary="consent search by patientId">
+      <created>1624406421694</created>
+      <option name="number" value="00155" />
+      <option name="presentableId" value="LOCAL-00155" />
+      <option name="project" value="LOCAL" />
+      <updated>1624406421694</updated>
+    </task>
+    <task id="LOCAL-00156" summary="consent search by patientId">
+      <created>1624409828426</created>
+      <option name="number" value="00156" />
+      <option name="presentableId" value="LOCAL-00156" />
+      <option name="project" value="LOCAL" />
+      <updated>1624409828426</updated>
+    </task>
+    <task id="LOCAL-00157" summary="consent search by patientId">
+      <created>1624409973385</created>
+      <option name="number" value="00157" />
+      <option name="presentableId" value="LOCAL-00157" />
+      <option name="project" value="LOCAL" />
+      <updated>1624409973385</updated>
+    </task>
+    <task id="LOCAL-00158" summary="consent search by patientId">
+      <created>1624410249121</created>
+      <option name="number" value="00158" />
+      <option name="presentableId" value="LOCAL-00158" />
+      <option name="project" value="LOCAL" />
+      <updated>1624410249121</updated>
+    </task>
+    <task id="LOCAL-00159" summary="consent search by patientId">
+      <created>1624410532653</created>
+      <option name="number" value="00159" />
+      <option name="presentableId" value="LOCAL-00159" />
+      <option name="project" value="LOCAL" />
+      <updated>1624410532653</updated>
+    </task>
+    <option name="localTasksCounter" value="160" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63906000" />
+    <option name="totallyTimeSpent" value="73426000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -591,10 +611,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1280" y="0" width="1920" height="1080" extended-state="0" />
-    <editor active="true" />
+    <frame x="1284" y="23" width="1920" height="980" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3913738" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14909478" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -609,7 +628,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32970297" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="8" visible="true" weight="0.6633663" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="8" visible="true" weight="0.45945945" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.3295838" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
@@ -691,18 +710,14 @@
     <entry file="file://$PROJECT_DIR$/smarthealthit/index.html" />
     <entry file="file://$PROJECT_DIR$/createPatient.html" />
     <entry file="file://$PROJECT_DIR$/onerror.html" />
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+    <entry file="file://$PROJECT_DIR$/smarthealthit/launch.html" />
+    <entry file="file://$PROJECT_DIR$/epic/index.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/smarthealthit/launch.html" />
-    <entry file="file://$PROJECT_DIR$/epic/index.html" />
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="45">
-            <caret line="3" selection-start-line="3" selection-end-line="3" />
-          </first_editor>
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -720,10 +735,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="45">
+            <caret line="3" selection-start-line="3" selection-end-line="3" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="203" column="86" selection-start-line="203" selection-start-column="86" selection-end-line="203" selection-end-column="86" />
+        <state relative-caret-position="249">
+          <caret line="126" column="21" selection-start-line="126" selection-start-column="21" selection-end-line="126" selection-end-column="21" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
