@@ -173,7 +173,6 @@
                 );
 
 
-
             fhirBundle.request('/DocumentReference?patient=' + fhirBundle.patient.id, {})
 
                 .then(function (data) {
@@ -196,7 +195,7 @@
                 );
 
             // Get Organization for the selected patient
-            fhirClient.request('/Patient?_id=' + fhirBundle.patient.id, {
+            fhirBundle.request('/Patient?_id=' + fhirBundle.patient.id, {
                 resolveReferences: ['managingOrganization'],
                 graph: true
             })
