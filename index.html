@@ -202,8 +202,8 @@
                 );
 
             // Get Organization for the selected patient
-            fhirBundle.request('/Encounter?_id=' + fhirBundle.encounter.id, {
-                resolveReferences: ['serviceProvider'],
+            fhirClient.request('/Patient?_id=' + fhirClient.patient.id, {
+                resolveReferences: ['managingOrganization'],
                 graph: true
             })
 
@@ -215,11 +215,11 @@
                     return data.entry;
                 })
 
-                // Render the current location (or any error)
+                // Render the current organization(or any error)
                 .then(
                     function (encounter) {
-                        document.getElementById('organization').innerText = JSON.stringify(encounter[0].resource.serviceProvider, null, 4);
-                        fhirBundle.fhirBundle.organizationResource = encounter[0].resource.serviceProvider;
+                        document.getElementById('organization').innerText = JSON.stringify(encounter[0].resource.managingOrganization, null, 4);
+                        fhirBundle.fhirBundle.Organization = encounter[0].resource.managingOrganization;
                     },
                     function (error) {
                         alert('Issue Fetching Organization');
