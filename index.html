@@ -12,7 +12,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <style>
-        #patient, #organization, #location, #practitioner, #encounterHistory, #encounterLaunchContext, #observation, #documentReference, #appointment, #user, #allergyIntolerance, #headers {
+        #patient, #organization, #location, #practitioner, #encounterHistory, #encounterLaunchContext, #observation, #documentReference, #user, #serviceRequest, #diagnosticReport, #medicationRequest, #consent, #fhirClient {
             font-family: Monaco, monospace;
             white-space: pre;
             font-size: 13px;
@@ -110,7 +110,7 @@
             fhirBundle.encounter.read().then(
                 function (encounter) {
                     document.getElementById('encounterLaunchContext').innerText = JSON.stringify(encounter, null, 4);
-                    fhirBundle.fhirBundle.encounterLaunchContextResource = encounter;
+                    fhirBundle.fhirBundle.Encounter = encounter;
                 },
                 function (error) {
                     document.getElementById('encounterLaunchContext').innerText = error.stack;
@@ -141,7 +141,7 @@
                 .then(
                     function (encounterByPatientId) {
                         document.getElementById('encounterHistory').innerText = JSON.stringify(encounterByPatientId, null, 4);
-                        fhirBundle.fhirBundle.encounterByPatientIdResource = encounterByPatientId;
+                        fhirBundle.fhirBundle.EncounterList = encounterByPatientId;
                     },
                     function (error) {
                         alert('Issue Fetching Encounter by PatientId');
@@ -220,7 +220,97 @@
                     }
                 );
 
-            // Get Location for the selected patient
+
+            fhirBundle.request('/Consent?patient=' + fhirBundle.patient.id + '&status=active', { //+ client.patient.id,
+            })
+
+                .then(function (data) {
+                    if (!data.entry || !data.entry.length) {
+                        throw new Error('No Consent found for the selected patient');
+                    }
+                    return data.entry;
+                })
+
+                // Render the current consent (or any error)
+                .then(
+                    function (consent) {
+                        document.getElementById('consent').innerText = JSON.stringify(consent, null, 4);
+                        fhirBundle.fhirBundle.Consent = consent;
+                    },
+                    function (error) {
+                        alert('Issue fetching Consent by PatientId');
+                        document.getElementById('consent').innerText = error.stack;
+                    }
+                );
+
+            fhirBundle.request('/MedicationRequest?patient=' + fhirBundle.patient.id, { //+ client.patient.id,
+            })
+
+                .then(function (data) {
+                    if (!data.entry || !data.entry.length) {
+                        throw new Error('No Appointment found for the selected patient');
+                    }
+                    return data.entry;
+                })
+
+                // Render the current medicationRequest (or any error)
+                .then(
+                    function (medicationRequest) {
+                        document.getElementById('medicationRequest').innerText = JSON.stringify(medicationRequest, null, 4);
+                        fhirBundle.fhirBundle.MedicationRequest = medicationRequest;
+                    },
+                    function (error) {
+                        alert('Issue fetching MedicationRequest by PatientId');
+                        document.getElementById('medicationRequest').innerText = error.stack;
+                    }
+                );
+
+            fhirBundle.request('/ServiceRequest?patient=' + fhirBundle.patient.id, { //+ client.patient.id,
+            })
+
+                .then(function (data) {
+                    if (!data.entry || !data.entry.length) {
+                        throw new Error('No ServiceRequest found for the selected patient');
+                    }
+                    return data.entry;
+                })
+
+                // Render the current service request (or any error)
+                .then(
+                    function (serviceRequest) {
+                        document.getElementById('serviceRequest').innerText = JSON.stringify(serviceRequest, null, 4);
+                        fhirBundle.fhirBundle.ServiceRequest = serviceRequest;
+                    },
+                    function (error) {
+                        alert('Issue fetching Service Request by PatientId');
+                        document.getElementById('serviceRequest').innerText = error.stack;
+                    }
+                );
+
+            fhirBundle.request('/DiagnosticReport?patient=' + fhirBundle.patient.id, { //+ client.patient.id,
+            })
+
+                .then(function (data) {
+                    if (!data.entry || !data.entry.length) {
+                        throw new Error('No DiagnosticReport found for the selected patient');
+                    }
+                    return data.entry;
+                })
+
+                // Render the current appointment (or any error)
+                .then(
+                    function (diagnosticReport) {
+                        document.getElementById('diagnosticReport').innerText = JSON.stringify(diagnosticReport, null, 4);
+                        fhirBundle.fhirBundle.DiagnosticReport = diagnosticReport;
+                    },
+                    function (error) {
+                        alert('Issue fetching DiagnosticReport by PatientId');
+                        document.getElementById('diagnosticReport').innerText = error.stack;
+                    }
+                );
+
+
+            // Get Location for the selected encounter
             fhirBundle.request('/Encounter?_id=' + fhirBundle.encounter.id, {
                 resolveReferences: ['location'],
                 graph: true
@@ -238,7 +328,7 @@
                 .then(
                     function (encounter) {
                         document.getElementById('location').innerText = JSON.stringify(encounter[0].resource.location, null, 4);
-                        fhirBundle.fhirBundle.locationResource = encounter[0].resource.location;
+                        fhirBundle.fhirBundle.Location = encounter[0].resource.location;
                     },
                     function (error) {
                         alert('Issue Fetching Location');
@@ -247,9 +337,9 @@
                 );
 
 
-            // Get Practitioners for the selected patient
-            fhirBundle.request('/Patient?_id=' + fhirBundle.patient.id, {
-                resolveReferences: ['generalPractitioner'],
+            // Get Practitioners for the selected encounter
+            fhirBundle.request('/Encounter?_id=' + fhirBundle.encounter.id, {
+                resolveReferences: ['subject'],
                 graph: true
             })
 
@@ -263,11 +353,11 @@
                 })
 
 
-                // Get Practitioners for the selected patient
+                // Get Practitioners for the selected encounter
                 .then(
-                    function (practitioner) {
-                        document.getElementById('practitioner').innerText = JSON.stringify(practitioner.resource.generalPractitioner, null, 4);
-                        fhirBundle.fhirBundle.practitionerResource = practitioner;
+                    function (encounter) {
+                        document.getElementById('practitioner').innerText = JSON.stringify(encounter, null, 4);
+                        fhirBundle.fhirBundle.Practitioner = encounter;
                     },
                     function (error) {
                         document.getElementById('practitioner').innerText = error.stack;
