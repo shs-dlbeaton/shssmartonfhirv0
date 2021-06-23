@@ -93,7 +93,7 @@
     <script type="text/javascript">
         FHIR.oauth2.ready().then(function (fhirClient) {
             // Render the current patient (or any error)
-            fhirClient.fhirBundle = {};
+            fhirClient.fhirBundle = {'id': 1};
             fhirClient.patient.read().then(
                 function (pt) {
                     console.log(JSON.stringify(fhirClient));
