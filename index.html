@@ -12,7 +12,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <style>
-        #patient, #organization, #location, #practitioner, #encounterByPatientId, #encounterLaunchContext, #observation, #documentReference, #appointment, #user, #allergyIntolerance, #headers {
+        #patient, #organization, #location, #practitioner, #encounterHistory, #encounterLaunchContext, #observation, #documentReference, #appointment, #user, #allergyIntolerance, #headers {
             font-family: Monaco, monospace;
             white-space: pre;
             font-size: 13px;
@@ -68,7 +68,7 @@
         <h4>smart on fhir Encounter launch context</h4>
         <div id="encounterLaunchContext">Loading...</div>
         <h4>Encounter history</h4>
-        <div id="encounterByPatientId">Loading...</div>
+        <div id="encounterHistory">Loading...</div>
         <h4>Organization</h4>
         <div id="organization">Loading...</div>
         <h4>Location</h4>
@@ -118,7 +118,10 @@
             );
 
             // Render the current user (or any error)
-            console.log(JSON.stringify(fhirBundle.user.fhirUser));
+            // Render the current user (or any error)
+            console.log('client.user.id' + JSON.stringify(fhirClient.user.id));
+            console.log('client.user.fhirUser' + JSON.stringify(fhirClient.user.fhirUser));
+            console.log('client.user.resourceType' + JSON.stringify(fhirClient.user.resourceType));
 
             fhirBundle.user.read().then(
                 function (user) {
@@ -130,7 +133,7 @@
                 }
             );
 
-            // Get Encounter for the selected patient
+            // Get Encounter History for selected patient
             fhirBundle.request('/Encounter?subject=Patient/' + fhirBundle.patient.id, {})
 
                 .then(function (data) {
@@ -143,17 +146,17 @@
                 // Render the current encounter (or any error)
                 .then(
                     function (encounterByPatientId) {
-                        document.getElementById('encounterByPatientId').innerText = JSON.stringify(encounterByPatientId, null, 4);
+                        document.getElementById('encounterHistory').innerText = JSON.stringify(encounterByPatientId, null, 4);
                         fhirBundle.fhirBundle.encounterByPatientIdResource = encounterByPatientId;
                     },
                     function (error) {
                         alert('Issue Fetching Encounter by PatientId');
-                        document.getElementById('encounterByPatientId').innerText = error.stack;
+                        document.getElementById('encounterHistory').innerText = error.stack;
                     }
                 );
 
 
-            fhirBundle.request('/Observation?subject=Patient/' + fhirBundle.patient.id, { //+ client.patient.id,
+            fhirBundle.request('/Observation?subject=Patient/' + fhirBundle.patient.id + '&category=http://hl7.org/fhir/observation-category|laboratory', { //+ client.patient.id,
             })
 
                 .then(function (data) {
@@ -175,49 +178,7 @@
                     }
                 );
 
-            fhirBundle.request('/Appointment?patient=' + fhirBundle.patient.id, { //+ client.patient.id,
-            })
 
-                .then(function (data) {
-                    if (!data.entry || !data.entry.length) {
-                        throw new Error('No appointments found for the selected patient');
-                    }
-                    return data.entry;
-                })
-
-                // Render the current appointment (or any error)
-                .then(
-                    function (appointment) {
-                        document.getElementById('appointment').innerText = JSON.stringify(appointment, null, 4);
-                        fhirBundle.fhirBundle.appointment = appointment;
-                    },
-                    function (error) {
-                        alert('Issue Fetching appointment by PatientId');
-                        document.getElementById('appointment').innerText = error.stack;
-                    }
-                );
-
-            fhirBundle.request('/AllergyIntolerance?patient=' + fhirBundle.patient.id, { //+ client.patient.id,
-            })
-
-                .then(function (data) {
-                    if (!data.entry || !data.entry.length) {
-                        throw new Error('No Allergy intolerances found for the selected patient');
-                    }
-                    return data.entry;
-                })
-
-                // Render the current allergy intolerance (or any error)
-                .then(
-                    function (allergyIntolerance) {
-                        document.getElementById('allergyIntolerance').innerText = JSON.stringify(allergyIntolerance, null, 4);
-                        fhirBundle.fhirBundle.allergyIntolerance = allergyIntolerance;
-                    },
-                    function (error) {
-                        alert('Issue Fetching allergyIntolerance by PatientId');
-                        document.getElementById('allergyIntolerance').innerText = error.stack;
-                    }
-                );
 
             fhirBundle.request('/DocumentReference?patient=' + fhirBundle.patient.id, {})
 
