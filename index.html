@@ -91,6 +91,7 @@
         <div id="fhirClient">Loading...</div>
     </div>
     <script type="text/javascript">
+        var fhirclientGlobal = {};
         FHIR.oauth2.ready().then(function (fhirClient) {
             // Render the current patient (or any error)
             fhirClient.fhirBundle = {};
@@ -381,15 +382,18 @@
                     function (encounter) {
                         document.getElementById('practitioner').innerText = JSON.stringify(encounter, null, 4);
                         fhirClient.fhirBundle.Practitioner = encounter;
-                        document.getElementById('fhirClient').innerText = JSON.stringify(fhirClient, null, 4);
                     },
                     function (error) {
                         document.getElementById('practitioner').innerText = error.stack;
                     }
                 );
-            console.log('fhirBundle', JSON.stringify(fhirClient.fhirBundle));
+
+            fhirclientGlobal.client = fhirClient;
 
         }).catch(console.error);
+
+        console.log('fhirClientGlobal', JSON.stringify(fhirclientGlobal));
+        document.getElementById('fhirClient').innerText = JSON.stringify(fhirclientGlobal, null, 4);
 
         function showLaunchParameters() {
             var x = document.getElementById('main');
