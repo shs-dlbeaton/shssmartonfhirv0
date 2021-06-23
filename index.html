@@ -93,12 +93,12 @@
     <script type="text/javascript">
         FHIR.oauth2.ready().then(function (fhirClient) {
             // Render the current patient (or any error)
-            var fhirBundle = {};
+            fhirClient.fhirBundle = {};
             fhirClient.patient.read().then(
                 function (pt) {
                     console.log(JSON.stringify(fhirClient));
                     document.getElementById('patient').innerText = JSON.stringify(pt, null, 4);
-                    fhirBundle.Patient = pt;
+                    fhirClient.fhirBundle.Patient = pt;
                 },
                 function (error) {
                     document.getElementById('patient').innerText = error.stack;
@@ -109,7 +109,7 @@
             fhirClient.encounter.read().then(
                 function (encounter) {
                     document.getElementById('activeEncounter').innerText = JSON.stringify(encounter, null, 4);
-                    fhirBundle.EncounterLaunch = encounter;
+                    fhirClient.fhirBundle.EncounterLaunch = encounter;
                 },
                 function (error) {
                     document.getElementById('activeEncounter').innerText = error.stack;
@@ -124,7 +124,7 @@
             fhirClient.user.read().then(
                 function (user) {
                     document.getElementById('user').innerText = JSON.stringify(user, null, 4);
-                   // fhirBundle.UserLaunch = user;
+                    fhirClient.fhirBundle.UserLaunch = user;
                 },
                 function (error) {
                     document.getElementById('user').innerText = error.stack;
@@ -145,7 +145,7 @@
                 .then(
                     function (encounterByPatientId) {
                         document.getElementById('encounterHistory').innerText = JSON.stringify(encounterByPatientId, null, 4);
-                     //   fhirBundle.EncounterList = encounterByPatientId;
+                        fhirClient.fhirBundle.EncounterList = encounterByPatientId;
                     },
                     function (error) {
                         alert('Issue fetching Encounter by patientId');
@@ -168,7 +168,7 @@
                 .then(
                     function (observation) {
                         document.getElementById('observation').innerText = JSON.stringify(observation, null, 4);
-                      //  fhirBundle.Observation = observation;
+                        fhirClient.fhirBundle.Observation = observation;
                     },
                     function (error) {
                         alert('Issue Fetching Observation by patientId');
@@ -190,7 +190,7 @@
                 .then(
                     function (appointment) {
                         document.getElementById('appointment').innerText = JSON.stringify(appointment, null, 4);
-                       // fhirBundle.Appointment = appointment;
+                        fhirClient.fhirBundle.Appointment = appointment;
                     },
                     function (error) {
                         alert('Issue fetching Appointment by PatientId');
@@ -212,7 +212,7 @@
                 .then(
                     function (consent) {
                         document.getElementById('consent').innerText = JSON.stringify(consent, null, 4);
-                       // fhirBundle.Consent = consent;
+                        fhirClient.fhirBundle.Consent = consent;
                     },
                     function (error) {
                         alert('Issue fetching Consent by PatientId');
@@ -234,7 +234,7 @@
                 .then(
                     function (medicationRequest) {
                         document.getElementById('medicationRequest').innerText = JSON.stringify(medicationRequest, null, 4);
-                       // fhirBundle.MedicationRequest = medicationRequest;
+                        fhirClient.fhirBundle.MedicationRequest = medicationRequest;
                     },
                     function (error) {
                         alert('Issue fetching MedicationRequest by PatientId');
@@ -256,7 +256,7 @@
                 .then(
                     function (serviceRequest) {
                         document.getElementById('serviceRequest').innerText = JSON.stringify(serviceRequest, null, 4);
-                       // fhirBundle.ServiceRequest = serviceRequest;
+                        fhirClient.fhirBundle.ServiceRequest = serviceRequest;
                     },
                     function (error) {
                         alert('Issue fetching Service Request by PatientId');
@@ -278,7 +278,7 @@
                 .then(
                     function (diagnosticReport) {
                         document.getElementById('diagnosticReport').innerText = JSON.stringify(diagnosticReport, null, 4);
-                       // fhirBundle.DiagnosticReport = diagnosticReport;
+                        fhirClient.fhirBundle.DiagnosticReport = diagnosticReport;
                     },
                     function (error) {
                         alert('Issue fetching DiagnosticReport by PatientId');
@@ -299,7 +299,7 @@
                 .then(
                     function (documentReference) {
                         document.getElementById('documentReference').innerText = JSON.stringify(documentReference, null, 4);
-                       // fhirBundle.DocumentReference = documentReference;
+                        fhirClient.fhirBundle.DocumentReference = documentReference;
                     },
                     function (error) {
                         alert('Issue fetching DocumentReference by patientId');
@@ -325,7 +325,7 @@
                 .then(
                     function (encounter) {
                         document.getElementById('organization').innerText = JSON.stringify(encounter[0].resource.managingOrganization, null, 4);
-                       // fhirBundle.Organization = encounter[0].resource.managingOrganization;
+                        fhirClient.fhirBundle.Organization = encounter[0].resource.managingOrganization;
                     },
                     function (error) {
                         alert('Issue Fetching Organization');
@@ -351,7 +351,7 @@
                 .then(
                     function (encounter) {
                         document.getElementById('location').innerText = JSON.stringify(encounter[0].resource.location, null, 4);
-                        //fhirBundle.Location = encounter[0].resource.location;
+                        fhirClient.fhirBundle.Location = encounter[0].resource.location;
                     },
                     function (error) {
                         alert('Issue Fetching Location');
@@ -380,14 +380,13 @@
                 .then(
                     function (encounter) {
                         document.getElementById('practitioner').innerText = JSON.stringify(encounter, null, 4);
-                        fhirBundle.Practitioner = encounter;
+                        fhirClient.fhirBundle.Practitioner = encounter;
                     },
                     function (error) {
                         document.getElementById('practitioner').innerText = error.stack;
                     }
                 );
-            fhirClient.bundle = fhirBundle;
-            console.log('fhirBundle', JSON.stringify(fhirBundle));
+            console.log('fhirBundle', JSON.stringify(fhirClient.fhirBundle));
             document.getElementById('fhirClient').innerText = JSON.stringify(fhirClient, null, 4);
         }).catch(console.error);
 
