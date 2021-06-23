@@ -382,14 +382,13 @@
                     function (encounter) {
                         document.getElementById('practitioner').innerText = JSON.stringify(encounter, null, 4);
                         fhirClient.fhirBundle.Practitioner = encounter;
+                        fhirclientGlobal.client = fhirClient;
                         document.getElementById('fhirClient').innerText = JSON.stringify(fhirclientGlobal, null, 4);
                     },
                     function (error) {
                         document.getElementById('practitioner').innerText = error.stack;
                     }
                 );
-
-            fhirclientGlobal.client = fhirClient;
 
         }).catch(console.error);
 
