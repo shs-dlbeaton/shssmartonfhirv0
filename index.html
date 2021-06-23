@@ -13,7 +13,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <style>
-        #patient, #organization, #medicationRequest, #serviceRequest, #diagnosticReport, #consent, #location, #practitioner, #encounterHistory, #activeEncounter, #observation, #documentReference, #user, #fhirClient {
+        #patient, #organization, #location, #practitioner, #encounterByPatientId, #encounterLaunchContext, #observation, #documentReference, #appointment, #user, #allergyIntolerance, #headers {
             font-family: Monaco, monospace;
             white-space: pre;
             font-size: 13px;
@@ -55,40 +55,66 @@
     </style>
 </head>
 <body>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">SHS Smart App Launch</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="index.html">EHR Launch</a></li>
+            class="caret"></span></a>
+            <ul class="dropdown-menu">
+            </ul>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+        </ul>
+    </div>
+</nav>
 <div class="jumbotron text-center" style="margin-bottom:0">
-    <button type="button" class="btn btn-primary" onclick="returnClient()">fhir payload
+    <img src="images/shs_logo2.png" height="128" width="170"/>
+    <h2>SHS SMART ON FHIR POC</h2>
+    <br><br>
+    <button type="button" class="btn btn-primary" onclick="returnClient()">LOOKUP PATIENT
     </button>
-    <button type="button" class="btn btn-warning" onclick="showLaunchParameters()">debug
+    <button type="button" class="btn btn-warning" onclick="showLaunchParameters()">SHOW
+        LAUNCH
+        PARAMETERS
     </button>
     <div id="main" style="display: none">
-        <h4>smart on fhir Patient launch context</h4>
+        <h4>EHR Launch (patient)</h4>
         <div id="patient">Loading...</div>
-        <h4>smart on fhir User launch context</h4>
+        <h4>EHR Launch (user)</h4>
         <div id="user">Loading...</div>
-        <h4>smart on fhir Encounter launch context</h4>
-        <div id="activeEncounter">Loading...</div>
-        <h4>Encounter history</h4>
-        <div id="encounterHistory">Loading...</div>
+        <h4>EHR Launch (encounter)</h4>
+        <div id="encounterLaunchContext">Loading...</div>
+        <h4>all encounters</h4>
+        <div id="encounterByPatientId">Loading...</div>
         <h4>Organization</h4>
         <div id="organization">Loading...</div>
         <h4>Location</h4>
         <div id="location">Loading...</div>
-        <h4>Practitioner</h4>
+        <h4>Practitioner(s)</h4>
         <div id="practitioner">Loading...</div>
-        <h4>Observation</h4>
+        <h4>Observation(s)</h4>
         <div id="observation">Loading...</div>
-        <h4>DocumentReference</h4>
+        <h4>Appointment(s)</h4>
+        <div id="appointment">Loading...</div>
+        <h4>Allergy Intolerance(s)</h4>
+        <div id="allergyIntolerance">Loading...</div>
+        <h4>Document(s)</h4>
         <div id="documentReference">Loading...</div>
-        <h4>MedicationRequest</h4>
-        <div id="medicationRequest">Loading...</div>
-        <h4>ServiceRequest</h4>
-        <div id="serviceRequest">Loading...</div>
-        <h4>DiagnosticReport</h4>
-        <div id="diagnosticReport">Loading...</div>
-        <h4>Consent</h4>
-        <div id="consent">Loading...</div>
-        <h4>FHIR Client</h4>
-        <div id="fhirClient">Loading...</div>
+        <h4>Referral Submit Payload Structure </h4>
+        <center>
+            <div class="item">Location Resource</div>
+            <div class="item">Patient Resource</div>
+            <div class="item">Organization Resource</div>
+            <div class="item">DocumentReference Resource</div>
+            <div class="item">Encounter Resource</div>
+            <div class="item">Observation Resource</div>
+            <div class="item">Appointment Resource</div>
+        </center>
+        <div id="headers">Loading...</div>
     </div>
     <script type="text/javascript">
         var clientGlobalScope = {};
@@ -118,9 +144,7 @@
             );
 
             // Render the current user (or any error)
-            console.log('client.user.id' + JSON.stringify(fhirClient.user.id));
-            console.log('client.user.fhirUser' + JSON.stringify(fhirClient.user.fhirUser));
-            console.log('client.user.resourceType' + JSON.stringify(fhirClient.user.resourceType));
+            console.log(JSON.stringify(fhirBundle.user.fhirUser));
 
             fhirBundle.user.read().then(
                 function (user) {
@@ -132,8 +156,8 @@
                 }
             );
 
-            // Get Encounter History for selected patient
-            fhirClient.patient.request('Encounter', {})
+            // Get Encounter for the selected patient
+            fhirBundle.request('/Encounter?subject=Patient/' + fhirBundle.patient.id, {})
 
                 .then(function (data) {
                     if (!data.entry || !data.entry.length) {
@@ -144,18 +168,19 @@
 
                 // Render the current encounter (or any error)
                 .then(
-                    function (encounterHistory) {
-                        document.getElementById('encounterByPatientId').innerText = JSON.stringify(encounterHistory, null, 4);
-                        fhirBundle.fhirBundle.EncounterList = encounterHistory;
+                    function (encounterByPatientId) {
+                        document.getElementById('encounterByPatientId').innerText = JSON.stringify(encounterByPatientId, null, 4);
+                        fhirBundle.fhirBundle.encounterByPatientIdResource = encounterByPatientId;
+                        localStorage.setItem('_encounterByPatientIdResource', JSON.stringify(encounterByPatientId));
                     },
                     function (error) {
                         alert('Issue Fetching Encounter by PatientId');
-                        document.getElementById('encounterHistory').innerText = error.stack;
+                        document.getElementById('encounterByPatientId').innerText = error.stack;
                     }
                 );
 
 
-            fhirClient.request('/Observation?subject=Patient/' + fhirClient.patient.id + '&category=http://hl7.org/fhir/observation-category|laboratory', { //+ client.patient.id,
+            fhirBundle.request('/Observation?subject=Patient/' + fhirBundle.patient.id, { //+ client.patient.id,
             })
 
                 .then(function (data) {
@@ -174,6 +199,50 @@
                     function (error) {
                         alert('Issue Fetching observation by PatientId');
                         document.getElementById('observation').innerText = error.stack;
+                    }
+                );
+
+            fhirBundle.request('/Appointment?patient=' + fhirBundle.patient.id, { //+ client.patient.id,
+            })
+
+                .then(function (data) {
+                    if (!data.entry || !data.entry.length) {
+                        throw new Error('No appointments found for the selected patient');
+                    }
+                    return data.entry;
+                })
+
+                // Render the current appointment (or any error)
+                .then(
+                    function (appointment) {
+                        document.getElementById('appointment').innerText = JSON.stringify(appointment, null, 4);
+                        fhirBundle.fhirBundle.appointment = appointment;
+                    },
+                    function (error) {
+                        alert('Issue Fetching appointment by PatientId');
+                        document.getElementById('appointment').innerText = error.stack;
+                    }
+                );
+
+            fhirBundle.request('/AllergyIntolerance?patient=' + fhirBundle.patient.id, { //+ client.patient.id,
+            })
+
+                .then(function (data) {
+                    if (!data.entry || !data.entry.length) {
+                        throw new Error('No Allergy intolerances found for the selected patient');
+                    }
+                    return data.entry;
+                })
+
+                // Render the current allergy intolerance (or any error)
+                .then(
+                    function (allergyIntolerance) {
+                        document.getElementById('allergyIntolerance').innerText = JSON.stringify(allergyIntolerance, null, 4);
+                        fhirBundle.fhirBundle.allergyIntolerance = allergyIntolerance;
+                    },
+                    function (error) {
+                        alert('Issue Fetching allergyIntolerance by PatientId');
+                        document.getElementById('allergyIntolerance').innerText = error.stack;
                     }
                 );
 
@@ -277,14 +346,70 @@
                         document.getElementById('practitioner').innerText = error.stack;
                     }
                 );
-
             clientGlobalScope.client = fhirBundle;
+            localStorage.setItem('_payload', JSON.stringify(clientGlobalScope.client));
 
         }).catch(console.error);
 
         function returnClient() {
-            document.getElementById('fhirClient').innerText = JSON.stringify(clientGlobalScope, null, 4);
+            document.getElementById('headers').innerText = JSON.stringify(clientGlobalScope, null, 4);
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'https://services-strataconnect.stratahealth.net:3141/instanceLookup', true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
+            xhr.setRequestHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+            xhr.setRequestHeader('Access-Control-Allow-Credentials', true);
+            xhr.setRequestHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH');
 
+            xhr.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status > 400) {
+                    if (typeof (Storage) !== 'undefined') {
+                        localStorage.setItem('_errorDescription', this.responseText);
+                        window.location.href = 'onerror.html';
+                    } else {
+                        alert('Sorry, your browser does not support Web Storage...');
+                    }
+                }
+                if (this.readyState == 4 && this.status == 200) {
+                    if (typeof (Storage) !== 'undefined') {
+
+                        var response = JSON.parse(this.responseText);
+
+                        localStorage.setItem('patientExists', response.patientExists);
+
+                        if (response.instanceEnvironment) {
+                            localStorage.setItem('instanceEnvironment', response.instanceEnvironment);
+                        }
+                        if (response._organization) {
+                            localStorage.setItem('organization', response._organization);
+                        }
+                        if (response.Hospital) {
+                            localStorage.setItem('Hospital', response.Hospital);
+                        }
+                        if (response.firstName) {
+                            localStorage.setItem('firstName', response.firstName);
+                        }
+                        if (response.lastName) {
+                            localStorage.setItem('lastName', response.lastName);
+                        }
+                        if (response.lastName) {
+                            localStorage.setItem('patientDTO', response.patientDTO);
+                        }
+                        localStorage.setItem('encountersWithReferralsExists', response.encountersWithReferralsExists);
+
+                        if (response.encountersWithReferrals) {
+                            localStorage.setItem('encountersWithReferrals', JSON.stringify(response.encountersWithReferrals));
+                        }
+                    } else {
+                        alert('Sorry, your browser does not support Web Storage...');
+                    }
+                    window.location.href = 'createPatient.html';
+                }
+            };
+            xhr.send(JSON.stringify({
+                value: clientGlobalScope
+            }));
+            // end of state change: it can be after some time (async)
         };
 
         function showLaunchParameters() {
