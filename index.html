@@ -11,56 +11,17 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <style>
-        #patient, #organization, #location, #practitioner, #encounterHistory, #encounterLaunchContext, #observation, #documentReference, #user, #serviceRequest, #diagnosticReport, #medicationRequest, #consent, #fhirClient {
-            font-family: Monaco, monospace;
-            white-space: pre;
-            font-size: 13px;
-            height: 30vh;
-            overflow: scroll;
-            border: 1px solid #CCC;
-        }
-
-        body {
-            padding: 20px;
-            font: 1em Helvetica Neue, Helvetica, Arial, sans-serif;
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        p {
-            margin: 0 0 1em 0;
-        }
-
-        .container {
-            border-radius: .5em;
-            padding: 10px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            height: 500px;
-        }
-
-        .item {
-            width: 300px;
-            height: 30px;
-            padding: 10px;
-            background-color: rgba(173, 255, 47, 1);
-            border: 2px solid rgba(214, 69, 65, 1);
-            font-size: 13px;
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <meta charset="utf-8">
 </head>
 <body>
 <div class="jumbotron text-center" style="margin-bottom:0">
-
     <button type="button" class="btn btn-primary" onclick="returnClient()">fhir payload
     </button>
     <button type="button" class="btn btn-warning" onclick="showLaunchParameters()">debug
     </button>
     <div id="main" style="display: none">
+        <p>testing change</p>
         <h4>smart on fhir Patient launch context</h4>
         <div id="patient">Loading...</div>
         <h4>smart on fhir User launch context</h4>
@@ -381,5 +342,25 @@
         }
     </script>
 </div>
+<footer id="app-footer" class="container-fluid">
+    <div class="row">
+        <div class="col-sm-4 col-sm-offset-1">
+            <img src="assets/img/Strata-logo-300w.png" alt="Strata Health Solutions Inc." width="200px"/>
+        </div>
+        <div class="col-sm-4 col-sm-offset-3">
+            <ul id="support-contact-list">
+                <li>
+                    <span class="glyphicon glyphicon-globe pad-right-5"></span><a href="https://stratahealth.com" target="_blank">Strata Health Solutions Inc.</a>
+                </li>
+                <li>
+                    <span class="glyphicon glyphicon-earphone pad-right-5"></span><a href="tel:+18665565005">1 (866) 556-5005</a>
+                </li>
+                <li>
+                    <span class="glyphicon glyphicon-envelope pad-right-5"></span><a href="mailto:support@stratahealth.com?subject=Support%20Request">support@stratahealth.com</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</footer>
 </body>
 </html>

@@ -1,0 +1,66 @@
+/*BASE RESETS*/
+body {
+    padding: 20px;
+    font-size: 18px;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+p {
+    margin: 0 0 1em 0;
+}
+
+/*BEGIN CUSTOM STYLES AND OVERRIDES*/
+
+.container {
+    border-radius: .5em;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+footer .row {
+    display: flex;
+    align-items: center;
+}
+
+.item {
+    width: 300px;
+    height: 30px;
+    padding: 10px;
+    background-color: rgba(173, 255, 47, 1);
+    border: 2px solid rgba(214, 69, 65, 1);
+    font-size: 13px;
+}
+
+#patient, #organization, #location, #practitioner, #encounterHistory,
+#encounterLaunchContext, #observation, #documentReference, #user,
+#serviceRequest, #diagnosticReport, #medicationRequest, #consent,
+#fhirClient {
+    font-family: Monaco, monospace;
+    white-space: pre;
+    font-size: 13px;
+    height: 30vh;
+    overflow: scroll;
+    border: 1px solid #CCC;
+}
+
+#app-footer {
+    background-color: #eee;
+    padding: 10px 0;
+}
+
+#support-contact-list {
+    list-style-type: none;
+    text-align: left;
+}
+
+/*BEGIN UTILITY CSS*/
+
+.pad-right-5 {
+    padding-right: 5px;
+}
