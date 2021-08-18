@@ -330,6 +330,57 @@
 
         function returnClient() {
             document.getElementById('fhirClient').innerText = JSON.stringify(clientGlobalScope, null, 4);
+
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'https://services-strataconnect.stratahealth.net:3141/smartLookup', true);
+
+            var smartLookup = {};
+            if (clientGlobalScope.client.fhirBundle.organization && clientGlobalScope.client.fhirBundle.patient) {
+                smartLookup.patient = clientGlobalScope.client.fhirBundle.patient;
+                smartLookup.organization = clientGlobalScope.client.fhirBundle.organization;
+
+                xhr.setRequestHeader('Content-Type', 'application/json');
+                xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
+                xhr.setRequestHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+                xhr.setRequestHeader('Access-Control-Allow-Credentials', true);
+                xhr.setRequestHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH');
+
+                xhr.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status > 400) {
+                        /** We will get a response back, then the response object will have
+                         * error: true
+                         * errorDescription: String
+                         *Possible errors: Instance does not exist, CareTypes does not exists,
+                         * **/
+                        if (typeof (Storage) !== 'undefined') {
+                            localStorage.setItem('_errorDescription', this.responseText);
+                            /** Option to redirect to an error page or display the error description on the same page **/
+                            //window.location.href = 'onerror.html';
+                        } else {
+                            alert('Sorry, your browser does not support Web Storage...');
+                        }
+                    }
+                    if (this.readyState == 4 && this.status == 200) {
+                        if (typeof (Storage) !== 'undefined') {
+
+                            var response = JSON.parse(this.responseText);
+
+                            localStorage.setItem('smartLookupResponse', response);
+
+                        } else {
+                            alert('Sorry, your browser does not support Web Storage...');
+                        }
+                        window.location.href = 'createPatient.html';
+                    }
+                };
+                xhr.send(JSON.stringify({
+                    value: smartLookup
+                }));
+            } else {
+                alert('Either Patient or Organization does not exist');
+            }
+
+            // end of state change: it can be after some time (async)
         };
 
         function showLaunchParameters() {
@@ -350,13 +401,17 @@
         <div class="col-sm-4 col-sm-offset-3">
             <ul id="support-contact-list">
                 <li>
-                    <span class="glyphicon glyphicon-globe pad-right-5"></span><a href="https://stratahealth.com" target="_blank">Strata Health Solutions Inc.</a>
+                    <span class="glyphicon glyphicon-globe pad-right-5"></span><a href="https://stratahealth.com"
+                                                                                  target="_blank">Strata Health
+                    Solutions Inc.</a>
                 </li>
                 <li>
-                    <span class="glyphicon glyphicon-earphone pad-right-5"></span><a href="tel:+18665565005">1 (866) 556-5005</a>
+                    <span class="glyphicon glyphicon-earphone pad-right-5"></span><a href="tel:+18665565005">1 (866)
+                    556-5005</a>
                 </li>
                 <li>
-                    <span class="glyphicon glyphicon-envelope pad-right-5"></span><a href="mailto:support@stratahealth.com?subject=Support%20Request">support@stratahealth.com</a>
+                    <span class="glyphicon glyphicon-envelope pad-right-5"></span><a
+                        href="mailto:support@stratahealth.com?subject=Support%20Request">support@stratahealth.com</a>
                 </li>
             </ul>
         </div>
