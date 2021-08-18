@@ -15,6 +15,14 @@
     <meta charset="utf-8">
 </head>
 <body>
+<header class="container">
+    <div id="messages" class="alert alert-warning alert-dismissible text-center" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <!--TODO: REPLACE DUMMY CONTENT-->
+        <strong>Warning!</strong> Better check yourself, you're not looking too good.
+        <button class="btn btn-warning" type="button" data-toggle="modal" data-target="#patientSyncModal">Fix it</button>
+    </div>
+</header>
 <div class="jumbotron text-center" style="margin-bottom:0">
     <button type="button" class="btn btn-primary" onclick="returnClient()">fhir payload
     </button>
@@ -362,5 +370,38 @@
         </div>
     </div>
 </footer>
+<div class="modal fade" id="patientSyncModal" tabindex="-1" role="dialog" aria-labelledby="patientSyncModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="patientSyncModalLabel">Patient Details Mis-match</h4>
+            </div>
+            <div id="patientSyncModalBody" class="modal-body">
+                <div class="row">
+                    <!--TODO: REPLACE DUMMY CONTENT FOR MODAL-->
+                    <div id="EMRPatient" class="col-sm-6">
+                        <ul>
+                            <li>Name: Last Name, First Name</li>
+                            <li>MRN: 1234567890</li>
+                            <li>D.O.B: 09/08/1988</li>
+                        </ul>
+                    </div>
+                    <div id="pathwaysPatient" class="col-sm-6">
+                        <ul>
+                            <li>Name: Last Name, First Name</li>
+                            <li>MRN: 1234567891</li>
+                            <li>D.O.B: 09/08/1989</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
